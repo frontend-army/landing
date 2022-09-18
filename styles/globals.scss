@@ -1,0 +1,16 @@
+@font-face {
+  font-family: tcceb;
+  src: url('../assets/fonts/tcceb.ttf');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.link {
+  color: #f2f2f2;
+  font-family: tcceb;
+  line-height: 1.2;
+  font-size: 1rem;
+  text-decoration: none;
+}

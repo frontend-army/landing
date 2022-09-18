@@ -1,10 +1,15 @@
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
+import Navbar from '../components/Navbar';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  let a = '1';
-  const b = a + 1;
-  return <Component {...pageProps} />;
+  return (
+    <div>
+      <Navbar />
+      <Component {...pageProps} />
+      <footer>Footer</footer>
+    </div>
+  );
 }
 
 export default MyApp;

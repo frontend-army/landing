@@ -1,0 +1,19 @@
+.navContainer {
+  display: flex;
+  background-color: #0d0d0d;
+  height: 3rem;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+}
+
+.link {
+  margin-right: 2rem;
+}
+
+.logo {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 2rem;
+}

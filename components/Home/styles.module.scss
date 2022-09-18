@@ -1,0 +1,10 @@
+.section:nth-child(even) {
+  background-color: red;
+}
+
+.section:nth-child(odd) {
+  background-color: blue;
+}
+.section {
+  height: 200px;
+}
