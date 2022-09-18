@@ -1,0 +1,23 @@
+.footer {
+  background-color: var(--primary);
+  padding: 1.5rem var(--horizontal-padding);
+}
+
+.socialTitle {
+  margin-bottom: 1.2rem;
+}
+
+.linkContainer {
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(5rem));
+  gap: 1rem 5rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0.3rem;
+}

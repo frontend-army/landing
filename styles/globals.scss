@@ -1,16 +1,50 @@
+@import 'normalize.css';
+
 @font-face {
   font-family: tcceb;
+  font-weight: normal;
   src: url('../assets/fonts/tcceb.ttf');
+}
+
+@font-face {
+  font-family: tcceb;
+  font-weight: bold;
+  src: url('../assets/fonts/tcceb-bold.ttf');
+}
+
+:root {
+  --primary: #0d0d0d;
+  --secondary: #f2f2f2;
+  --terciary: #595959;
+  --accent: #bf1f2c;
+
+  --horizontal-padding: 2rem;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+li {
+  list-style: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: tcceb;
+}
+
 .link {
-  color: #f2f2f2;
+  color: var(--secondary);
   font-family: tcceb;
   line-height: 1.2;
   font-size: 1rem;
   text-decoration: none;
+}
+
+.title-3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
 }

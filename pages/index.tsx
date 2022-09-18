@@ -1,5 +1,3 @@
-import 'reset-css';
-
 import Home from '../components/Home';
 
 function HomeContainer() {

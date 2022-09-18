@@ -45,6 +45,7 @@ module.exports = {
         tsx: 'never'
       }
     ],
-    'react/jsx-props-no-spreading': 'off'
+    'react/jsx-props-no-spreading': 'off',
+    'jsx-a11y/anchor-is-valid': 'off'
   }
 };
