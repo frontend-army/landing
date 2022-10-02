@@ -1,11 +1,10 @@
+import Introduction from '../Introduction';
 import styles from './styles.module.scss';
 
 function Home() {
   return (
     <main className={styles.main}>
-      <section id="introduction" className={styles.section}>
-        Introduccion
-      </section>
+      <Introduction />
       <section id="vision" className={styles.section}>
         Vision
       </section>
