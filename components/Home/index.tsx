@@ -1,13 +1,12 @@
 import Introduction from '../Introduction';
+import WhatWeDo from '../WhatWeDo';
 import styles from './styles.module.scss';
 
 function Home() {
   return (
     <main className={styles.main}>
       <Introduction />
-      <section id="vision" className={styles.section}>
-        Vision
-      </section>
+      <WhatWeDo />
       <section id="us" className={styles.section}>
         Quienes somos
       </section>
