@@ -1,3 +1,4 @@
+import AboutUs from '../AboutUs';
 import Introduction from '../Introduction';
 import WhatWeDo from '../WhatWeDo';
 import styles from './styles.module.scss';
@@ -7,9 +8,7 @@ function Home() {
     <main className={styles.main}>
       <Introduction />
       <WhatWeDo />
-      <section id="us" className={styles.section}>
-        Quienes somos
-      </section>
+      <AboutUs />
       <section id="videos" className={styles.section}>
         Videos
       </section>

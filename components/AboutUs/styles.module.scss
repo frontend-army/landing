@@ -1,0 +1,47 @@
+$image-border: #d0d0d0;
+
+.section {
+  background-color: var(--secondary);
+  // TODO: global class
+  padding: 100px 80px;
+}
+
+.memberListContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 40px;
+  width: min(100%, 680px);
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.memberContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.memberImage {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  border: 1px solid $image-border;
+}
+
+.memberDescription {
+  text-align: center;
+}
+
+.memberTitle {
+  color: var(--primary);
+}
+
+.socials {
+  display: flex;
+  gap: 4px;
+}
+
+.socialLinkImg {
+  fill: var(--primary);
+}

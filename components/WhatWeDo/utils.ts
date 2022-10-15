@@ -4,42 +4,31 @@ import podcastImg from '../../assets/images/podcast.webp';
 import communityImg from '../../assets/images/community.jpg';
 import codeImg from '../../assets/images/code.webp';
 
-import TwitterLogo from '../../assets/images/twitter.svg';
-import TwitchLogo from '../../assets/images/twitch.svg';
-import YoutubeLogo from '../../assets/images/youtube.svg';
-import SpotifyLogo from '../../assets/images/spotify.svg';
-import DiscordLogo from '../../assets/images/discord.svg';
-import GithubLogo from '../../assets/images/github.svg';
+import { SOCIALS } from '../../constants';
 
 export const SOCIAL_LINKS = {
   twitter: {
-    title: 'Twitter',
-    icon: TwitterLogo,
+    ...SOCIALS.twitter,
     href: 'https://twitter.com/frontend_army'
   },
   twitch: {
-    title: 'Twitch',
-    icon: TwitchLogo,
+    ...SOCIALS.twitch,
     href: 'https://www.twitch.tv/frontend_army'
   },
   youtube: {
-    title: 'Youtube',
-    icon: YoutubeLogo,
+    ...SOCIALS.youtube,
     href: 'https://www.youtube.com/channel/UCZ-rzg0Rya_le0GtTH3piPQ'
   },
   spotify: {
-    title: 'Spotify',
-    icon: SpotifyLogo,
+    ...SOCIALS.spotify,
     href: 'https://open.spotify.com/show/0sN5AI1KvzNm46qhIPqppT?si=69865e1ae9fc4abc&nd=1'
   },
   discord: {
-    title: 'Discord',
-    icon: DiscordLogo,
+    ...SOCIALS.discord,
     href: 'https://discord.gg/FE7eTYFJ'
   },
   github: {
-    title: 'Github',
-    icon: GithubLogo,
+    ...SOCIALS.github,
     href: 'https://github.com/frontend-army'
   }
 };

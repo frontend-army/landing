@@ -21,6 +21,20 @@
   --horizontal-padding: 2rem;
 }
 
+body::before {
+  content: '';
+  background-color: rgba(#0d0d0d, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 300;
+  opacity: 0;
+  transition: opacity ease 0.25s;
+  pointer-events: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -44,6 +58,11 @@ h5,
 h6,
 span {
   margin: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
 }
 
 .link {

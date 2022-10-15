@@ -1,3 +1,5 @@
+@import '../../styles/breakpoints.scss';
+
 .navContainer {
   display: flex;
   background-color: var(--primary);
@@ -9,12 +11,81 @@
   z-index: 900;
 }
 
-.link {
+.link,
+.logoLink {
   margin-right: 2rem;
 }
 
 .logo {
   width: 2.5rem;
   height: 2.5rem;
-  margin-right: 2rem;
+}
+
+.hamburgerIcon {
+  display: block;
+  position: relative;
+  height: 2px;
+  width: 28px;
+  background-color: var(--secondary);
+  margin: 10px 0;
+  border-radius: 1px;
+
+  &::before,
+  &::after {
+    content: '';
+    height: 2px;
+    background-color: var(--secondary);
+    left: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 1px;
+  }
+
+  &::before {
+    top: -10px;
+  }
+
+  &::after {
+    bottom: -10px;
+  }
+}
+
+.sidebarButton {
+  background-color: transparent;
+  display: none;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  body:has(.sidebarActive)::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navContainer {
+    justify-content: space-between;
+  }
+
+  $sidebarWidth: 250px;
+  .linkContainer {
+    position: fixed;
+    right: -$sidebarWidth;
+    width: $sidebarWidth;
+    top: 64px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary);
+    padding: 24px;
+    gap: 20px;
+    box-shadow: -4px 7px 8px 0 rgb(black, 0.4);
+    transition: transform ease 0.25s;
+
+    &.sidebarActive {
+      transform: translateX(-$sidebarWidth);
+    }
+  }
+
+  .sidebarButton {
+    display: block;
+  }
 }

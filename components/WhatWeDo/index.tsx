@@ -37,9 +37,9 @@ function WhatWeDo() {
           <div className={styles.rowTextContent}>
             <p className={styles.rowText}>{text}</p>
             <div className={styles.socialLinks}>
-              {socials.map((social) => (
-                <a key={social.title} href={social.href} title={social.title}>
-                  <img src={social.icon.src} alt={social.title} />
+              {socials.map(({ title, href, icon: Icon }) => (
+                <a key={title} href={href} title={title}>
+                  <Icon className={styles.socialLinkImg} />
                 </a>
               ))}
             </div>
