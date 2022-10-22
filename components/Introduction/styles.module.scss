@@ -1,5 +1,7 @@
+@import '../../styles/breakpoints.scss';
+
 .container {
-  height: 80vh;
+  height: calc(100vh - var(--nav-height));
   position: relative;
   background: url('../../assets/images/introduction-bg.webp') no-repeat
     center/cover fixed;
@@ -7,7 +9,8 @@
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  padding: 100px 0;
+  padding: 100px 20px;
+  text-align: center;
 
   &::before {
     content: '';
@@ -18,8 +21,37 @@
     right: 0;
     background-color: rgba(#000000, 0.5);
   }
+
+  &::after {
+    content: '';
+    background: url('../../assets/images/arrow-down.png') no-repeat center/cover;
+    position: absolute;
+    left: calc(50% - 24px);
+    bottom: 20px;
+    height: 48px;
+    width: 48px;
+    animation: bounce 1s ease-in-out infinite;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px);
+  }
 }
 
 .text {
   z-index: 100;
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .container {
+    justify-content: center;
+  }
 }

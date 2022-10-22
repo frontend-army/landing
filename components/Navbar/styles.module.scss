@@ -3,12 +3,16 @@
 .navContainer {
   display: flex;
   background-color: var(--primary);
-  height: 3rem;
   align-items: center;
-  padding: 2rem var(--horizontal-padding);
+  padding: 10px var(--horizontal-padding);
   position: sticky;
   top: 0;
   z-index: 900;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
 }
 
 .link,
@@ -17,8 +21,7 @@
 }
 
 .logo {
-  width: 2.5rem;
-  height: 2.5rem;
+  height: 44px;
 }
 
 .hamburgerIcon {
@@ -70,7 +73,7 @@
     position: fixed;
     right: -$sidebarWidth;
     width: $sidebarWidth;
-    top: 64px;
+    top: var(--nav-height);
     bottom: 0;
     display: flex;
     flex-direction: column;
