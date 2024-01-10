@@ -1,0 +1,86 @@
+.episode {
+  border-radius: 4px;
+  padding: 16px 20px;
+  display: flex;
+  background-color: $black;
+  background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
+  color: $white;
+  border-left: 4px solid $red;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 8px;
+}
+
+.episode-number {
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 200;
+}
+
+.episode-title {
+  font-family: 'anton', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.episode-description {
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.episode-links {
+  display: flex;
+  gap: 10px;
+  padding-top: 1px;
+  position: relative;
+  margin-top: 20px;
+  
+  &::before {
+    content: '';
+    height: 1px;
+    width: 24px;
+    background: $red;
+    position: absolute;
+    top: -15px;
+    left: 0;
+  }
+}
+
+.episode-link {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  line-height: 0.7rem;
+  
+  &.spotify {
+    border: 1px solid darken($spotify-green, 10%);
+    background: linear-gradient($spotify-green, darken($spotify-green, 10%));
+    color: $black;
+    
+    &:hover {
+      background: linear-gradient(lighten($spotify-green, 4%), darken($spotify-green, 6%));
+    }
+    
+    &:active {
+      background: linear-gradient(darken($spotify-green, 4%), darken($spotify-green, 14%));
+    }
+  }
+
+  &.youtube {
+    border: 1px solid darken($red, 10%);
+    background: linear-gradient($red, darken($red, 10%));
+    color: $white;
+    
+    &:hover {
+      background: linear-gradient(lighten($red, 4%), darken($red, 6%));
+    }
+    
+    &:active {
+      background: linear-gradient(darken($red, 4%), darken($red, 14%));
+    }
+  }
+}

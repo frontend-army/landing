@@ -1,0 +1,72 @@
+.host {
+  display: flex;
+  flex-direction: column;
+  max-width: 220px;
+  padding: 20px;
+  gap: 10px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 10%;
+    background: conic-gradient(from 180deg at calc(100% - 1px) 1px,transparent 90deg, $red 0);
+    top: 0;
+    right: 0;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 10%;
+    background: conic-gradient(at 1px calc(100% - 1px),transparent 90deg, $red 0);;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.host-avatar {
+  align-self: center;
+}
+
+.host-socials {
+  display: flex;
+  gap: 8px;
+  font-size: 1.2rem;
+}
+
+.host-social {
+  color: $black;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.host-name {
+  text-transform: uppercase;
+  color: $black;
+  font-weight: 500;
+}
+
+.host-description {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  position: relative;
+  padding-top: 1px;
+  color: $black;
+  
+  &::before {
+    content: '';
+    height: 1px;
+    width: 12px;
+    background: $red;
+    position: absolute;
+    top: -9px;
+    left: 0;
+  }
+}

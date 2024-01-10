@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@frontend-army/equalizer/equalizer.css";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@200;300;500&display=swap');
+
+* {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+nav {
+  font-family: var(--font-anton), system-ui, sans-serif;
+}
