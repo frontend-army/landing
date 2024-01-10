@@ -5,23 +5,23 @@
   padding: 20px;
   gap: 10px;
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
     width: 80%;
     height: 10%;
-    background: conic-gradient(from 180deg at calc(100% - 1px) 1px,transparent 90deg, $red 0);
+    background: conic-gradient(from 180deg at calc(100% - 1px) 1px, transparent 90deg, var(--red) 0);
     top: 0;
     right: 0;
   }
-  
+
   &::after {
     content: '';
     position: absolute;
     width: 80%;
     height: 10%;
-    background: conic-gradient(at 1px calc(100% - 1px),transparent 90deg, $red 0);;
+    background: conic-gradient(at 1px calc(100% - 1px), transparent 90deg, var(--red) 0);
     bottom: 0;
     left: 0;
   }
@@ -38,17 +38,17 @@
 }
 
 .host-social {
-  color: $black;
+  color: var(--black);
   transition: color 0.3s ease;
 
   &:hover {
-    color: $red;
+    color: var(--red);
   }
 }
 
 .host-name {
   text-transform: uppercase;
-  color: $black;
+  color: var(--black);
   font-weight: 500;
 }
 
@@ -58,13 +58,13 @@
   line-height: 1.25;
   position: relative;
   padding-top: 1px;
-  color: $black;
+  color: var(--black);
   
   &::before {
     content: '';
     height: 1px;
     width: 12px;
-    background: $red;
+    background: var(--red);
     position: absolute;
     top: -9px;
     left: 0;

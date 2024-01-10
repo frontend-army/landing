@@ -1,6 +1,8 @@
-import type { Metadata } from 'next'
 import { Montserrat, Anton } from 'next/font/google'
-import './globals.css'
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import '@/css/globals.css';
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const a = Anton({weight: "400", subsets: ['latin'], variable: '--font-anton'});
 const b = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });

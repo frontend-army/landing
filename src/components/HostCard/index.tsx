@@ -1,5 +1,8 @@
 import { Host } from "@/types/host";
 import Image from "next/image";
+import styles from './styles.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { socialsIconMap } from "./utils";
 
 interface Props {
   host: Host
@@ -7,19 +10,19 @@ interface Props {
 
 export const HostCard: React.FC<Props> = ({host}) => {
   return (
-    <div className="host">
-      <Image className="host-avatar" src={host.avatarUrl} alt={`${host.name}'s profile picture`} />
-      <div className="host-socials">
+    <div className={styles.host}>
+      <Image className={styles.hostAvatar} src={host.avatarUrl} alt={`${host.name}'s profile picture`} width={220} height={200} />
+      <div className={styles.hostSocials}>
         {
           host.socials.map(social =>(
-            <a key={social.url} className="host-social" href={social.url}>
-              <i className={`fa-brands fa-${social.name.toLowerCase()} social-icon`} />
+            <a key={social.url} className={styles.hostSocial} href={social.url}>
+              <FontAwesomeIcon icon={socialsIconMap[social.name.toLocaleLowerCase()]} />
             </a>
           ))
         }
       </div>
-      <p className="host-name">{host.name}</p>
-      <p className="host-description">{host.description}</p>
+      <p className={styles.hostName}>{host.name}</p>
+      <p className={styles.hostDescription}>{host.description}</p>
     </div>
   );
 } 

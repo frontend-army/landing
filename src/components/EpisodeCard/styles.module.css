@@ -2,10 +2,10 @@
   border-radius: 4px;
   padding: 16px 20px;
   display: flex;
-  background-color: $black;
+  background-color: var(--black);
   background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
-  color: $white;
-  border-left: 4px solid $red;
+  color: var(--white);
+  border-left: 4px solid var(--red);
   flex-direction: column;
   max-width: 400px;
   gap: 8px;
@@ -18,7 +18,7 @@
 }
 
 .episode-title {
-  font-family: 'anton', sans-serif;
+  font-family: var(--font-anton), system-ui, sans-serif;
   font-size: 2.5rem;
   text-transform: uppercase;
 }
@@ -40,7 +40,7 @@
     content: '';
     height: 1px;
     width: 24px;
-    background: $red;
+    background: var(--red);
     position: absolute;
     top: -15px;
     left: 0;
@@ -57,30 +57,30 @@
   line-height: 0.7rem;
   
   &.spotify {
-    border: 1px solid darken($spotify-green, 10%);
-    background: linear-gradient($spotify-green, darken($spotify-green, 10%));
-    color: $black;
+    border: 1px solid oklch(from var(--spotify-green) calc(l - 10) c h);
+    background: linear-gradient(var(--spotify-green), oklch(from var(--spotify-green) calc(l - 10) c h));
+    color: var(--black);
     
     &:hover {
-      background: linear-gradient(lighten($spotify-green, 4%), darken($spotify-green, 6%));
+      background: linear-gradient(oklch(from var(--spotify-green) calc(l + 4) c h), oklch(from var(--spotify-green) calc(l - 6) c h));
     }
     
     &:active {
-      background: linear-gradient(darken($spotify-green, 4%), darken($spotify-green, 14%));
+      background: linear-gradient(oklch(from var(--spotify-green) calc(l - 4) c h), oklch(from var(--spotify-green) calc(l - 14) c h));
     }
   }
 
   &.youtube {
-    border: 1px solid darken($red, 10%);
-    background: linear-gradient($red, darken($red, 10%));
-    color: $white;
+    border: 1px solid oklch(from var(--red) calc(l - 10) c h);
+    background: linear-gradient(var(--red), oklch(from var(--red) calc(l - 10) c h));
+    color: var(--white);
     
     &:hover {
-      background: linear-gradient(lighten($red, 4%), darken($red, 6%));
+      background: linear-gradient(oklch(from var(--red) calc(l + 4) c h), oklch(from var(--red) calc(l - 6) c h));
     }
     
     &:active {
-      background: linear-gradient(darken($red, 4%), darken($red, 14%));
+      background: linear-gradient(oklch(from var(--red) calc(l - 4) c h), oklch(from var(--red) calc(l - 14) c h));
     }
   }
 }
