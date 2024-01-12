@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import styles from './styles.module.css';
-import { HeroSection } from './HeroSection';
-import { AboutSection } from './AboutSection';
-import { EpisodesSection } from './EpisodesSection';
+import Image from "next/image";
+import styles from "./styles.module.css";
+import { HeroSection } from "./HeroSection";
+import { AboutSection } from "./AboutSection";
+import { EpisodesSection } from "./EpisodesSection";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
       <HeroSection />
@@ -12,5 +12,5 @@ export default function Home() {
       <EpisodesSection />
       {/* <section>blog</section> */}
     </main>
-  )
+  );
 }
