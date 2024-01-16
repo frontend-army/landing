@@ -15,7 +15,7 @@ export const HostCard: React.FC<Props> = ({host}) => {
       <div className={styles.hostSocials}>
         {
           host.socials.map(social =>(
-            <a key={social.url} className={styles.hostSocial} href={social.url}>
+            <a key={social.url} className={styles.hostSocial} href={social.url} target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={socialsIconMap[social.name.toLocaleLowerCase()]} />
             </a>
           ))

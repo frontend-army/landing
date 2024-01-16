@@ -40,7 +40,7 @@
 .host-name {
   text-transform: uppercase;
   color: var(--dark-gray);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .host-description {
