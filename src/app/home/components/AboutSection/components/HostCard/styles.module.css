@@ -14,6 +14,7 @@
       conic-gradient(from 180deg at top 1px right 1px, transparent 90deg, var(--red) 0) 100% 0 / 20px 20px border-box no-repeat,
       conic-gradient(from 0deg at bottom 1px left 1px, transparent 90deg, var(--red) 0) 0 100% / 20px 20px border-box no-repeat,
       conic-gradient(from -90deg at bottom 1px right 1px, transparent 90deg, var(--red) 0) 100% 100% / 20px 20px border-box no-repeat;
+    pointer-events: none;
   }
 }
 
@@ -44,11 +45,11 @@
 
 .host-description {
   margin-top: 10px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   line-height: 1.25;
   position: relative;
   padding-top: 1px;
-  color: var(--dark-gray);
+  color: var(--black);
   
   &::before {
     content: '';
