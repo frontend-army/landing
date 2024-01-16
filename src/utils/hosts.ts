@@ -3,27 +3,7 @@ import skolzProfile from "@/assets/skolz_profile.png";
 
 export const hosts: Array<Host> = [
   {
-    name: "Gabriel Zanzotti",
-    avatar: skolzProfile,
-    socials: [
-      { name: "Github", url: "https://twitter.com/host1" },
-      { name: "Twitter", url: "https://instagram.com/host1" },
-      { name: "LinkedIn", url: "https://instagram.com/host1" },
-    ],
-    description: "This is the description for Host1.",
-  },
-  {
-    name: "Host2",
-    avatar: skolzProfile,
-    socials: [
-      { name: "Github", url: "https://twitter.com/host1" },
-      { name: "Twitter", url: "https://instagram.com/host1" },
-      { name: "LinkedIn", url: "https://instagram.com/host1" },
-    ],
-    description: "This is the description for Host2.",
-  },
-  {
-    name: "Host3",
+    name: "Damian Finkelstein",
     avatar: skolzProfile,
     socials: [
       { name: "Github", url: "https://twitter.com/host1" },
@@ -33,17 +13,27 @@ export const hosts: Array<Host> = [
     description: "This is the description for Host3.",
   },
   {
-    name: "Host4",
+    name: "Francisco Iglesias",
     avatar: skolzProfile,
     socials: [
       { name: "Github", url: "https://twitter.com/host1" },
       { name: "Twitter", url: "https://instagram.com/host1" },
       { name: "LinkedIn", url: "https://instagram.com/host1" },
     ],
-    description: "This is the description for Host4.",
+    description: "This is the description for Host2.",
   },
   {
-    name: "Host5",
+    name: "Gabriel Zanzotti",
+    avatar: skolzProfile,
+    socials: [
+      { name: "Github", url: "https://github.com/SKOLZ" },
+      { name: "Twitter", url: "https://instagram.com/host1" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/skolz/" },
+    ],
+    description: "This is the description for Host1.",
+  },
+  {
+    name: "Lucas Zibell",
     avatar: skolzProfile,
     socials: [
       { name: "Github", url: "https://twitter.com/host1" },
@@ -53,7 +43,17 @@ export const hosts: Array<Host> = [
     description: "This is the description for Host5.",
   },
   {
-    name: "Host6",
+    name: "Martin Callegari",
+    avatar: skolzProfile,
+    socials: [
+      { name: "Github", url: "https://twitter.com/host1" },
+      { name: "Twitter", url: "https://instagram.com/host1" },
+      { name: "LinkedIn", url: "https://instagram.com/host1" },
+    ],
+    description: "This is the description for Host4.",
+  },
+  {
+    name: "Pablo Ferro",
     avatar: skolzProfile,
     socials: [
       { name: "Github", url: "https://twitter.com/host1" },
