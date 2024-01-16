@@ -2,7 +2,7 @@
   border-radius: 4px;
   padding: 16px 20px;
   display: flex;
-  background-color: var(--black);
+  background-color: var(--dark-gray);
   background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
   color: var(--white);
   border-left: 4px solid var(--red);
@@ -59,7 +59,7 @@
   &.spotify {
     border: 1px solid oklch(from var(--spotify-green) calc(l - 10) c h);
     background: linear-gradient(var(--spotify-green), oklch(from var(--spotify-green) calc(l - 10) c h));
-    color: var(--black);
+    color: var(--dark-gray);
     
     &:hover {
       background: linear-gradient(oklch(from var(--spotify-green) calc(l + 4) c h), oklch(from var(--spotify-green) calc(l - 6) c h));

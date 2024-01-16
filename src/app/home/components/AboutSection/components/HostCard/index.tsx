@@ -11,7 +11,7 @@ interface Props {
 export const HostCard: React.FC<Props> = ({host}) => {
   return (
     <div className={styles.host}>
-      <Image className={styles.hostAvatar} src={host.avatarUrl} alt={`${host.name}'s profile picture`} width={220} height={200} />
+      <Image className={styles.hostAvatar} src={host.avatar} alt={`${host.name}'s profile picture`} width={220} height={200} />
       <div className={styles.hostSocials}>
         {
           host.socials.map(social =>(

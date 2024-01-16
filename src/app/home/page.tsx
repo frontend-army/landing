@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import styles from './styles.module.css';
-import { HeroSection } from './HeroSection';
-import { AboutSection } from './AboutSection';
 import { EpisodesSection } from './EpisodesSection';
+import { AboutSection } from './components/AboutSection';
+import { HeroSection } from './components/HeroSection';
 
 export default function Home() {
   return (
