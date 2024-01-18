@@ -1,0 +1,5 @@
+.episodes-section {
+  background: var(--light-gray);
+  position: relative;
+  padding: calc(5rem + 110px) 5rem 5rem;
+}

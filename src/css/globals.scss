@@ -5,13 +5,17 @@
 @import "./equalizer.scss";
 @import "./glitch.scss";
 @import "./texts.scss";
+@import "./buttons.scss";
 
 :root {
   --black: #000;
   --70-translucent-black: rgba(0, 0, 0, 0.7);
+  --30-translucent-black: rgba(0, 0, 0, 0.3);
+  --20-translucent-black: rgba(0, 0, 0, 0.2);
   --dark-gray: #1B1B1E;
   --light-gray: #EBEBEB;
   --white: #FBFFFE;
+  --50-translucent-white: rgba(251, 255, 254, 0.5);
   --red: #D81F26;
   --dark-red: #96031A;
   --spotify-green: #1ed760;
@@ -19,10 +23,4 @@
 
 * {
   font-family: var(--font-montserrat), system-ui, sans-serif;
-}
-
-body {
-  background: radial-gradient(circle, var(--light-gray) 7%, transparent 8%);
-  background-size: 1.5rem 1.5rem;
-  background-color: var(--white);
 }
