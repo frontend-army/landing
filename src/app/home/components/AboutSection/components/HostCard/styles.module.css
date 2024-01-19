@@ -4,6 +4,7 @@
   padding: 2rem 1.5rem;
   gap: 10px;
   position: relative;
+  max-width: calc(220px + 3rem);
 
   &::before {
     content: '';
@@ -50,7 +51,8 @@
   position: relative;
   padding-top: 1px;
   color: var(--black);
-  
+  text-wrap: pretty;
+
   &::before {
     content: '';
     height: 1px;

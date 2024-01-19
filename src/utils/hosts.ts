@@ -10,7 +10,8 @@ export const hosts: Array<Host> = [
       { name: "Twitter", url: "https://twitter.com/SKOLZZ" },
       { name: "LinkedIn", url: "https://www.linkedin.com/in/SKOLZ/" },
     ],
-    description: "This is the description for Host1.",
+    description:
+      "Ingeniero en informática graduado del ITBA. Fanático de los videojuegos y el animé. Enfocado en CSS, React y Management.",
   },
   {
     name: "Damian Finkelstein",
@@ -18,7 +19,10 @@ export const hosts: Array<Host> = [
     socials: [
       { name: "Github", url: "https://github.com/damfinkel" },
       { name: "Twitter", url: "https://twitter.com/damfinkel" },
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/damián-finkelstein-818b5133/" },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/damián-finkelstein-818b5133/",
+      },
     ],
     description: "This is the description for Host3.",
   },
@@ -48,7 +52,10 @@ export const hosts: Array<Host> = [
     socials: [
       { name: "Github", url: "https://github.com/FrankIglesias" },
       { name: "Twitter", url: "https://twitter.com/FrankIglesias" },
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/francisco-janin-iglesias/" },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/francisco-janin-iglesias/",
+      },
     ],
     description: "This is the description for Host2.",
   },
@@ -58,7 +65,10 @@ export const hosts: Array<Host> = [
     socials: [
       { name: "Github", url: "https://github.com/mcallegari10" },
       { name: "Twitter", url: "https://twitter.com/TiinchoKaleghar" },
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/martín-callegari-81a97011b/" },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/martín-callegari-81a97011b/",
+      },
     ],
     description: "This is the description for Host4.",
   },
