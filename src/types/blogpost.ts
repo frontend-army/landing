@@ -4,6 +4,7 @@ interface BlogpostAuthor {
 }
 
 export interface BlogpostSummary {
+  id: string;
   cover: string;
   title: string;
   summary: string;

@@ -33,7 +33,7 @@
       grid-area: secondary-post;
     }
   
-    & > *:last-child {
+    & > *:nth-child(3) {
       grid-area: tertiary-post;
     }
   }
