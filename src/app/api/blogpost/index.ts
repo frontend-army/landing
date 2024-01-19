@@ -4,7 +4,7 @@ import { createClient } from "@/prismicio";
 const client = createClient();
 
 export async function fetchPosts() {
-  const posts = await client.getByType("post");
+  const posts = await client.getByType("blogpost");
   return posts.results.map((post) => ({
     uid: post.uid,
     title: post.data.title,
