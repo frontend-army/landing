@@ -9,7 +9,7 @@ const posts = await client.getByType("blogpost");
     id: post.uid,
     title: post.data.title,
     summary: post.data.summary,
-    cover: post.data.cover.url,
+    cover: post.data.cover.url!,
     author: {
       name: post.data.author[0]?.name,
       avatar: post.data.author[0]?.avatar.url,
