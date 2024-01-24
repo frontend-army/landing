@@ -60,7 +60,7 @@ export const hosts: Array<Host> = [
         url: "https://www.linkedin.com/in/francisco-janin-iglesias/",
       },
     ],
-    description: "This is the description for Host2.",
+    description: "Ingeniero en Sistemas de la UTN. Apasionado por la musica y por viajar. Frontend developer y ocasionalmente backend dev.",
   },
   {
     name: "Martin Callegari",
