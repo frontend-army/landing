@@ -8,7 +8,7 @@ class dotGrid {
     this.canvasElement = document.getElementById(container);
 
     // Get the device pixel ratio, falling back to 1.
-    this.dpr = window.devicePixelRatio || 1;
+    this.dpr = 1;
 
     this.drawable = this.canvasElement.getBoundingClientRect();
     this.drawable.width = window.innerWidth;
@@ -65,23 +65,17 @@ class dotGrid {
         let y = j * gridSize;
         let dist = this.pythag(x, y, this.mouseX, this.mouseY);
         this.canvas.beginPath();
-        if (j === 20 && i === 20) {
-          console.log({xNoise: (x - this.mouseX) / dist * gridSize, yNoise: (y - this.mouseY) / dist * gridSize})
-        }
-        const noiseX = (x - this.mouseX) / dist * gridSize;
-        const noiseY = (y - this.mouseY) / dist * gridSize;
-        // const noiseX = ((x - this.mouseX) / Math.abs(x - this.mouseX)) * Math.max(20 - Math.abs(x - this.mouseX), 0) / dist * gridSize;
-        // const noiseX = (Math.max(20 - (x - this.mouseX), 0)/ dist * gridSize);
-        // const noiseY = 0;
+        const noiseX = ((x - this.mouseX) / dist * gridSize) * Math.max(1 - (dist / 200), 0),
+              noiseY = ((y - this.mouseY) / dist * gridSize) * Math.max(1 - (dist / 200), 0);
         this.canvas.arc(
           x + noiseX,
           y + noiseY,
           size,
-          0,
-          2*Math.PI,
+          size,
+          Math.PI,
           true
         );
-        this.canvas.fillStyle = (j === 20 && i === 20) ? "lime" : "red";
+        this.canvas.fillStyle = "#EBEBEB";
         this.canvas.fill();
       }
     }
