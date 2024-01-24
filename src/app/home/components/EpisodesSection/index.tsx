@@ -2,7 +2,7 @@ import { getEpisodes } from "@/services/episodes";
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { EpisodeCard } from "./components/EpisodeCard";
+import { EpisodeCard } from "@/components/EpisodeCard";
 
 export const EpisodesSection: React.FC = async () => {
   const episodes = await getEpisodes(6);

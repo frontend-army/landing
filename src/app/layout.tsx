@@ -4,6 +4,7 @@ import '@/css/globals.scss';
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Navbar } from './home/components/Navbar';
 import { Footer } from './home/components/Footer';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 config.autoAddCss = false;
 
 const a = Anton({weight: "400", subsets: ['latin'], variable: '--font-anton'});
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${a.variable} ${b.variable}`}>
       <body>
+        <SpeedInsights />
         <Navbar />
         {children}
         <Footer />
