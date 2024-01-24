@@ -1,5 +1,6 @@
 import { Host } from "@/types/host";
 import skolzProfile from "@/assets/skolz_profile.png";
+import frankProfile from "@/assets/frank_profile.png";
 
 export const hosts: Array<Host> = [
   {
@@ -24,7 +25,8 @@ export const hosts: Array<Host> = [
         url: "https://www.linkedin.com/in/damián-finkelstein-818b5133/",
       },
     ],
-    description: "This is the description for Host3.",
+    description:
+      "Lic. en Análisis de Sistemas graduado en la UBA. Gamer casual. Entusiasta del brunch. Frontend developer con especial expertise en React.",
   },
   {
     name: "Pablo Ferro",
@@ -44,11 +46,12 @@ export const hosts: Array<Host> = [
       { name: "Twitter", url: "https://twitter.com/lucas_zibell" },
       { name: "LinkedIn", url: "https://www.linkedin.com/in/lucas-zibell" },
     ],
-    description: "This is the description for Host5.",
+    description:
+      "Ingeniero en sistemas graduado de la UTN BA. Experto en Pokémon y aficionado del café. Además de codear Frontend, mí foco es tomar entrevistas y mentorear.",
   },
   {
     name: "Francisco Iglesias",
-    avatar: skolzProfile,
+    avatar: frankProfile,
     socials: [
       { name: "Github", url: "https://github.com/FrankIglesias" },
       { name: "Twitter", url: "https://twitter.com/FrankIglesias" },

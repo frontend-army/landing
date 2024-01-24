@@ -1,6 +1,3 @@
 .episodes-section {
-  background: var(--light-gray);
-  background-image: url(../../../../assets/episodes-bg.png);
-  position: relative;
-  padding: calc(5rem + 110px) 5rem 5rem;
+  padding: 8rem;
 }

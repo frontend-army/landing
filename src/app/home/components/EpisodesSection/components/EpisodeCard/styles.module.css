@@ -1,0 +1,167 @@
+.episode {
+  padding: 0 1.5rem;
+  display: flex;
+  color: var(--black);
+  border-left: 1px solid var(--red);
+  flex-direction: column;
+  gap: 8px;
+  min-height: 165px;
+  max-width: 400px;
+}
+
+.episode-number {
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.episode-title {
+  font-family: var(--font-anton), system-ui, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.episode-description {
+  font-size: 0.85rem;
+  line-height: 1.2;
+  flex: 1;
+}
+
+.episode-links {
+  display: flex;
+  gap: 10px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 8px;
+    border-bottom: 8px solid var(--red);
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+.episode-link {
+  --button-background: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--white);
+  flex: 1;
+  background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+  position: relative;
+  
+  &:hover::after {
+    animation: glitch 3s steps(2, end) infinite alternate;
+  }
+
+  &::after {
+    position: absolute;
+    line-height: 2rem;
+    text-align: center;
+    inset: 0;
+    background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+    display: block;
+    clip-path: var(--slice-0);
+    animation: glitch2 0.5s steps(2, end) alternate;
+  }
+  
+  &.spotify {
+    background: linear-gradient(45deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+
+    &:hover {
+      --button-background: var(--spotify-green);
+      color: var(--black);
+      
+      &::after {
+        --button-background: var(--spotify-green);
+        color: var(--black);
+      }
+    }
+
+    &::after {
+      content: 'Spotify';
+      background: linear-gradient(45deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+    }
+  }
+
+  &.youtube {
+    background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+
+    &:hover {
+      --button-background: var(--red);
+
+      &::after {
+        --button-background: var(--red);
+      }
+    }
+
+    &::after {
+      content: 'YouTube';
+      background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+    }
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-2px, -10px);
+  }
+  4% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 10px);
+  }
+  8% {
+    clip-path: var(--slice-1);
+    transform: translate(-5px, 2px);
+  }
+  12% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, -4px);
+  }
+  16% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  20%, 100% {
+    clip-path: var(--slice-0);
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(8px, 2px);
+  }
+  20% {
+    clip-path: var(--slice-3);
+    transform: translate(-4px, 8px);
+  }
+  40% {
+    clip-path: var(--slice-1);
+    transform: translate(-5px, 2px);
+  }
+  60% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, -4px);
+  }
+  80% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-0);
+    transform: translate(0);
+  }
+}

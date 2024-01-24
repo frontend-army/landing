@@ -3,26 +3,6 @@
   z-index: 1;
 }
 
-.about-bg {
-  position: absolute;
-  top: -150px;
-  left: 0;
-  right: 0;
-  bottom: -110px;
-  filter: drop-shadow(0 2px 3px var(--30-translucent-black));
-  z-index: -1;
-
-  &::after {
-    background-color: var(--white);
-    background-image: radial-gradient(circle, var(--light-gray) 7%, transparent 8%);
-    background-size: 1.5rem 1.5rem;
-    content: '';
-    position: absolute;
-    inset: 0;
-    mask: linear-gradient(var(--black) 0%, var(--black) 100%) 0 0/100% calc(100% - 110px) no-repeat, url(../../../../assets/divider2.svg) 0 100%/100% 110px no-repeat
-  }
-}
-
 .hosts-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

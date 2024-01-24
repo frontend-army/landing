@@ -16,12 +16,10 @@ export const EpisodeCard: React.FC<Props> = ({episode}) => {
       <div className={styles.episodeLinks}>
             <a className={`${styles.episodeLink} ${styles.youtube}`} href={episode.youtube_url}>
               <FontAwesomeIcon icon={sourceIconMap.youtube} />
-              <i className={`fa-brands fa-youtube`}></i>
               <span className={styles.episodeSourceName}>Youtube</span>
             </a>
             <a className={`${styles.episodeLink} ${styles.spotify}`} href={episode.spotify_url}>
               <FontAwesomeIcon icon={sourceIconMap.spotify} />
-              <i className={`fa-brands fa-spotify`}></i>
               <span className={styles.episodeSourceName}>Spotify</span>
             </a>
       </div>

@@ -1,17 +1,15 @@
-import { EpisodeCard } from "@/components/EpisodeCard";
 import { getEpisodes } from "@/services/episodes";
-import divider from '@/assets/divider.svg';
 import styles from './styles.module.css';
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { EpisodeCard } from "./components/EpisodeCard";
 
 export const EpisodesSection: React.FC = async () => {
-  const episodes = await getEpisodes(4);
+  const episodes = await getEpisodes(6);
   return (
     <section className={`flex flex-col items-center gap-20 ${styles.episodesSection}`}>
       <h2 className="title-1">Episodios Recientes</h2>
-      <div className="grid grid-cols-2 gap-6 max-w-[1024px] mx-auto">
+      <div className="grid grid-cols-3 gap-24">
         {episodes?.map((episode) => (
           <EpisodeCard key={episode.id} episode={episode} />
         ))}

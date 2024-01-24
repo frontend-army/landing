@@ -15,6 +15,12 @@
   }
 }
 
+@property --hover-progression {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 @property --bg-x {
   syntax: "<number>";
   inherits: true;
@@ -36,12 +42,12 @@
 :root {
   --button-background-color: var(--light-gray);
   --button-border-color: rgb(from var(--dark-gray) r g b / calc(alpha - 0.5));
-  --button-border-radius: 2px;
   --border-width: 1px;
-  --animation-speed: 6s;
+  --animation-speed: 4s;
   --bg-x: 0;
   --bg-y: 0;
   --bg-opacity: 1;
+  --hover-progression: 0;
 }
 
 @keyframes shine {
@@ -54,32 +60,59 @@
   }
 }
 
+// @keyframes rotate-bg {
+//   0% {
+//     --bg-opacity: 0;
+//     --bg-x: 0;
+//     --bg-y: 0;
+//   }
+
+//   15% {
+//     --bg-opacity: 1;
+//     --bg-x: 100;
+//     --bg-y: 0;
+//   }
+
+//   30% {
+//     --bg-x: 100;
+//     --bg-y: 100;
+//   }
+
+//   45% {
+//     --bg-opacity: 1;
+//     --bg-x: 0;
+//     --bg-y: 100;
+//   }
+
+//   60%, 100% {
+//     --bg-opacity: 0;
+//     --bg-x: 0;
+//     --bg-y: 0;
+//   }
+// }
+
 @keyframes rotate-bg {
   0% {
-    --bg-opacity: 0;
     --bg-x: 0;
     --bg-y: 0;
   }
 
-  15% {
-    --bg-opacity: 1;
+  25% {
     --bg-x: 100;
     --bg-y: 0;
   }
 
-  30% {
+  50% {
     --bg-x: 100;
     --bg-y: 100;
   }
 
-  45% {
-    --bg-opacity: 1;
+  75% {
     --bg-x: 0;
     --bg-y: 100;
   }
 
-  60%, 100% {
-    --bg-opacity: 0;
+  100% {
     --bg-x: 0;
     --bg-y: 0;
   }
@@ -87,20 +120,18 @@
 
 .shiny-glowing-border {
   position: relative;
-  border-radius: var(--button-border-radius);
   border: 0;
   font-weight: 700;
   cursor: pointer;
   letter-spacing: 2px;
-  color: rgb(from var(--dark-gray) r g b / calc(alpha - 0.2));
-  transition: color 0.5s ease;
-  background: transparent;
+  color: var(--black);
+  box-shadow: inset 0 0 0 calc(var(--hover-progression) * 1px) var(--red);
+  transition: --hover-progression 0.3s ease, color 0.3s ease;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: var(--button-border-radius);
     background-color: rgb(from var(--dark-gray) r g b / calc(alpha - 0.7));;
     background-image:
       radial-gradient(
@@ -118,28 +149,46 @@
         transparent 100%
       );
     animation: rotate-bg var(--animation-speed) linear infinite;
-    z-index: -2;
+    z-index: -1;
+    mask:
+      linear-gradient(
+        to bottom,
+        var(--black) var(--border-width),
+        transparent var(--border-width),
+        transparent calc(100% - var(--border-width)),
+        var(--black) calc(100% - var(--border-width))
+      ),
+      linear-gradient(
+        to right,
+        var(--black) var(--border-width),
+        transparent var(--border-width),
+        transparent calc(100% - var(--border-width)),
+        var(--black) calc(100% - var(--border-width))
+      );
+    transition: background 0.3s ease;
   }
 
-  &::after {
-    content: '';
-    width: calc(100% - 2 * var(--border-width));
-    height: calc(100% - 2 * var(--border-width));
-    top: var(--border-width);
-    left: var(--border-width);
-    background-color: var(--button-background-color);
-    position: absolute;
-    border-radius: calc(var(--button-border-radius) - var(--border-width));
-    z-index: -1;
-    background-image:
-      linear-gradient(130deg, transparent 44%, var(--50-translucent-white) 46%, transparent 60%),
-      linear-gradient(130deg, transparent 39%, var(--50-translucent-white) 41%, transparent 55%);
-    background-size: 300% auto;
-  }
+  // &::after {
+  //   content: '';
+  //   width: calc(100% - 2 * var(--border-width));
+  //   height: calc(100% - 2 * var(--border-width));
+  //   top: var(--border-width);
+  //   left: var(--border-width);
+  //   background-color: var(--button-background-color);
+  //   position: absolute;
+  //   z-index: -1;
+  //   background-image:
+  //     linear-gradient(130deg, transparent 44%, var(--50-translucent-white) 46%, transparent 60%),
+  //     linear-gradient(130deg, transparent 39%, var(--50-translucent-white) 41%, transparent 55%);
+  //   background-size: 300% auto;
+  // }
 
   &:hover {
-    &::after {
-      animation: shine 3s cubic-bezier(.7,0,.3,1) infinite;
-    } 
+    --hover-progression: 100;
+    color: var(--white);
+
+    &::before {
+      background: none;
+    }
   }
 }

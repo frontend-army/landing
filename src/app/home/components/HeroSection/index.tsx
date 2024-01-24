@@ -8,7 +8,7 @@ export const HeroSection: React.FC = () => {
         Frontend Army
       </h1>
       <p className={styles.heroDescription}>
-        Únete a nuestra comunidad de podcast para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend con el resto.
+        Únete a nuestra comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.
       </p>
     </section>
   );

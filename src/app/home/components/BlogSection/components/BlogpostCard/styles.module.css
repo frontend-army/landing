@@ -1,12 +1,8 @@
 .post {
-  padding: 1rem;
-  background: var(--white);
-  border-bottom: 2px solid var(--red);
-  box-shadow: 0 1px 3px 0 var(--10-translucent-black), 0 1px 2px -1px var(--10-translucent-black);
   transition: scale 0.25s ease;
-  gap: 1rem;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   &:hover {
     scale: 1.02;
@@ -24,6 +20,10 @@
 
 .post-info {
   display: grid;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--black);
+  box-shadow: 0 10px 70px 80px var(--black);
   grid-template-rows: min-content 1fr repeat(2, min-content);
   grid-template-areas:
     "title title"
@@ -35,9 +35,9 @@
   &::after {
     content: '';
     grid-area: divider;
-    width: 100%;
+    width: 20px;
     height: 1px;
-    background: var(--light-gray);
+    background: var(--red);
     bottom: 0;
     left: 0;
   }
@@ -47,9 +47,9 @@
   font-family: 'Montserrat', system-ui, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--dark-gray);
   grid-area: title;
   text-wrap: balance;
+  line-height: 1.2;
 }
 
 .post-body {
@@ -57,14 +57,13 @@
   font-family: 'Montserrat', system-ui, sans-serif;
   line-height: 1.4;
   font-size: 0.875rem;
-  color: var(--black);
-  font-weight: 400;
+  font-weight: 300;
   text-wrap: pretty;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
-  line-clamp: 5;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   -webkit-box-pack: end;
   align-self: start;
@@ -76,31 +75,33 @@
 
 .post-author-avatar {
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--white);
   object-fit: cover;
 }
 
 .post-author-name {
-  color: var(--dark-gray);
   font-family: 'Montserrat', system-ui, sans-serif;
   font-size: 0.875rem;
+  font-weight: 300;
 }
 
 .post-date {
-  color: var(--dark-gray);
   font-family: 'Montserrat', system-ui, sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   grid-area: date;
   justify-self: end;
   align-self: center;
+  font-weight: 300;
 }
 
-@container (width >= 900px) {
+@media (width >= 900px) {
   .post-horizontal {
     flex-direction: row;
 
     .post-info {
+      box-shadow: 10px 0 70px 80px var(--black);
       grid-template-areas:
         "date"
         "title"
@@ -114,6 +115,10 @@
   
     .post-cover {
       flex: 3;
+    }
+
+    .post-author {
+      margin-top: 0.5rem;
     }
   
     .post-date {

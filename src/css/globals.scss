@@ -19,8 +19,19 @@
   --red: #D81F26;
   --dark-red: #96031A;
   --spotify-green: #1ed760;
+  // episode button glitch animation
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
 }
 
 * {
   font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--white);
+  background-image: radial-gradient(circle, var(--light-gray) 7%, transparent 8%);
+  background-size: 1.5rem 1.5rem;
 }

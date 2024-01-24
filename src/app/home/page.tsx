@@ -7,9 +7,9 @@ export default async function Home() {
   return (
     <main>
       <HeroSection />
-      <AboutSection />
       <EpisodesSection />
       <BlogSection />
+      <AboutSection />
     </main>
   );
 }
