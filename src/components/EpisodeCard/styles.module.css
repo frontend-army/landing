@@ -117,10 +117,10 @@
   animation: glitch2 0.3s steps(2, end) alternate;
 } */
 
-.youtube:not(:hover):has( ~ .spotify:hover)::after,
+/* .youtube:not(:hover):has( ~ .spotify:hover)::after,
 .youtube:hover ~ .spotify:not(:hover)::after {
   animation: none;
-}
+} */
 
 .button-glitch::after {
   animation: glitch2 0.3s steps(2, end) alternate;
