@@ -10,6 +10,7 @@ export class DotGrid {
   size = 1.5;
   gridSize = 20;
   fillColor = "#DDD";
+  distArea = 200;
 
   constructor(ref: React.RefObject<HTMLCanvasElement>) {
     if (!ref.current) {
@@ -67,14 +68,14 @@ export class DotGrid {
   }
 
   drawDots() {
-    for (let i = 0; i < this.canvasWidth / this.dpr / this.gridSize + 2; i++) {
-      for (let j = 0; j < this.canvasHeight / this.dpr / this.gridSize + 2; j++) {
+    for (let i = 0; i < this.canvasWidth / this.dpr / this.gridSize; i++) {
+      for (let j = 0; j < this.canvasHeight / this.dpr / this.gridSize; j++) {
         const x = i * this.gridSize;
         const y = j * this.gridSize;
         const dist = this.distance(x, y, this.mouseX, this.mouseY);
         this.canvas.beginPath();
-        const noiseX = ((x - this.mouseX) / dist * this.gridSize) * Math.max(1 - (dist / 200), 0),
-              noiseY = ((y - this.mouseY) / dist * this.gridSize) * Math.max(1 - (dist / 200), 0);
+        const noiseX = (x - this.mouseX) / dist * this.gridSize * Math.max(1 - (dist / this.distArea), 0),
+              noiseY = (y - this.mouseY) / dist * this.gridSize * Math.max(1 - (dist / this.distArea), 0);
         this.canvas.arc(
           x + noiseX,
           y + noiseY,
