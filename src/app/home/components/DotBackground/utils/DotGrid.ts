@@ -81,8 +81,7 @@ export class DotGrid {
           y + noiseY,
           this.size,
           0,
-          2 * Math.PI,
-          true
+          2 * Math.PI
         );
         this.canvas.fillStyle = this.fillColor;
         this.canvas.fill();
