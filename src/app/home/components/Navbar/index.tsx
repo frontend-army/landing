@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
     <header className={styles.header}>
       <Image src={FeaLogo} alt="" width={60} height={60} />
       <nav className={styles.navbar}>
-        <Link href="/episodes" className={styles.navLink}>Episodios</Link>
+        <Link href="/episodes" className={styles.navLink}>Podcast</Link>
         <Link href="https://www.google.com" className={styles.navLink}>Blog</Link>
         <Link href="https://www.google.com" className={styles.navLink}>Nosotros</Link>
       </nav>

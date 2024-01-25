@@ -17,7 +17,7 @@ export const hosts: Array<Host> = [
   },
   {
     name: "Damian Finkelstein",
-    avatar: skolzProfile,
+    avatar: frankProfile,
     socials: [
       { name: "Github", url: "https://github.com/damfinkel" },
       { name: "Twitter", url: "https://twitter.com/damfinkel" },

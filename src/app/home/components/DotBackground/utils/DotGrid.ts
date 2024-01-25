@@ -8,8 +8,8 @@ export class DotGrid {
   mouseX: number;
   mouseY: number;
   size = 1.5;
-  gridSize = 20;
-  fillColor = "#DDD";
+  gridSize = 30;
+  fillColor = "#E1E1E1";
   distArea = 200;
 
   constructor(ref: React.RefObject<HTMLCanvasElement>) {
@@ -19,7 +19,7 @@ export class DotGrid {
     this.canvasElement = ref.current;
     this.dpr = window.devicePixelRatio || 1;
     this.drawable = this.canvasElement.getBoundingClientRect();
-  
+
     this.canvasWidth = this.drawable.width * this.dpr;
     this.canvasHeight = this.drawable.height * this.dpr;
 
@@ -55,7 +55,6 @@ export class DotGrid {
     window.requestAnimationFrame(this.draw.bind(this));
   }
 
-
   init() {
     window.requestAnimationFrame(this.draw.bind(this));
     window.addEventListener("mousemove", this.onMouseUpdate.bind(this), false);
@@ -74,8 +73,14 @@ export class DotGrid {
         const y = j * this.gridSize;
         const dist = this.distance(x, y, this.mouseX, this.mouseY);
         this.canvas.beginPath();
-        const noiseX = (x - this.mouseX) / dist * this.gridSize * Math.max(1 - (dist / this.distArea), 0),
-              noiseY = (y - this.mouseY) / dist * this.gridSize * Math.max(1 - (dist / this.distArea), 0);
+        const noiseX =
+            ((x - this.mouseX) / dist) *
+            this.gridSize *
+            Math.max(1 - dist / this.distArea, 0),
+          noiseY =
+            ((y - this.mouseY) / dist) *
+            this.gridSize *
+            Math.max(1 - dist / this.distArea, 0);
         this.canvas.arc(
           x + noiseX,
           y + noiseY,
