@@ -1,6 +1,7 @@
 import { Host } from "@/types/host";
 import skolzProfile from "@/assets/skolz_profile.png";
 import frankProfile from "@/assets/frank_profile.png";
+import pablitoProfile from "@/assets/pablito_profile.png";
 
 export const hosts: Array<Host> = [
   {
@@ -30,13 +31,14 @@ export const hosts: Array<Host> = [
   },
   {
     name: "Pablo Ferro",
-    avatar: skolzProfile,
+    avatar: pablitoProfile,
     socials: [
       { name: "Github", url: "https://github.com/pabloferro" },
       { name: "Twitter", url: "https://twitter.com/pabloeferro" },
       { name: "LinkedIn", url: "https://www.linkedin.com/in/pablo-e-ferro/" },
     ],
-    description: "This is the description for Host6.",
+    description:
+      "Ingeniero en sistemas graduado de la UTN BA. Amante del cine y los juegos de mesa. Me especializo en desarrollo Frontend y Mobile con React & React Native.",
   },
   {
     name: "Lucas Zibell",
@@ -60,7 +62,8 @@ export const hosts: Array<Host> = [
         url: "https://www.linkedin.com/in/francisco-janin-iglesias/",
       },
     ],
-    description: "Ingeniero en Sistemas de la UTN. Apasionado por la musica y por viajar. Frontend developer y ocasionalmente backend dev.",
+    description:
+      "Ingeniero en Sistemas de la UTN. Apasionado por la musica y por viajar. Frontend developer y ocasionalmente backend dev.",
   },
   {
     name: "Martin Callegari",
