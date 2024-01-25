@@ -72,7 +72,7 @@
     background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
     display: block;
     clip-path: var(--slice-0);
-    animation: glitch2 0.5s steps(2, end) alternate;
+    /* animation: glitch2 0.3s steps(2, end) alternate; */
   }
   
   &.spotify {
@@ -112,6 +112,20 @@
   }
 }
 
+/* .youtube:not(:hover):has( ~ .spotify:not(:hover))::after,
+.youtube:not(:hover) ~ .spotify:not(:hover)::after {
+  animation: glitch2 0.3s steps(2, end) alternate;
+} */
+
+.youtube:not(:hover):has( ~ .spotify:hover)::after,
+.youtube:hover ~ .spotify:not(:hover)::after {
+  animation: none;
+}
+
+.button-glitch::after {
+  animation: glitch2 0.3s steps(2, end) alternate;
+}
+
 @keyframes glitch {
   0% {
     clip-path: var(--slice-1);
@@ -142,23 +156,15 @@
 @keyframes glitch2 {
   0% {
     clip-path: var(--slice-1);
-    transform: translate(8px, 2px);
+    transform: translate(4px, -2px);
   }
-  20% {
+  33% {
     clip-path: var(--slice-3);
-    transform: translate(-4px, 8px);
+    transform: translate(-5px, -4px);
   }
-  40% {
-    clip-path: var(--slice-1);
-    transform: translate(-5px, 2px);
-  }
-  60% {
-    clip-path: var(--slice-3);
-    transform: translate(0px, -4px);
-  }
-  80% {
+  66% {
     clip-path: var(--slice-2);
-    transform: translate(-5px, 0px);
+    transform: translate(2px, 4px);
   }
   100% {
     clip-path: var(--slice-0);

@@ -8,13 +8,13 @@ export const EpisodesSection: React.FC = async () => {
   const episodes = await getEpisodes(6);
   return (
     <section className={`flex flex-col items-center gap-20 ${styles.episodesSection}`}>
-      <h2 className="title-1">Episodios Recientes</h2>
+      <h2 className="title-1">Podcast</h2>
       <div className="grid grid-cols-3 gap-24">
         {episodes?.map((episode) => (
           <EpisodeCard key={episode.id} episode={episode} />
         ))}
       </div>
-      <button className="button shiny-glowing-border">Ver todos los episodios <FontAwesomeIcon icon={faArrowRight} /> </button>
+      <button className="button shiny-glowing-border">Ver todos los capítulos<FontAwesomeIcon icon={faArrowRight} /></button>
     </section>
   );
 } 

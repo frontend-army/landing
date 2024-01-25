@@ -15,6 +15,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4rem;
   font-family: 'Montserrat', system-ui, sans-serif;
+  justify-items: center;
 }
 
 .nav-link {
