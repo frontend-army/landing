@@ -1,0 +1,39 @@
+.paragraph {
+  --caret-color: var(--red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .line {
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--white);
+    width: 0;
+    max-width: fit-content;
+    $animation-duration: 3;
+
+      @for $i from 1 through 10 {
+      &:nth-child(#{$i}n) {
+        animation:
+        typing #{$animation-duration}s #{($i - 1) * $animation-duration}s  steps(50, end) forwards,
+        blink-caret .5s #{($i - 1) * $animation-duration}s step-end infinite,
+        stop-caret .5s #{$i * $animation-duration}s infinite;
+      }
+    }
+  }
+
+  @keyframes stop-caret {
+    from, to { border-right-color: transparent; }
+  }
+
+
+  @keyframes typing {
+    0% { width: 0;}
+    100% { width: 110%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-right: .15em solid var(--caret-color); }
+    50% { border-right-color: transparent; }
+  }
+}

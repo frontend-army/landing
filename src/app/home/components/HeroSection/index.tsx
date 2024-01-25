@@ -1,4 +1,8 @@
-import styles from './styles.module.css';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import styles from './styles.module.scss';
+import { TypewriterParagraph } from '@/components/TypewriterParagraph';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -7,9 +11,9 @@ export const HeroSection: React.FC = () => {
       <h1 className={`${styles.heroTitle} glitch`} data-text="Frontend Army">
         Frontend Army
       </h1>
-      <p className={styles.heroDescription}>
+      <TypewriterParagraph className={styles.heroDescription}>
         Únete a nuestra comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.
-      </p>
+      </TypewriterParagraph>
     </section>
   );
 } 
