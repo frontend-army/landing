@@ -171,3 +171,10 @@
     transform: translate(0);
   }
 }
+
+
+@container (width < calc(400px * 3 + 6rem * 2)) {
+  .episode:nth-child(n+5) {
+    display: none;
+  }
+}
