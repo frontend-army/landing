@@ -173,7 +173,7 @@
 }
 
 
-@container (width < calc(400px * 3 + 6rem * 2)) {
+@container (width < 1200px) {
   .episode:nth-child(n+5) {
     display: none;
   }
