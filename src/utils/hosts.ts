@@ -2,6 +2,7 @@ import { Host } from "@/types/host";
 import skolzProfile from "@/assets/skolz_profile.png";
 import frankProfile from "@/assets/frank_profile.png";
 import pablitoProfile from "@/assets/pablito_profile.png";
+import luquiProfile from "@/assets/luqui_profile.png";
 
 export const hosts: Array<Host> = [
   {
@@ -42,7 +43,7 @@ export const hosts: Array<Host> = [
   },
   {
     name: "Lucas Zibell",
-    avatar: skolzProfile,
+    avatar: luquiProfile,
     socials: [
       { name: "Github", url: "https://github.com/LucasZibell" },
       { name: "Twitter", url: "https://twitter.com/lucas_zibell" },

@@ -4,4 +4,8 @@
   letter-spacing: 2px;
   color: var(--black);
   text-transform: uppercase;
+
+  &.white {
+    color: var(--white);
+  }
 }

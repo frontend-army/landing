@@ -17,7 +17,7 @@ useEffect(() => {
   }
     const spans = [];
     const width = ref.current.offsetWidth - parseInt(getComputedStyle(ref.current).paddingLeft) - parseInt(getComputedStyle(ref.current).paddingRight);
-    if(splitAbout.length > 0) {  
+    if(splitAbout.length > 0) {
       return;
     }
     const about = ref.current.getAttribute('data-text');
@@ -45,9 +45,11 @@ useEffect(() => {
 
   return (
       <p ref={ref} className={`${styles.paragraph} ${className}`} data-text={children}>
-        {splitAbout.map((text) => (
+        {/* {splitAbout.map((text) => (
           <span className={styles.line} key={text}>{text}</span>
-        ))}
+        ))} */}
+        <span className={styles.line}>Sumate a nuestro podcast y comunidad para explorar las tendencias en</span>
+        <span className={styles.line}>desarrollo web y compartir tu experiencia en el mundo Frontend.</span>
       </p>
   );
 } 
