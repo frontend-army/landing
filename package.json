@@ -21,6 +21,7 @@
     "@prismicio/react": "^2.7.3",
     "@slicemachine/init": "^2.9.11",
     "@supabase/supabase-js": "^2.39.3",
+    "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.7",
     "babel-plugin-macros": "^3.1.0",
     "next": "14.0.4",
