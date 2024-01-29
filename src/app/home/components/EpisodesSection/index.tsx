@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { EpisodeCard } from "@/components/EpisodeCard";
 
+export const revalidate = 3600;
+
 export const EpisodesSection: React.FC = async () => {
   const episodes = await getEpisodes(6);
   return (

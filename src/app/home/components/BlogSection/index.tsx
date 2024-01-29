@@ -3,6 +3,8 @@ import { BlogpostCard } from "./components/BlogpostCard";
 import { SeeMorePostsButton } from "./components/SeeMorePostsButton";
 import styles from './styles.module.css';
 
+export const revalidate = 3600;
+
 export const BlogSection: React.FC = async () => {
   const posts = await fetchPosts();
   return (
