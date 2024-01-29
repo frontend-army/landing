@@ -7,6 +7,8 @@ import ChevronRight from "@/assets/chevron-right.svg";
 interface Props {
 }
 
+export const revalidate = 3600;
+
 export const BlogSection: React.FC<Props> = async () => {
   const posts = await fetchPosts();
 
