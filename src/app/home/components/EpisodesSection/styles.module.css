@@ -1,3 +1,12 @@
 .episodes-section {
-  padding: 8rem;
+  padding: 8rem 2rem;
+}
+
+.episodes-container {
+  display: grid;
+  gap: 6rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px,min-content));
+  width: min(100%, calc(400px * 3 + 6rem * 2));
+  justify-content: center;
+  container-type: inline-size;
 }

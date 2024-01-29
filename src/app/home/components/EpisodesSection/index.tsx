@@ -9,7 +9,7 @@ export const EpisodesSection: React.FC = async () => {
   return (
     <section className={`flex flex-col items-center gap-20 ${styles.episodesSection}`}>
       <h2 className="title-1">Podcast</h2>
-      <div className="grid grid-cols-3 gap-24">
+      <div className={styles.episodesContainer}>
         {episodes?.map((episode) => (
           <EpisodeCard key={episode.id} episode={episode} />
         ))}

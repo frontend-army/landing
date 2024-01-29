@@ -1,11 +1,12 @@
 .post {
-  transition: scale 0.25s ease;
+  transition: scale 0.3s ease, box-shadow 0.3s cubic-bezier(.4,0,.2,1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
   &:hover {
     scale: 1.02;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 5px var(--red);
   }
 }
 
@@ -26,10 +27,11 @@
   box-shadow: 0 10px 70px 80px var(--black);
   grid-template-rows: min-content 1fr repeat(2, min-content);
   grid-template-areas:
+    "date date"
     "title title"
     "body body"
     "divider divider"
-    "author date";
+    "author arrow";
   gap: 1rem;
 
   &::after {
@@ -41,6 +43,15 @@
     bottom: 0;
     left: 0;
   }
+}
+
+.post-date {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 0.75rem;
+  grid-area: date;
+  justify-self: start;
+  align-self: center;
+  font-weight: 300;
 }
 
 .post-title {
@@ -87,13 +98,16 @@
   font-weight: 300;
 }
 
-.post-date {
-  font-family: 'Montserrat', system-ui, sans-serif;
-  font-size: 0.75rem;
-  grid-area: date;
+.post-read-arrow {
+  grid-area: arrow;
+  font-size: 1.5rem;
   justify-self: end;
   align-self: center;
-  font-weight: 300;
+  padding: 0.5rem;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }
 
 @media (width >= 900px) {
@@ -102,12 +116,6 @@
 
     .post-info {
       box-shadow: 10px 0 70px 80px var(--black);
-      grid-template-areas:
-        "date"
-        "title"
-        "body"
-        "divider"
-        "author";
       flex: 4;
       grid-template-rows: repeat(2, min-content) 1fr repeat(2, min-content);
       gap: 0.5rem;
@@ -117,13 +125,9 @@
       flex: 3;
     }
 
-    .post-author {
+    .post-author,
+    .post-read-arrow {
       margin-top: 0.5rem;
-    }
-  
-    .post-date {
-      font-size: 0.75rem;
-      justify-self: start;
     }
   }
 }
