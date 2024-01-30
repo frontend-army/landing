@@ -10,14 +10,14 @@
     color: var(--white);
     width: 0;
     max-width: fit-content;
-    $animation-duration: 3;
+    $animation-duration: 4;
 
       @for $i from 1 through 10 {
       &:nth-child(#{$i}n) {
         animation:
-        typing #{$animation-duration}s #{($i - 1) * $animation-duration}s  steps(50, end) forwards,
-        blink-caret .5s #{($i - 1) * $animation-duration}s step-end infinite,
-        stop-caret .5s #{$i * $animation-duration}s infinite;
+        typing #{$animation-duration}s #{($i - 1) * $animation-duration * 0.75}s steps(50, end) forwards,
+        blink-caret .5s #{($i - 1) * $animation-duration * 0.75}s step-end infinite,
+        stop-caret .5s #{$i * $animation-duration * 0.75}s infinite;
       }
     }
   }
@@ -29,7 +29,7 @@
 
   @keyframes typing {
     0% { width: 0;}
-    100% { width: 110%; }
+    100% { width: 100%; }
   }
 
   @keyframes blink-caret {
