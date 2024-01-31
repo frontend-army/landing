@@ -1,5 +1,7 @@
 import { BlogpostSummary } from "@/types/blogpost";
+// @ts-ignore
 import { metadata } from '@/app/blog/aws-deploy-script-fe.mdx';
+// @ts-ignore
 import { metadata as metadata2 } from '@/app/blog/deploy-frontend-apps.mdx';
 
 export async function fetchPosts(): Promise<Array<BlogpostSummary>> {
