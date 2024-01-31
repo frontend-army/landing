@@ -11,21 +11,17 @@ export const SeeMorePostsButton: React.FC = () => {
   const buttonRef = useRef(null);
   const buttonObserver = useIntersectionObserver(buttonRef, {
     threshold: 1,
-    freezeOnceVisible: true,
+    // freezeOnceVisible: true,
     rootMargin: '0px 0px -50px 0px',
   });
 
   const isButtonVisible = !!buttonObserver?.isIntersecting;
 
-  if(isButtonVisible) {
-    console.log("puto el que lee");
-  }
-
   return (
     <button ref={buttonRef} className={`self-end ${isButtonVisible ? styles.postsSeeMore : 'opacity-0'}`} type="button">
       <span className={styles.postsSeeMoreContent}>
           Ver mas Posts
-          <Image src={ChevronRight} className={styles.postsSeeMoreArrow} width={24} height={24} alt="" />
+          <ChevronRight className={styles.postsSeeMoreArrow} width={24} height={24} alt="" />
       </span>
     </button>
   );

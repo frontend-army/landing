@@ -3,6 +3,7 @@ import { BlogpostSummary } from "@/types/blogpost";
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ChevronSimpleRight from "@/assets/chevron-simple-right.svg";
 
 interface Props {
   postSummary: BlogpostSummary;
@@ -21,7 +22,9 @@ export const BlogpostCard: React.FC<Props> = ({postSummary, isHorizontal}) => {
           <Image className={styles.postAuthorAvatar} src={postSummary.author.avatar} width={40} height={40} alt={`${postSummary.author.name}'s avatar`} />
           <p className={styles.postAuthorName}>{postSummary.author.name}</p>
         </div>
-        <FontAwesomeIcon icon={faArrowRight} className={styles.postReadArrow} />
+        <div className={styles.postReadArrow}>
+          <ChevronSimpleRight className={styles.postReadArrowIcon} />
+        </div>
       </div>
     </a>
   );
