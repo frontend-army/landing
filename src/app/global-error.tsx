@@ -4,7 +4,13 @@ import * as Sentry from "@sentry/nextjs";
 import Error from "next/error";
 import { useEffect } from "react";
 
-export default function GlobalError({ error }) {
+export default function GlobalError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
   useEffect(() => {
     Sentry.captureException(error);
   }, [error]);
@@ -12,7 +18,11 @@ export default function GlobalError({ error }) {
   return (
     <html>
       <body>
-        <Error />
+        <Error
+          statusCode={500}
+          title="An unexpected error has occurred"
+          reset={reset}
+        />
       </body>
     </html>
   );

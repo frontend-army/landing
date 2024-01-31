@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const withMDX = require("@next/mdx")();
+const { withSentryConfig } = require("@sentry/nextjs");
 const nextConfig = {
   webpack: (config) => {
     const rules = config.module.rules
@@ -64,16 +66,14 @@ const nextConfig = {
       },
     ],
   },
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  experimental: {
+    mdxRs: true,
+  },
 };
 
-module.exports = nextConfig;
-
-// Injected content via Sentry wizard below
-
-const { withSentryConfig } = require("@sentry/nextjs");
-
 module.exports = withSentryConfig(
-  module.exports,
+  withMDX(nextConfig),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options

@@ -1,20 +1,21 @@
-import { createClient } from "@/prismicio";
 import { BlogpostSummary } from "@/types/blogpost";
-
-const client = createClient();
+// @ts-ignore
+import { metadata } from '@/app/blog/aws-deploy-script-fe.mdx';
+// @ts-ignore
+import { metadata as metadata2 } from '@/app/blog/deploy-frontend-apps.mdx';
 
 export async function fetchPosts(): Promise<Array<BlogpostSummary>> {
-  const posts = await client.getByType("blogpost");
-  return posts.results.map(
-    (post) =>
+  return [metadata, metadata2, metadata].map(
+    (post, index) =>
       ({
-        id: post.uid,
-        title: post.data.title,
-        summary: post.data.summary,
-        cover: post.data.cover.url,
+        id: post.id + index,
+        title: post.title,
+        summary: post.description,
+        cover: post.cover,
+        date: post.date,
         author: {
-          name: post.data.author[0]?.name,
-          avatar: post.data.author[0]?.avatar.url,
+          name: post.author,
+          avatar: post.authorAvatar,
         },
       }) as BlogpostSummary
   );

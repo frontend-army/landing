@@ -9,4 +9,5 @@ export interface BlogpostSummary {
   title: string;
   summary: string;
   author: BlogpostAuthor;
+  date: string;
 }

@@ -1,0 +1,52 @@
+export const metadata = {
+  id: "aws-deploy-script-fe",
+  title: "Boost your productivity: How to leverage AWS to deploy multiple environment front-end apps",
+  author: "SKOLZ",
+  authorAvatar: "https://avatars.githubusercontent.com/u/1150154?v=4",
+  date: "03/03/2024",
+  cover: "https://images.unsplash.com/photo-1517976487492-5750f3195933?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxyb2NrZXR8ZW58MHx8fHwxNzA2MjAyMDg0fDA&ixlib=rb-4.0.3&w=800&h=800&auto=compress%2Cformat&fit=max",
+  description: "Hello everyone, today, I want to share with you how we handle front-end deployments at Frontend Army",
+}
+
+Boost your productivity: How to leverage AWS to deploy multiple environment front-end apps
+
+Hello everyone, today, I want to share with you how we handle front-end deployments at Frontend Army
+
+First of all, I’d like to give you a little bit of context. Frontend Army works with multiple clients on several different projects and each one of them has at least three environments: development, staging, and production. Each environment uses an S3 bucket that is configured to work as a web hosting service and CloudFront as CDN.
+
+Our infrastructure configuration uses a Terraform script. The Front-End team only has to upload the files to the bucket and use the CloudFront’s URL or some custom route created using Route 53 to access it. Now that you know more about our structure, you may be on the edge of your seat wondering: How do I upload my stuff to the S3 bucket? PATIENCE YOU MUST HAVE, my young Padawan.
+
+**How we evolved**
+
+Let’s talk about the ways that we used to upload our files in order to understand why we chose to create something that simplifies our deployments. Not so long ago, we used the AWS CLI in most cases. We logged in by configuring our personal access key ID and secret access key and then used the *S3 sync* command to upload the files.
+
+When deploying a different project, we had to change the configured keys by creating different profiles, selecting the right one and then running *S3 sync. *That was a bit annoying, so some of us ended up uploading the files manually. Yes, you read that right, we went to the bucket’s admin page, deleted everything and dragged the new build content to the bucket’s list to upload it. I’m not proud of it but that’s how it went. In the end, all those inconsistencies ended up in creating a tool that allowed us to handle the deployment of files to an S3 bucket just by using a configuration file.
+
+**The deployment library**
+
+This tool, like many others we have created to help us with a specific task, has its code in a github’s public repository to make it easier to manage the different versions. We encourage you to contribute to this development by creating a pull request or an issue.
+
+This script uses a configuration file named *aws.js *in your project’s root directory where you define the different environments you are going to use with their respective deployment credentials, bucket, and region. It looks something like this:
+
+
+Apart from that file, you need zero configuration. Just install the npm package globally by running:
+> npm i -g aws-deploy-script-fe
+
+And every time you want to deploy, execute the following command:
+> aws-deploy -e environment -p path_of_your_static_build
+
+The build path defaults to “*build*” and the default environment is development, so you might be able to remove that from the command too.
+
+**Caching issue**
+
+Using CloudFront provided us with a lot of performance improvements but every time you deploy new code you’ll have to create an invalidation to tell CloudFront to go and fetch the new data from the bucket since the one it’s serving is now outdated. Since invalidations eventually cost money, we added the action of disabling cache for the development environment to our terraform script. We also added more functionality to our deployment tool by specifying the CloudFront’s distribution ID and by generating an invalidation in CloudFront as soon as our deploy occurs.
+
+This functionality can be seen in the following code snippet:
+
+And requires you to have a specific policy in your user apart from the S3 ones.
+
+**Conclusion**
+
+This helped us to standardize deployments across all front-end frameworks and by adding to the *gitignore* the aws.js file we can keep our credentials safe. Just give it a try and leave a comment if you’d like us to improve something!
+
+![](https://cdn-images-1.medium.com/max/7146/1*234JOxeIXU76svp76BDkKA.png)
