@@ -17,10 +17,6 @@ export const SeeMorePostsButton: React.FC = () => {
 
   const isButtonVisible = !!buttonObserver?.isIntersecting;
 
-  if(isButtonVisible) {
-    console.log("puto el que lee");
-  }
-
   return (
     <button ref={buttonRef} className={`self-end ${isButtonVisible ? styles.postsSeeMore : 'opacity-0'}`} type="button">
       <span className={styles.postsSeeMoreContent}>
