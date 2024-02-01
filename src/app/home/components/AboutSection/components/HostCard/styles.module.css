@@ -1,13 +1,12 @@
 .host {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.5rem;
-  gap: 10px;
+  /* padding: 1.5rem; */
+  /* gap: 10px; */
   position: relative;
-  color: var(--white);
-  max-width: calc(220px + 3rem);
+  max-width: 240px;
 
-  &::before {
+  /* &::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -17,6 +16,27 @@
       conic-gradient(from 0deg at bottom 1px left 1px, transparent 90deg, var(--red) 0) 0 100% / 20px 20px border-box no-repeat,
       conic-gradient(from -90deg at bottom 1px right 1px, transparent 90deg, var(--red) 0) 100% 100% / 20px 20px border-box no-repeat;
     pointer-events: none;
+  } */
+}
+
+.host-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.75rem 2rem;
+  gap: 10px;
+  position: relative;
+  color: var(--white);
+  flex: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(-45deg, var(--red) 50%, transparent 0);
+    pointer-events: none;
+    right: 0;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -41,15 +61,17 @@
 .host-name {
   text-transform: uppercase;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .host-description {
   margin-top: 10px;
   font-size: 0.875rem;
-  line-height: 1.25;
+  line-height: 1.5;
   position: relative;
   padding-top: 1px;
   text-wrap: pretty;
+  font-weight: 300;
 
   &::before {
     content: '';
