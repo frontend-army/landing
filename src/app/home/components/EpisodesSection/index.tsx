@@ -16,7 +16,7 @@ export const EpisodesSection: React.FC = async () => {
           <EpisodeCard key={episode.id} episode={episode} />
         ))}
       </div>
-      <button className="button shiny-glowing-border">Ver todos los capítulos<FontAwesomeIcon icon={faArrowRight} /></button>
+      <button className="button shiny-glowing-border">Ver todos los capítulos</button>
     </section>
   );
 } 

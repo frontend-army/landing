@@ -3,6 +3,7 @@ import skolzProfile from "@/assets/skolz_profile.png";
 import frankProfile from "@/assets/frank_profile.png";
 import pablitoProfile from "@/assets/pablito_profile.png";
 import luquiProfile from "@/assets/luqui_profile.png";
+import capiProfile from "@/assets/capi_profile.png";
 
 export const hosts: Array<Host> = [
   {
@@ -18,7 +19,7 @@ export const hosts: Array<Host> = [
   },
   {
     name: "Damian Finkelstein",
-    avatar: frankProfile,
+    avatar: capiProfile,
     socials: [
       { name: "Github", url: "https://github.com/damfinkel" },
       { name: "Twitter", url: "https://twitter.com/damfinkel" },
@@ -39,7 +40,7 @@ export const hosts: Array<Host> = [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/pablo-e-ferro/" },
     ],
     description:
-      "Ingeniero en sistemas graduado de la UTN BA. Amante del cine y los juegos de mesa. Me especializo en desarrollo Frontend y Mobile con React & React Native.",
+      "Ingeniero en sistemas graduado de la UTN. Amante del cine y los juegos de mesa. Especializado en desarrollo con React & React Native.",
   },
   {
     name: "Lucas Zibell",
@@ -50,7 +51,7 @@ export const hosts: Array<Host> = [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/lucas-zibell" },
     ],
     description:
-      "Ingeniero en sistemas graduado de la UTN BA. Experto en Pokémon y aficionado del café. Además de codear Frontend, mí foco es tomar entrevistas y mentorear.",
+      "Ingeniero en sistemas graduado de la UTN. Experto en Pokémon y aficionado del café. Frontender con foco en entrevistas y mentoring.",
   },
   {
     name: "Francisco Iglesias",

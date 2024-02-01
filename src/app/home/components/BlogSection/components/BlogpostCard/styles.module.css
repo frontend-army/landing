@@ -7,6 +7,27 @@
   &:hover {
     scale: 1.02;
     box-shadow: 0 0 0 2px var(--white), 0 0 0 5px var(--red);
+
+    .post-read-arrow {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+  
+      &::before {
+        transition: opacity 0.2s ease 0.3s;
+      }
+  
+      &::after {
+        transition: opacity 0.2s ease 0.5s;
+      }
+  
+      .post-read-arrow-icon {
+        color: var(--red);
+        animation: slide-fade-out 0.3s ease forwards, fade-in 0.2s ease 0.7s forwards;
+        transition: color 0s 0.3s;
+      }
+    }
   }
 }
 
@@ -99,15 +120,57 @@
 }
 
 .post-read-arrow {
+  position: relative;
+  padding-inline: 0.75rem;
   grid-area: arrow;
-  font-size: 1.5rem;
   justify-self: end;
   align-self: center;
-  padding: 0.5rem;
-  border: 1px solid var(--white);
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+
+  &::before,
+  &::after {
+    content: url('../../../../../../assets/chevron-simple-right-red.svg');
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &::after {
+    left: 0.75rem;
+    top: 0;
+    transition: opacity 0.3s ease 0.2s;
+  }
+
+  .post-read-arrow-icon {
+    position: relative;
+    left: 0.75rem;
+    color: var(--white);
+    transition: color 0.3s ease 0.5s;
+  }
+}
+
+@keyframes slide-fade-out {
+  to {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (width >= 900px) {

@@ -7,6 +7,7 @@ import {
   faTwitch,
   faTwitter,
   faYoutube,
+  faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 
 export const socials = [
@@ -21,6 +22,10 @@ export const socials = [
   {
     url: "https://google.com",
     icon: faSpotify,
+  },
+  {
+    url: "https://google.com",
+    icon: faDiscord,
   },
   {
     url: "https://google.com",

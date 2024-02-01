@@ -2,22 +2,20 @@
   background: var(--black);
   color: var(--white);
   display: flex;
-  padding: 2rem calc((100vw - 1200px) / 2);
+  padding: 4rem max(calc((100vw - 1200px + 2rem) / 2), 2rem);
   position: relative;
   flex-direction: column;
   gap: 0.8rem;
-  margin-top: 1.25rem;
-  box-shadow: 0px -2px 5px var(--70-translucent-black);
 
   &::before {
     content: '';
     position: absolute;
-    height: 1.25rem;
-    top: -1.25rem;
-    left: 0;
-    width: 100%;
-    background: var(--red);
-    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: min(1200px, calc(100% - 4rem));
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--dark-gray) 30%, var(--dark-gray) 60%,transparent);
+    transform: translateX(-50%);
   }
 }
 

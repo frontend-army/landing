@@ -12,24 +12,23 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 8px;
-    height: 8px;
+    width: 0.5rem;
+    height: 0.5rem;
     border: 1.5px solid var(--red);
     box-sizing: border-box;
     --falling-height: -2;
-    animation: fall-appear 0.8s ease-out;
+    animation: fall-appear 0.5s ease-out;
   }
 
   &::after {
     content: '';
     position: absolute;
-    bottom: 7px;
-    left: 7px;
-    width: calc(100% - 8px);
-    height: calc(30px - 12px);
-    background: linear-gradient(to right, var(--red) calc(var(--underline-progress) * 1%), transparent calc(var(--underline-progress) * 1%));
+    bottom: calc(0.5rem - 1px);
+    left: calc(0.5rem - 1px);
+    height: calc(30px - 0.75rem);
+    background: var(--red);
     clip-path: polygon(0 calc(100% - 0.5px), 1rem 0, 100% 0, 100% 1px, calc(1rem + 0.5px) 1px, 1px 100%);
-    animation: fill-line 0.4s ease-in-out 0.8s forwards;
+    animation: fill-line 0.4s ease-in-out 0.5s forwards;
   }
 
   &:hover {
@@ -61,11 +60,11 @@
 
 @keyframes fill-line {
   from {
-    --underline-progress: 0;
+    width: 0;
   }
 
   to {
-    --underline-progress: 100;
+    width: calc(100% - 0.5rem);
   }
 }
 
