@@ -12,39 +12,39 @@ import {
 
 export const socials = [
   {
-    url: "https://google.com",
+    url: "https://www.twitch.tv/frontend_army",
     icon: faTwitch,
   },
   {
-    url: "https://google.com",
+    url: "https://www.youtube.com/@frontend_army",
     icon: faYoutube,
   },
   {
-    url: "https://google.com",
+    url: "https://open.spotify.com/show/0sN5AI1KvzNm46qhIPqppT",
     icon: faSpotify,
   },
   {
-    url: "https://google.com",
+    url: "https://discord.com/invite/pKQ6KdPBj3",
     icon: faDiscord,
   },
   {
-    url: "https://google.com",
+    url: "https://www.instagram.com/frontend_army/",
     icon: faInstagram,
   },
   {
-    url: "https://google.com",
+    url: "https://twitter.com/frontend_army",
     icon: faTwitter,
   },
   {
-    url: "https://google.com",
+    url: "https://www.linkedin.com/company/frontend-army",
     icon: faLinkedin,
   },
   {
-    url: "https://google.com",
+    url: "https://www.tiktok.com/@frontend_army",
     icon: faTiktok,
   },
   {
-    url: "https://google.com",
+    url: "https://github.com/frontend-army",
     icon: faGithub,
   },
 ];

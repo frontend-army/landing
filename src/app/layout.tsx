@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${a.variable} ${b.variable}`}>
-      <body>
+      <body suppressHydrationWarning={true}>
         <SpeedInsights />
         <Analytics />
         <Navbar />
