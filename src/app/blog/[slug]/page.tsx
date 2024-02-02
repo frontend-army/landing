@@ -1,6 +1,8 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { fetchPost, fetchPosts } from '@/app/api/blogpost';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts = await fetchPosts();
   return posts.map((post) => ({

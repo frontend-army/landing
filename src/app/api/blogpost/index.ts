@@ -2,6 +2,7 @@ import { BlogpostSummary } from "@/types/blogpost";
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { notFound } from 'next/navigation';
 
 export async function fetchPosts(): Promise<Array<BlogpostSummary>> {
   let files = fs.readdirSync(path.join("posts"));
@@ -30,9 +31,9 @@ export async function fetchPost(id: string) {
   files = files.filter(file => file.split('.')[1] == "mdx");
   const file = files.find(file => file.split('.')[0] == id);
   if (!file) {
-    throw new Error("Post not found");
+    notFound();
   }
 
   const data = fs.readFileSync(path.join("posts", file), 'utf-8');
-  return {source: data, metadata: matter(data).data };
+  return { source: data, metadata: matter(data).data };
 }
