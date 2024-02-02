@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 export async function fetchPosts(): Promise<Array<BlogpostSummary>> {
   let files = fs.readdirSync(path.join("posts"));
   files = files.filter(file => file.split('.')[1] == "mdx");
-  const posts = files.map((file, index) => {
+  const posts = files.map((file) => {
     const name = file.replace('.mdx', '');
     const fileData = fs.readFileSync(path.join("posts", file), 'utf-8');
     const { data } = matter(fileData);
@@ -34,6 +34,7 @@ export async function fetchPost(id: string) {
     notFound();
   }
 
-  const data = fs.readFileSync(path.join("posts", file), 'utf-8');
-  return { source: data, metadata: matter(data).data };
+  let data = fs.readFileSync(path.join("posts", file), 'utf-8');
+  const parsedFile = matter(data);
+  return { source: parsedFile.content, metadata: parsedFile.data };
 }
