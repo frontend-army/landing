@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { BlogpostSummary } from "@/types/blogpost";
 import styles from './styles.module.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ChevronSimpleRight from "@/assets/chevron-simple-right.svg";
+import Link from 'next/link';
+import { format } from "date-fns";
 
 interface Props {
   postSummary: BlogpostSummary;
@@ -11,11 +11,12 @@ interface Props {
 }
 
 export const BlogpostCard: React.FC<Props> = ({postSummary, isHorizontal}) => {
+  debugger;
   return (
-    <a className={`${styles.post} ${isHorizontal ? styles.postHorizontal : ''}`} href="https://google.com">
+    <Link className={`${styles.post} ${isHorizontal ? styles.postHorizontal : ''}`} href={`/blog/${postSummary.id}`}>
       <Image width={592} height={333} className={styles.postCover} src={postSummary.cover} alt="" />
       <div className={styles.postInfo}>
-        <p className={styles.postDate}>14/01/2024</p>
+        <p className={styles.postDate}>{format(postSummary.date,'dd/MM/yyyy')}</p>
         <h3 className={styles.postTitle}>{postSummary.title}</h3>
         <p className={styles.postBody}>{postSummary.summary}</p>
         <div className={`${styles.postAuthor} flex items-center gap-2`}>
@@ -26,6 +27,6 @@ export const BlogpostCard: React.FC<Props> = ({postSummary, isHorizontal}) => {
           <ChevronSimpleRight className={styles.postReadArrowIcon} />
         </div>
       </div>
-    </a>
+    </Link>
   );
 } 
