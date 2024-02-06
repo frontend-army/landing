@@ -21,10 +21,33 @@ export async function generateMetadata({
     return {};
   }
   return {
+    metadataBase: new URL('https://www.frontend-army.com'),
     title: metadata.title,
     description: metadata.description,
+    images: [metadata.cover],
+    url: `https://www.frontend-army.com/blog/${params.slug}`,
+    openGraph: {
+      title: metadata.title,
+      description: metadata.description,
+      images: [metadata.cover],
+      url: `https://www.frontend-army.com/blog/${params.slug}`,
+    },
+    twitter: {
+      card : 'summary_large_image',
+      title: metadata.title,
+      description: metadata.description,
+      images: [metadata.cover],
+      url: `https://www.frontend-army.com/blog/${params.slug}`,
+    },
+    linkedin: {
+      title: metadata.title,
+      description: metadata.description,
+      images: [metadata.cover],
+      url: `https://www.frontend-army.com/blog/${params.slug}`,
+    }
   };
 }
+
 const components = {
   p: (props: any) => <p className="my-2 leading-normal" {...props} />,
   blockquote: (props: any) => <code className="border-l-4 border-gray-300 pl-2" {...props} />,
