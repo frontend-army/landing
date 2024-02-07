@@ -8,6 +8,7 @@
   max-width: 1200px;
   width: 100%;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .posts {

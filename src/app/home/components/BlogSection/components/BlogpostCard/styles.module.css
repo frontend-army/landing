@@ -167,6 +167,7 @@
     opacity: 0;
     transform: translateX(0);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -183,7 +184,7 @@
       grid-template-rows: repeat(2, min-content) 1fr repeat(2, min-content);
       gap: 0.5rem;
     }
-  
+
     .post-cover {
       flex: 3;
     }
