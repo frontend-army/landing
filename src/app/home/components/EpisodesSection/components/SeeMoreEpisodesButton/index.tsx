@@ -5,7 +5,7 @@ import { useRef } from "react";
 import styles from './styles.module.css';
 import ChevronRight from "@/assets/chevron-right.svg";
 
-export const SeeMorePostsButton: React.FC = () => {
+export const SeeMoreEpisodesButton: React.FC = () => {
   const buttonRef = useRef(null);
   const buttonObserver = useIntersectionObserver(buttonRef, {
     threshold: 1,
@@ -18,7 +18,7 @@ export const SeeMorePostsButton: React.FC = () => {
   return (
     <button ref={buttonRef} className={`self-end ${isButtonVisible ? styles.postsSeeMore : 'opacity-0'}`} type="button">
       <span className={styles.postsSeeMoreContent}>
-          Ver mas Posts
+          Ver mas capítulos
           <ChevronRight className={styles.postsSeeMoreArrow} width={24} height={24} alt="" />
       </span>
     </button>

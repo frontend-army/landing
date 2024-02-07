@@ -21,19 +21,18 @@
       }
     }
   }
+}
 
-  @keyframes stop-caret {
-    from, to { border-right-color: transparent; }
-  }
+@keyframes stop-caret {
+  from, to { border-right-color: transparent; }
+}
 
+@keyframes typing {
+  0% { width: 0;}
+  100% { width: 100%; }
+}
 
-  @keyframes typing {
-    0% { width: 0;}
-    100% { width: 100%; }
-  }
-
-  @keyframes blink-caret {
-    from, to { border-right: .15em solid var(--caret-color); }
-    50% { border-right-color: transparent; }
-  }
+@keyframes blink-caret {
+  from, to { border-right: .15em solid var(--caret-color); }
+  50% { border-right-color: transparent; }
 }

@@ -4,7 +4,7 @@
   grid-template-columns: 60px 1fr 60px;
   place-items: center;
   background: var(--black);
-  padding-inline: calc((100% - 1200px) / 2);
+  padding-inline: max(calc((100% - 1200px) / 2), 2rem);
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -50,7 +50,7 @@
   }
 
   &:hover {
-    color: oklch(from var(--white) calc(l - 30) c h);
+    color: oklch(from var(--white) 70% c h);
 
     &::before {
       translate: -0.5rem -50%;
@@ -61,5 +61,119 @@
       translate: 0.5rem -50%;
       opacity: 1;
     }
+  }
+}
+
+.hamburguer {
+  display: none;
+  grid-column: 3;
+
+  .hamburguer-input {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+@media screen and (width <= 900px) {
+  .navbar {
+    --link-delay: 0.5s;
+    transition: opacity 0.5s linear, display 0s 1s linear allow-discrete, position 0s 1s linear allow-discrete;
+    opacity: 0;
+    display: none;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background: var(--black);
+    inset: 0;
+
+    &:has(+ .hamburguer .hamburguer-input:checked) {
+      opacity: 1;
+      @starting-style {
+        opacity: 0;
+      }
+
+      .nav-link {
+        opacity: 1;
+        font-size: 2rem;
+        transition: opacity 1s ease var(--link-delay);
+        @starting-style {
+          opacity: 0;
+        }
+
+        &:nth-child(2) {
+          --link-delay: 0.7s;
+        }
+
+        &:nth-child(3) {
+          --link-delay: 0.9s;
+        }
+      }
+    }
+
+    .nav-link {
+      opacity: 0;
+      transition: opacity 0s 0.5s, font-size 0s 0.5s allow-discrete;
+    }
+  }
+
+  .hamburguer {
+    padding: 0;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: block;
+    z-index: 2;
+    transition: opacity 1s linear, display 0.5s linear allow-discrete;
+    @starting-style {
+      opacity: 0;
+    }
+
+    &:has(.hamburguer-input:checked) {
+      &::before {
+        transform: translateY(-10px) rotate(-45deg);
+        width: 40px;
+        left: -12px;
+      }
+
+      &::after {
+        transform: translateY(8px) rotate(45deg);
+        width: 40px;
+        left: -12px;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      height: 2px;
+      background: var(--white);
+      position: absolute;
+      border-radius: 1px;
+      transform-origin: center right;
+      transition: transform 0.3s ease, left 0.3s ease, width 0.3s ease;
+    }
+
+    &::before {
+      top: calc(50% - 5px);
+      width: 100%;
+      left: 0;
+    }
+
+    &::after {
+      top: calc(50% + 5px);
+      width: 75%;
+      left: 25%;
+    }
+  }
+
+  :global(body):has(.hamburguer-input:checked) {
+    overflow: hidden;
   }
 }

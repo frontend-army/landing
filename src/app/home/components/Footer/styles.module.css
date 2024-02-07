@@ -14,7 +14,7 @@
     left: 50%;
     width: min(1200px, calc(100% - 4rem));
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--dark-gray) 30%, var(--dark-gray) 60%,transparent);
+    background: linear-gradient(to right, transparent, var(--dark-gray) 30%, var(--dark-gray) 60%, transparent);
     transform: translateX(-50%);
   }
 }

@@ -1,5 +1,6 @@
 .episode {
-  padding: 0 1.5rem;
+  padding: 0;
+  padding-left: 1.5rem;
   display: flex;
   color: var(--black);
   border-left: 1px solid var(--red);
@@ -46,7 +47,9 @@
   }
 }
 
-.episode-link {
+.episode-link,
+.episode-link:active,
+.episode-link:visited {
   --button-background: var(--black);
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -72,7 +75,6 @@
     background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
     display: block;
     clip-path: var(--slice-0);
-    /* animation: glitch2 0.3s steps(2, end) alternate; */
   }
   
   &.spotify {
@@ -111,16 +113,6 @@
     }
   }
 }
-
-/* .youtube:not(:hover):has( ~ .spotify:not(:hover))::after,
-.youtube:not(:hover) ~ .spotify:not(:hover)::after {
-  animation: glitch2 0.3s steps(2, end) alternate;
-} */
-
-/* .youtube:not(:hover):has( ~ .spotify:hover)::after,
-.youtube:hover ~ .spotify:not(:hover)::after {
-  animation: none;
-} */
 
 .button-glitch::after {
   animation: glitch2 0.3s steps(2, end) alternate;
