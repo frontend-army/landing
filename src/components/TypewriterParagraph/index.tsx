@@ -45,11 +45,9 @@ useEffect(() => {
 
   return (
       <p ref={ref} className={`${styles.paragraph} ${className}`} data-text={children}>
-        {/* {splitAbout.map((text) => (
+        {splitAbout.map((text) => (
           <span className={styles.line} key={text}>{text}</span>
-        ))} */}
-        <span className={styles.line}>Sumate a nuestro podcast y comunidad para explorar las tendencias en</span>
-        <span className={styles.line}>desarrollo web y compartir tu experiencia en el mundo Frontend.</span>
+        ))}
       </p>
   );
 } 

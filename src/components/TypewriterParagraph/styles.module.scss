@@ -15,9 +15,9 @@
       @for $i from 1 through 10 {
       &:nth-child(#{$i}n) {
         animation:
-        typing #{$animation-duration}s #{($i - 1) * $animation-duration * 0.75}s steps(50, end) forwards,
-        blink-caret .5s #{($i - 1) * $animation-duration * 0.75}s step-end infinite,
-        stop-caret .5s #{$i * $animation-duration * 0.75}s infinite;
+        typing #{$animation-duration}s #{($i - 1) * $animation-duration * 0.9}s steps(50, end) forwards,
+        blink-caret .5s #{($i - 1) * $animation-duration * 0.9}s step-end infinite,
+        stop-caret .5s #{$i * $animation-duration * 0.9}s infinite;
       }
     }
   }

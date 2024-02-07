@@ -4,8 +4,6 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useRef } from "react";
 import styles from './styles.module.css';
 import ChevronRight from "@/assets/chevron-right.svg";
-import Image from "next/image";
-
 
 export const SeeMorePostsButton: React.FC = () => {
   const buttonRef = useRef(null);

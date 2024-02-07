@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import { TypewriterParagraph } from '@/components/TypewriterParagraph';
 
