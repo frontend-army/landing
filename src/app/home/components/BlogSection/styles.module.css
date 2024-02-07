@@ -1,14 +1,5 @@
 .blog-section {
-  padding: 5rem;
-}
-
-.posts-wrapper {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  width: 100%;
-  gap: 1.5rem;
-  align-items: center;
+  padding: 4rem 2rem;
 }
 
 .posts {

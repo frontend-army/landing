@@ -1,8 +1,7 @@
 import { getEpisodes } from "@/services/episodes";
 import styles from './styles.module.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { EpisodeCard } from "@/components/EpisodeCard";
+import { SeeMoreEpisodesButton } from "./components/SeeMoreEpisodesButton";
 
 export const revalidate = 3600;
 
@@ -11,12 +10,14 @@ export const EpisodesSection: React.FC = async () => {
   return (
     <section className={`flex flex-col items-center gap-20 ${styles.episodesSection}`}>
       <h2 className="title-1">Podcast</h2>
-      <div className={styles.episodesContainer}>
-        {episodes?.map((episode) => (
-          <EpisodeCard key={episode.id} episode={episode} />
-        ))}
+      <div className={styles.episodesWrapper}>
+        <div className={styles.episodesContainer}>
+          {episodes?.map((episode) => (
+            <EpisodeCard key={episode.id} episode={episode} />
+          ))}
+        </div>
+        <SeeMoreEpisodesButton />
       </div>
-      <button className="button shiny-glowing-border">Ver todos los capítulos</button>
     </section>
   );
 } 
