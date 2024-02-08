@@ -8,7 +8,7 @@ export const revalidate = 3600;
 export const BlogSection: React.FC = async () => {
   const posts = await fetchPosts();
   return (
-    <section className={`${styles.blogSection} flex flex-col items-center`}>
+    <section id="blog" className={`${styles.blogSection} flex flex-col items-center`}>
       <h2 className="title-1 mb-16">Nuestro Blog</h2>
       <div className={`${styles.posts} mb-12`}>
         {posts?.map((postSummary, index) => (

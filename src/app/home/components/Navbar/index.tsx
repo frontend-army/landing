@@ -3,8 +3,7 @@
 import FeaLogo from '@/assets/fea_logo.png';
 import Image from 'next/image';
 import styles from './styles.module.css';
-import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 export const Navbar: React.FC = () => {
   const hamburguerInputRef = useRef<HTMLInputElement>(null);
@@ -23,13 +22,16 @@ export const Navbar: React.FC = () => {
     }
   }, []);
 
+  const handleClick = useCallback((id: string) => () => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
   return (
     <header className={styles.header}>
       <Image src={FeaLogo} alt="" width={60} height={60} />
       <nav className={styles.navbar}>
-        <Link href="/episodes" className={styles.navLink}>Podcast</Link>
-        <Link href="https://www.google.com" className={styles.navLink}>Blog</Link>
-        <Link href="https://www.google.com" className={styles.navLink}>Nosotros</Link>
+        <button onClick={handleClick('episodes')} className={styles.navLink}>Podcast</button>
+        <button onClick={handleClick('blog')} className={styles.navLink}>Blog</button>
+        <button onClick={handleClick('about')} className={styles.navLink}>Nosotros</button>
       </nav>
       <button type='button' className={styles.hamburguer}>
         <input type="checkbox" className={styles.hamburguerInput} ref={hamburguerInputRef} />

@@ -8,7 +8,7 @@ export const revalidate = 3600;
 export const EpisodesSection: React.FC = async () => {
   const episodes = await getEpisodes(6);
   return (
-    <section className={`flex flex-col items-center gap-20 ${styles.episodesSection}`}>
+    <section id="episodes" className={`flex flex-col items-center gap-20 ${styles.episodesSection}`}>
       <h2 className="title-1">Podcast</h2>
       <div className={styles.episodesWrapper}>
         <div className={styles.episodesContainer}>
