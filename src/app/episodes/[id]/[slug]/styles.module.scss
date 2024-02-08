@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 5rem;
+  padding: 5rem 4rem;
   width: 100%;
-  height: calc(100vh - 200px);
+  min-height: calc(100vh - 200px);
   background: linear-gradient(180deg, var(--black) 0%, var(--dark-red) 4%, var(--black) 50%);
 
   .episode-name {
