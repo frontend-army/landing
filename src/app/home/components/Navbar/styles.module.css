@@ -18,6 +18,10 @@
   justify-items: center;
 }
 
+.home-link:hover {
+  opacity: 0.8;
+}
+
 .nav-link {
   text-transform: uppercase;
   letter-spacing: 2px;
