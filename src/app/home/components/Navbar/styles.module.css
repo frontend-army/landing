@@ -92,9 +92,12 @@
     z-index: 1;
     background: var(--black);
     inset: 0;
+    pointer-events: none;
 
     &:has(+ .hamburguer .hamburguer-input:checked) {
       opacity: 1;
+      pointer-events: initial;
+
       @starting-style {
         opacity: 0;
       }
