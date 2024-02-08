@@ -4,7 +4,7 @@ import { Episode } from "@/types/episode";
 import styles from "./styles.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sourceIconMap } from "./utils";
-import { MouseEvent, useCallback, useEffect, useRef } from "react";
+import { MouseEvent, useCallback, useRef } from "react";
 
 interface Props {
   episode: Episode;
