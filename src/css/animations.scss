@@ -1,0 +1,29 @@
+:root {
+  --flicker-animation: flicker;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0.3;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
