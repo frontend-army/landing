@@ -12,10 +12,17 @@
 }
 
 .episodes-container {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 6rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
   width: min(100%, calc(400px * 3 + 6rem * 2));
-  justify-content: center;
   container-type: inline-size;
+}
+
+
+@media screen and (width >= 900px) {
+  .episodes-section {
+    padding: 8rem 4rem 4rem;
+  }
 }

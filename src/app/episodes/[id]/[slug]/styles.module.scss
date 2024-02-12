@@ -1,0 +1,68 @@
+.episode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 5rem 4rem;
+  width: 100%;
+  min-height: calc(100vh - 200px);
+  background: linear-gradient(180deg, var(--black) 0%, var(--dark-red) 4%, var(--black) 50%);
+
+  .episode-name {
+    font-family: var(--font-anton), system-ui, sans-serif;
+    font-size: 6rem;
+    text-transform: uppercase;
+    line-height: 1.15;
+    letter-spacing: 4px;
+    color: var(--white);
+    margin-bottom: 2rem;
+  }
+
+  .episode-description {
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+  }
+
+  .episode-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 600px;
+    text-align: left;
+  }
+
+  .episode-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .episode-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 1px solid var(--white);
+
+    &:first-of-type {
+      border-color: var(--red);
+
+      &:hover {
+        background: var(--red);
+      }
+    }
+
+    &:last-of-type {
+      border-color: var(--spotify-green);
+
+      &:hover {
+        background: var(--spotify-green);
+      }
+    }
+  }
+}

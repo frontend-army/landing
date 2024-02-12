@@ -8,7 +8,7 @@ interface Props {
 
 export const AboutSection: React.FC<Props> = () => {
   return (
-    <section className={`flex flex-col items-center gap-20 ${styles.hostsSection}`}>
+    <section id="about" className={`flex flex-col items-center gap-20 ${styles.hostsSection}`}>
       <div className={styles.aboutBg} />
       <SectionTitle variant="white">¿Quienes Somos?</SectionTitle>
       <div className={styles.hostsContainer}>
