@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
       <Link className={styles.homeLink} href="/">
         <Image src={FeaLogo} alt="" width={60} height={60} />
       </Link>
-      {pathname === "/" && (
+      {pathname === "/home" && (
         <>
           <nav className={styles.navbar}>
             <button
