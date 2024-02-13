@@ -1,13 +1,43 @@
+@property --reveal-progress {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 .episode {
   padding: 0;
   padding-left: 1.5rem;
   display: flex;
   color: var(--black);
-  border-left: 1px solid var(--red);
   flex-direction: column;
   gap: 8px;
   min-height: 165px;
   max-width: 350px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  --reveal-progress: 100;
+  mask-image: linear-gradient(to right, var(--black) calc(var(--reveal-progress) * 1% + 1px), transparent calc(var(--reveal-progress) * 1% + 1px));
+  transition: --reveal-progress 0.5s ease-in-out 0.5s;
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: var(--red);
+    transition: height 0.5s ease;
+  }
+
+  &:not(.is-active) {
+    --reveal-progress: 0;
+
+    &::before {
+      height: 0;
+    }
+  }
 }
 
 .episode-number {
