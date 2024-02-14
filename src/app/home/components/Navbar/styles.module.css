@@ -68,11 +68,11 @@
   }
 }
 
-.hamburguer {
+.hamburger {
   display: none;
   grid-column: 3;
 
-  .hamburguer-input {
+  .hamburger-input {
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -98,7 +98,7 @@
     inset: 0;
     pointer-events: none;
 
-    &:has(+ .hamburguer .hamburguer-input:checked) {
+    &:has(+ .hamburger .hamburger-input:checked) {
       opacity: 1;
       pointer-events: initial;
 
@@ -130,7 +130,7 @@
     }
   }
 
-  .hamburguer {
+  .hamburger {
     padding: 0;
     position: relative;
     width: 30px;
@@ -142,7 +142,7 @@
       opacity: 0;
     }
 
-    &:has(.hamburguer-input:checked) {
+    &:has(.hamburger-input:checked) {
       &::before {
         transform: translateY(-10px) rotate(-45deg);
         width: 40px;
@@ -180,7 +180,7 @@
     }
   }
 
-  :global(body):has(.hamburguer-input:checked) {
+  :global(body):has(.hamburger-input:checked) {
     overflow: hidden;
   }
 }
