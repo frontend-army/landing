@@ -5,12 +5,14 @@ import styles from "./styles.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sourceIconMap } from "./utils";
 import { MouseEvent, useCallback, useRef } from "react";
+import { useAnimateOnScroll } from "@/hooks/useRevealOnScroll";
 
 interface Props {
   episode: Episode;
 }
 
 export const EpisodeCard: React.FC<Props> = ({ episode }) => {
+  const {ref, isVisible} = useAnimateOnScroll('50px');
   const youtubeRef = useRef<HTMLAnchorElement>(null);
   const spotifyRef = useRef<HTMLAnchorElement>(null);
 
@@ -27,7 +29,7 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
   }, []);
 
   return (
-    <div className={styles.episode}>
+    <div ref={ref} className={`${styles.episode} ${isVisible ? styles.isActive : ''}`}>
       <h4 className={styles.episodeNumber}>Capitulo {episode.id}:</h4>
       <h3 className={styles.episodeTitle}>{episode.title}</h3>
       <p className={styles.episodeDescription}>{episode.description}</p>

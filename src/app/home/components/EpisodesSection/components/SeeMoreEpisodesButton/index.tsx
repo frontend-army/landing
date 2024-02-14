@@ -4,19 +4,14 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useRef } from "react";
 import styles from './styles.module.css';
 import ChevronRight from "@/assets/chevron-right.svg";
-import Link from 'next/link';
+import { useAnimateOnScroll } from "@/hooks/useRevealOnScroll";
+import Link from "next/link";
 
 export const SeeMoreEpisodesButton: React.FC = () => {
-  const buttonRef = useRef(null);
-  const buttonObserver = useIntersectionObserver(buttonRef, {
-    threshold: 1,
-    rootMargin: '0px 0px -50px 0px',
-  });
-
-  const isButtonVisible = !!buttonObserver?.isIntersecting;
+  const {ref: buttonRef, isVisible: isButtonVisible} = useAnimateOnScroll('50px');
 
   return (
-    <Link ref={buttonRef} className={`self-end ${isButtonVisible ? styles.postsSeeMore : 'opacity-0'}`} href="/episodes">
+    <Link ref={buttonRef} className={`${styles.postsSeeMore} ${isButtonVisible ? styles.isActive : 'opacity-0'} self-end`} href="/episodes">
       <span className={styles.postsSeeMoreContent}>
           Ver mas capítulos
           <ChevronRight className={styles.postsSeeMoreArrow} width={24} height={24} alt="" />
