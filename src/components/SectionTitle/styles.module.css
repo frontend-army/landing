@@ -1,6 +1,6 @@
 .title-visible .section-title-letter {
   opacity: 0;
-  animation: reveal 0.3s ease var(--reveal-delay) forwards, var(--flicker-animation) var(--should-flicker, 1s) ease var(--reveal-delay);
+  animation: reveal 0.2s ease var(--reveal-delay) forwards, var(--flicker-animation) var(--should-flicker, 0.5s) ease var(--reveal-delay);
 }
 
 @keyframes reveal {

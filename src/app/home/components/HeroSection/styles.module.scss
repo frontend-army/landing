@@ -45,7 +45,7 @@
 
 .hero-title {
   font-family: var(--font-anton), system-ui, sans-serif;
-  font-size: 6rem;
+  font-size: clamp(3rem, 20vw, 6rem);
   text-transform: uppercase;
   line-height: 1.15;
   letter-spacing: 4px;

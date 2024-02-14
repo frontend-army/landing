@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const SectionTitle: React.FC<Props> = ({children, className, variant}) => {
-  const {ref, isVisible} = useAnimateOnScroll('50px');
+  const {ref, isVisible} = useAnimateOnScroll({});
 
   const formattedChildren = useMemo(() => {
     const letters = children.split('');
@@ -29,7 +29,7 @@ export const SectionTitle: React.FC<Props> = ({children, className, variant}) =>
         className={styles.sectionTitleLetter}
         key={index}
         style={{
-          '--reveal-delay': `calc(${letterPositions[index]} * 0.1s + 0.3s)`,
+          '--reveal-delay': `calc(${letterPositions[index]} * 0.1s + 0.2s)`,
           '--should-flicker': Math.random() > 0.7 ? '0.3s' : '0s'
         } as CSSProperties}
       >
