@@ -8,58 +8,64 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const Navbar: React.FC = () => {
-  const hamburguerInputRef = useRef<HTMLInputElement>(null);
+  const hamburgerInputRef = useRef<HTMLInputElement>(null);
   const pathname = usePathname();
   useEffect(() => {
-    const uncheckHamburguerHandler = (event: UIEvent) => {
-      if (hamburguerInputRef.current && document.body.clientWidth > 900) {
-        hamburguerInputRef.current.checked = false;
+    const uncheckHamburgerHandler = (event: UIEvent) => {
+      if (hamburgerInputRef.current && document.body.clientWidth > 900) {
+        hamburgerInputRef.current.checked = false;
       }
     };
 
-    window.addEventListener("resize", uncheckHamburguerHandler);
+    window.addEventListener("resize", uncheckHamburgerHandler);
 
     return () => {
-      window.removeEventListener("resize", uncheckHamburguerHandler);
+      window.removeEventListener("resize", uncheckHamburgerHandler);
     };
   }, []);
 
   const handleClick = useCallback(
     (id: string) => () => {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      if (hamburgerInputRef.current) {
+        hamburgerInputRef.current.checked = false;
+      }
     },
-    []
+    [hamburgerInputRef]
   );
   return (
     <header className={styles.header}>
       <Link className={styles.homeLink} href="/">
         <Image src={FeaLogo} alt="" width={60} height={60} />
       </Link>
-      {pathname === "/home" && (
-        <>
-          <nav className={styles.navbar}>
-            <button
-              onClick={handleClick("e pisodes")}
-              className={styles.navLink}
-            >
-              Podcast
-            </button>
-            <button onClick={handleClick("blog")} className={styles.navLink}>
-              Blog
-            </button>
-            <button onClick={handleClick("about")} className={styles.navLink}>
-              Nosotros
-            </button>
-          </nav>
-          <button type="button" className={styles.hamburguer}>
-            <input
-              type="checkbox"
-              className={styles.hamburguerInput}
-              ref={hamburguerInputRef}
-            />
-          </button>
-        </>
-      )}
+        <nav className={styles.navbar}>
+          <Link
+            href={!pathname?.startsWith("/home") ? "/home#episodes" : pathname}
+            onClick={handleClick("episodes")}
+            className={styles.navLink}
+          >
+            Podcast
+          </Link>
+          <Link
+            href={!pathname?.startsWith("/home") ? "/home#blog" : pathname}
+            onClick={handleClick("blog")}
+           className={styles.navLink}>
+            Blog
+          </Link>
+          <Link 
+            href={!pathname?.startsWith("/home") ? "/home#about" : pathname}
+            onClick={handleClick("about")}
+           className={styles.navLink}>
+            Nosotros
+          </Link>
+        </nav>
+        <button type="button" className={styles.hamburger}>
+          <input
+            type="checkbox"
+            className={styles.hamburgerInput}
+            ref={hamburgerInputRef}
+          />
+        </button>
     </header>
   );
 };
