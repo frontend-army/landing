@@ -57,6 +57,7 @@
 
 .footer-social-items {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
