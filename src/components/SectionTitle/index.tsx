@@ -1,6 +1,6 @@
 "use client"
 
-import { CSSProperties, useMemo } from "react";
+import { useMemo } from "react";
 import styles from './styles.module.css';
 import { useAnimateOnScroll } from "@/hooks/useRevealOnScroll";
 
@@ -10,6 +10,12 @@ interface Props {
   className?: string;
   children: string;
   variant?: SectionTitleVariants;
+}
+
+declare module "react" {
+  interface CSSProperties {
+    [key: `--${string}`]: string | number;
+  }
 }
 
 export const SectionTitle: React.FC<Props> = ({children, className, variant}) => {
@@ -31,7 +37,7 @@ export const SectionTitle: React.FC<Props> = ({children, className, variant}) =>
         style={{
           '--reveal-delay': `calc(${letterPositions[index]} * 0.1s + 0.2s)`,
           '--should-flicker': Math.random() > 0.7 ? '0.3s' : '0s'
-        } as CSSProperties}
+        }}
       >
         {char}
       </span>
