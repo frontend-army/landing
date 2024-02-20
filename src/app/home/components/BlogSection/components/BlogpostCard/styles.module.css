@@ -117,6 +117,7 @@
   font-family: 'Montserrat', system-ui, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
+  white-space: nowrap;
 }
 
 .post-read-arrow {

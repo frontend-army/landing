@@ -16,7 +16,7 @@ export const BlogSection: React.FC = async () => {
           <BlogpostCard key={postSummary.title} postSummary={postSummary} isHorizontal={index > 0} />
         ))}
       </div>
-      <button className="button shiny-glowing-border">Ver todos los posts</button>
+      {/* <button className="button shiny-glowing-border">Ver todos los posts</button> */}
     </section>
   );
 } 
