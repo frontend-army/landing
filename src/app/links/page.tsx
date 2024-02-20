@@ -1,6 +1,32 @@
 import { socials } from '@/utils/socials';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+export const metadata = {
+  title: "Links",
+  description: "Links to my social media profiles and other platforms.",
+  images: [],
+  url: "https://frontendarmy.tech/links",
+  openGraph: {
+    title: "Links",
+    description: "Links to my social media profiles and other platforms.",
+    images: [],
+    url: "https://frontendarmy.tech/links"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Links",
+    description: "Links to my social media profiles and other platforms.",
+    images: [],
+    url: "https://frontendarmy.tech/links"
+  },
+  linkedin: {
+    title: "Links",
+    description: "Links to my social media profiles and other platforms.",
+    images: [],
+    url: "https://frontendarmy.tech/links"
+  }
+};
+
 export default async function Links() {
   return (
     <main className="flex flex-col items-center w-full flex-1 px-4 pt-4 text-center bg-black text-white">
