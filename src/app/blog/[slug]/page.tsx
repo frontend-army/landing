@@ -22,29 +22,29 @@ export async function generateMetadata({
     return {};
   }
   return {
-    metadataBase: new URL("https://www.frontend-army.com"),
+    metadataBase: new URL("https://frontendarmy.tech"),
     title: metadata.title,
     description: metadata.description,
     images: [metadata.cover],
-    url: `https://www.frontend-army.com/blog/${params.slug}`,
+    url: `https://frontendarmy.tech/blog/${params.slug}`,
     openGraph: {
       title: metadata.title,
       description: metadata.description,
       images: [metadata.cover],
-      url: `https://www.frontend-army.com/blog/${params.slug}`
+      url: `https://frontendarmy.tech/blog/${params.slug}`
     },
     twitter: {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
       images: [metadata.cover],
-      url: `https://www.frontend-army.com/blog/${params.slug}`
+      url: `https://frontendarmy.tech/blog/${params.slug}`
     },
     linkedin: {
       title: metadata.title,
       description: metadata.description,
       images: [metadata.cover],
-      url: `https://www.frontend-army.com/blog/${params.slug}`
+      url: `https://frontendarmy.tech/blog/${params.slug}`
     }
   };
 }
@@ -59,7 +59,8 @@ const components = {
   ),
   h2: (props: any) => (
     <h2 className={styles.articleSubtitle} {...props} />
-  )
+  ),
+  li: (props: any) => <li className="my-2 leading-normal list-disc ml-4" {...props} />
 };
 
 export default async function Post({ params }: { params: { slug: string } }) {
