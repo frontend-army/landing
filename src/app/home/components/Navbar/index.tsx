@@ -39,25 +39,22 @@ export const Navbar: React.FC = () => {
         <Image src={FeaLogo} alt="" width={60} height={60} />
       </Link>
         <nav className={styles.navbar}>
-          <Link
-            href={!pathname?.startsWith("/home") ? "/home#episodes" : pathname}
+          <button
             onClick={handleClick("episodes")}
             className={styles.navLink}
           >
             Podcast
-          </Link>
-          <Link
-            href={!pathname?.startsWith("/home") ? "/home#blog" : pathname}
+          </button>
+          <button
             onClick={handleClick("blog")}
            className={styles.navLink}>
             Blog
-          </Link>
-          <Link 
-            href={!pathname?.startsWith("/home") ? "/home#about" : pathname}
+          </button>
+          <button 
             onClick={handleClick("about")}
            className={styles.navLink}>
             Nosotros
-          </Link>
+          </button>
         </nav>
         <button type="button" className={styles.hamburger}>
           <input

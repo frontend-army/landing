@@ -3,6 +3,7 @@ import { HeroSection } from './components/HeroSection';
 import { EpisodesSection } from './components/EpisodesSection';
 import { BlogSection } from './components/BlogSection';
 import { DotBackground } from './components/DotBackground';
+import { Navbar } from './components/Navbar';
 
 export const metadata = {
   title: 'Frontend Army',
@@ -33,6 +34,7 @@ export const metadata = {
 export default async function Home() {
   return (
     <main>
+      <Navbar />
       <DotBackground/>
       <HeroSection />
       <EpisodesSection />
