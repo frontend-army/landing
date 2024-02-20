@@ -55,12 +55,12 @@ const components = {
     <code className="border-l-4 border-gray-300 pl-2" {...props} />
   ),
   h1: (props: any) => (
-    <h1 className="text-4xl font-bold mb-2 leading-tight" {...props} />
+    <h1 className="text-4xl font-bold mb-2 leading-tight text-start" {...props} />
   ),
   h2: (props: any) => (
-    <h1 className="text-3xl font-bold mb-2 leading-tight" {...props} />
+    <h1 className="text-3xl font-bold mb-2 leading-tight text-start" {...props} />
   ),
-  li: (props: any) => <li className="my-4 list-disc ml-4" {...props} />
+  li: (props: any) => <li className="my-2 leading-normal list-disc ml-4" {...props} />
 };
 
 export default async function Post({ params }: { params: { slug: string } }) {
