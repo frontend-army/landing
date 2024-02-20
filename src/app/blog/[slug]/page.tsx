@@ -50,15 +50,15 @@ export async function generateMetadata({
 }
 
 const components = {
-  p: (props: any) => <p className="my-2 leading-normal" {...props} />,
+  p: (props: any) => <p className={styles.articleText} {...props} />,
   blockquote: (props: any) => (
     <code className="border-l-4 border-gray-300 pl-2" {...props} />
   ),
   h1: (props: any) => (
-    <h1 className="text-4xl font-bold mb-2 leading-tight" {...props} />
+    <h2 className={styles.articleSubtitle} {...props} />
   ),
   h2: (props: any) => (
-    <h1 className="text-3xl font-bold mb-2 leading-tight" {...props} />
+    <h2 className={styles.articleSubtitle} {...props} />
   )
 };
 
@@ -66,25 +66,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { source, metadata } = await fetchPost(params.slug);
   return (
     <div className="relative">
-      <div className={styles.hero}>
-        <h1 className={styles.title}>
+      <div className={styles.hero} style={{backgroundImage: `url(${metadata.cover})`}}>
+        <h1 className={styles.blogpostTitle}>
           {metadata.title}
-          </h1>
-          <Image
-            src={metadata.cover}
-            alt={metadata.title}
-            sizes="100vw"
-            style={{
-              width: "100%",
-              height: "300px",
-              objectFit: "cover",
-              opacity: 0.7
-            }}
-            width={1024}
-            height={300}
-          />
+        </h1>
       </div>
-      <article className={styles.blog}>
+      <article className={styles.article}>
         <MDXRemote source={source} components={components} />
       </article>
     </div>
