@@ -38,31 +38,24 @@ export const Navbar: React.FC = () => {
       <Link className={styles.homeLink} href="/">
         <Image src={FeaLogo} alt="" width={60} height={60} />
       </Link>
-        <nav className={styles.navbar}>
-          <button
-            onClick={handleClick("episodes")}
-            className={styles.navLink}
-          >
-            Podcast
-          </button>
-          <button
-            onClick={handleClick("blog")}
-           className={styles.navLink}>
-            Blog
-          </button>
-          <button 
-            onClick={handleClick("about")}
-           className={styles.navLink}>
-            Nosotros
-          </button>
-        </nav>
-        <button type="button" className={styles.hamburger}>
-          <input
-            type="checkbox"
-            className={styles.hamburgerInput}
-            ref={hamburgerInputRef}
-          />
+      <nav className={styles.navbar}>
+        <button onClick={handleClick("episodes")} className={styles.navLink}>
+          Podcast
         </button>
+        <button onClick={handleClick("blog")} className={styles.navLink}>
+          Blog
+        </button>
+        <button onClick={handleClick("about")} className={styles.navLink}>
+          Nosotros
+        </button>
+      </nav>
+      <button type="button" className={styles.hamburger}>
+        <input
+          type="checkbox"
+          className={styles.hamburgerInput}
+          ref={hamburgerInputRef}
+        />
+      </button>
     </header>
   );
 };
