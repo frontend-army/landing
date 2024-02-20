@@ -23,29 +23,29 @@ export async function generateMetadata({
     return {};
   }
   return {
-    metadataBase: new URL("https://www.frontend-army.com"),
+    metadataBase: new URL("https://frontendarmy.tech"),
     title: `${episode.title} - Frontend Army`,
     description: episode.description,
     images: ["/fea_logo.png"],
-    url: `https://www.frontend-army.com/episodes/${params.id}/${params.slug}`,
+    url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`,
     openGraph: {
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
       images: ["/fea_logo.png"],
-      url: `https://www.frontend-army.com/episodes/${params.id}/${params.slug}`
+      url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
     },
     twitter: {
       card: "summary_large_image",
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
       images: ["/fea_logo.png"],
-      url: `https://www.frontend-army.com/episodes/${params.id}/${params.slug}`
+      url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
     },
     linkedin: {
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
       images: ["/fea_logo.png"],
-      url: `https://www.frontend-army.com/episodes/${params.id}/${params.slug}`
+      url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
     }
   };
 }

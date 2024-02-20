@@ -8,25 +8,25 @@ export const metadata = {
   title: 'Frontend army',
   description: 'Sumate a nuestro podcast y comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.',
   images: ["/fea_logo.png"],
-  url: 'https://www.frontend-army.com',
+  url: 'https://frontendarmy.tech',
   openGraph: {
     title: 'Frontend army',
     description: 'Sumate a nuestro podcast y comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.',
     images: ["/fea_logo.png"],
-    url: 'https://www.frontend-army.com'
+    url: 'https://frontendarmy.tech'
   },
   twitter: {
     card : 'summary_large_image',
     title: 'Frontend army',
     description: 'Sumate a nuestro podcast y comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.',
     images: ["/fea_logo.png"],
-    url: 'https://www.frontend-army.com'
+    url: 'https://frontendarmy.tech'
   },
   linkedin: {
     title: 'Frontend army',
     description: 'Sumate a nuestro podcast y comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.',
     images: ["/fea_logo.png"],
-    url: 'https://www.frontend-army.com'
+    url: 'https://frontendarmy.tech'
   }
 }
 
