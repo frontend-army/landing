@@ -1,12 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@200;300;500&display=swap');
 @import "./equalizer.scss";
 @import "./glitch.scss";
 @import "./texts.scss";
 @import "./buttons.scss";
 @import "./animations.scss";
+@import "./expandReveal.scss";
 
 :root {
   --black: #000;

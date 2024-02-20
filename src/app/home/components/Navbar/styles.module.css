@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4rem;
-  font-family: 'Montserrat', system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   justify-items: center;
 }
 

@@ -10,23 +10,20 @@ interface Props {
   isHorizontal: boolean;
 }
 
-export const BlogpostCard: React.FC<Props> = ({postSummary, isHorizontal}) => {
-  debugger;
-  return (
-    <Link className={`${styles.post} ${isHorizontal ? styles.postHorizontal : ''}`} href={`/blog/${postSummary.id}`}>
-      <Image width={592} height={333} className={styles.postCover} src={postSummary.cover} alt="" />
-      <div className={styles.postInfo}>
-        <p className={styles.postDate}>{format(postSummary.date,'dd/MM/yyyy')}</p>
-        <h3 className={styles.postTitle}>{postSummary.title}</h3>
-        <p className={styles.postBody}>{postSummary.summary}</p>
-        <div className={`${styles.postAuthor} flex items-center gap-2`}>
-          <Image className={styles.postAuthorAvatar} src={postSummary.author.avatar} width={40} height={40} alt={`${postSummary.author.name}'s avatar`} />
-          <p className={styles.postAuthorName}>{postSummary.author.name}</p>
-        </div>
-        <div className={styles.postReadArrow}>
-          <ChevronSimpleRight className={styles.postReadArrowIcon} />
-        </div>
+export const BlogpostCard: React.FC<Props> = ({postSummary, isHorizontal}) => (
+  <Link className={`${styles.post} ${isHorizontal ? styles.postHorizontal : ''}`} href={`/blog/${postSummary.id}`}>
+    <Image width={592} height={333} className={styles.postCover} src={postSummary.cover} alt="" />
+    <div className={styles.postInfo}>
+      <p className={styles.postDate}>{format(postSummary.date,'dd/MM/yyyy')}</p>
+      <h3 className={styles.postTitle}>{postSummary.title}</h3>
+      <p className={styles.postBody}>{postSummary.summary}</p>
+      <div className={`${styles.postAuthor} flex items-center gap-2`}>
+        <Image className={styles.postAuthorAvatar} src={postSummary.author.avatar} width={40} height={40} alt={`${postSummary.author.name}'s avatar`} />
+        <p className={styles.postAuthorName}>{postSummary.author.name}</p>
       </div>
-    </Link>
-  );
-} 
+      <div className={styles.postReadArrow}>
+        <ChevronSimpleRight className={styles.postReadArrowIcon} />
+      </div>
+    </div>
+  </Link>
+);

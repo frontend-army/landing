@@ -4,6 +4,7 @@ import frankProfile from "@/assets/frank_profile.png";
 import pablitoProfile from "@/assets/pablito_profile.png";
 import luquiProfile from "@/assets/luqui_profile.png";
 import capiProfile from "@/assets/capi_profile.png";
+import tinchoProfile from "@/assets/tincho_profile.png";
 
 export const hosts: Array<Host> = [
   {
@@ -69,7 +70,7 @@ export const hosts: Array<Host> = [
   },
   {
     name: "Martin Callegari",
-    avatar: skolzProfile,
+    avatar: tinchoProfile,
     socials: [
       { name: "Github", url: "https://github.com/mcallegari10" },
       { name: "Twitter", url: "https://twitter.com/TiinchoKaleghar" },
@@ -78,6 +79,7 @@ export const hosts: Array<Host> = [
         url: "https://www.linkedin.com/in/martín-callegari-81a97011b/",
       },
     ],
-    description: "This is the description for Host4.",
+    description:
+      "Experto en casi todo. Gamer y tiro cartones de Pokemon cada tanto. Frontend dev y siguiendo el path de game dev.",
   },
 ];
