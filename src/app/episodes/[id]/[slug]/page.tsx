@@ -26,25 +26,25 @@ export async function generateMetadata({
     metadataBase: new URL("https://frontendarmy.tech"),
     title: `${episode.title} - Frontend Army`,
     description: episode.description,
-    images: ["/fea_logo.png"],
+    images: ["https://frontendarmy.tech/fea_logo.png"],
     url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`,
     openGraph: {
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
-      images: ["/fea_logo.png"],
+      images: ["https://frontendarmy.tech/fea_logo.png"],
       url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
     },
     twitter: {
       card: "summary_large_image",
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
-      images: ["/fea_logo.png"],
+      images: ["https://frontendarmy.tech/fea_logo.png"],
       url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
     },
     linkedin: {
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
-      images: ["/fea_logo.png"],
+      images: ["https://frontendarmy.tech/fea_logo.png"],
       url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
     }
   };
