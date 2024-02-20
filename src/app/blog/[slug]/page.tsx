@@ -59,7 +59,8 @@ const components = {
   ),
   h2: (props: any) => (
     <h1 className="text-3xl font-bold mb-2 leading-tight" {...props} />
-  )
+  ),
+  li: (props: any) => <li className="my-4 list-disc ml-4" {...props} />
 };
 
 export default async function Post({ params }: { params: { slug: string } }) {
