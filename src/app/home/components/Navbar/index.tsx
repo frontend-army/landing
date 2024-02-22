@@ -35,37 +35,45 @@ export const Navbar: React.FC = () => {
   );
   return (
     <header className={styles.header}>
-      <Link className={styles.homeLink} href="/">
+      <Link href="/">
         <Image src={FeaLogo} alt="" width={60} height={60} />
       </Link>
-        <nav className={styles.navbar}>
-          <Link
-            href={!pathname?.startsWith("/home") ? "/home#episodes" : pathname}
-            onClick={handleClick("episodes")}
-            className={styles.navLink}
-          >
-            Podcast
-          </Link>
-          <Link
-            href={!pathname?.startsWith("/home") ? "/home#blog" : pathname}
-            onClick={handleClick("blog")}
-           className={styles.navLink}>
-            Blog
-          </Link>
-          <Link 
-            href={!pathname?.startsWith("/home") ? "/home#about" : pathname}
-            onClick={handleClick("about")}
-           className={styles.navLink}>
-            Nosotros
-          </Link>
-        </nav>
-        <button type="button" className={styles.hamburger}>
-          <input
-            type="checkbox"
-            className={styles.hamburgerInput}
-            ref={hamburgerInputRef}
-          />
-        </button>
+      {
+        pathname?.startsWith("/home") && (
+          <>
+            <nav className={styles.navbar}>
+              <Link
+                href="/home#episodes"
+                onClick={handleClick("episodes")}
+                className={styles.navLink}
+              >
+                Podcast
+              </Link>
+              {/* <Link
+                href="/home#blog"
+                onClick={handleClick("blog")}
+                className={styles.navLink}
+              >
+                Blog
+              </Link> */}
+              <Link 
+                href="/home#about"
+                onClick={handleClick("about")}
+                className={styles.navLink}
+              >
+                Nosotros
+              </Link>
+            </nav>
+            <button type="button" className={styles.hamburger}>
+              <input
+                type="checkbox"
+                className={styles.hamburgerInput}
+                ref={hamburgerInputRef}
+              />
+            </button>
+          </>
+        )
+      }
     </header>
   );
 };

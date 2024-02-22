@@ -12,7 +12,7 @@ interface Props {
 };
 
 export const HostCard: React.FC<Props> = ({host}) => {
-  const {ref, isVisible} = useAnimateOnScroll({});
+  const {ref, isVisible} = useAnimateOnScroll({portionOfVisibility: 0.5});
   return (
     <div className={`expand-reveal ${isVisible ? "expand-active" : ""}`}>
       <div ref={ref} className={`${styles.host} expand-reveal-content`}>

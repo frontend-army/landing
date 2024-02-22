@@ -2,7 +2,6 @@ import { Montserrat, Anton } from 'next/font/google'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import '@/css/globals.scss';
 import { config } from "@fortawesome/fontawesome-svg-core";
-import { Navbar } from './home/components/Navbar';
 import { Footer } from './home/components/Footer';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from '@vercel/analytics/react';
@@ -21,7 +20,6 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <SpeedInsights />
         <Analytics />
-        <Navbar />
         {children}
         <Footer />
       </body>

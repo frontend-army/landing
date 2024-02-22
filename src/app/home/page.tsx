@@ -1,8 +1,9 @@
+import { DotBackground } from '@/components/DotBackground';
+import { Navbar } from '@/app/home/components/Navbar';
+import { HeroSection } from '@/app/home/components/HeroSection';
 import { AboutSection } from './components/AboutSection';
-import { HeroSection } from './components/HeroSection';
 import { EpisodesSection } from './components/EpisodesSection';
 import { BlogSection } from './components/BlogSection';
-import { DotBackground } from './components/DotBackground';
 
 export const metadata = {
   title: 'Frontend Army',
@@ -32,12 +33,15 @@ export const metadata = {
 
 export default async function Home() {
   return (
-    <main>
-      <DotBackground/>
-      <HeroSection />
-      <EpisodesSection />
-      <BlogSection />
-      <AboutSection />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <DotBackground/>
+        <HeroSection />
+        <EpisodesSection />
+        {/* <BlogSection /> */}
+        <AboutSection />
+      </main>
+    </>
   );
 }

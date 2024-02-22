@@ -3,16 +3,18 @@ import { useIntersectionObserver } from "./useIntersectionObserver";
 
 interface Params {
   distance?: string;
+  portionOfVisibility?: number;
   freezeOnceVisible?: boolean;
 }
 
 export const useAnimateOnScroll = ({
   distance = "50px",
+  portionOfVisibility = 1,
   freezeOnceVisible = true,
 }: Params) => {
   const elementRef = useRef(null);
   const elementObserver = useIntersectionObserver(elementRef, {
-    threshold: 1,
+    threshold: portionOfVisibility,
     freezeOnceVisible,
     rootMargin: `0px 0px -${distance} 0px`,
   });

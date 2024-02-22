@@ -5,24 +5,20 @@
   place-items: center;
   background: var(--black);
   padding-inline: max(calc((100% - 1200px) / 2), 2rem);
-  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
 .navbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   font-family: var(--font-montserrat), system-ui, sans-serif;
   justify-items: center;
 }
 
-.home-link:hover {
-  opacity: 0.8;
-}
-
-.nav-link {
+.nav-link, .nav-link:active {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;

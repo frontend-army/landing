@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const EpisodeCard: React.FC<Props> = ({ episode }) => {
-  const {ref, isVisible} = useAnimateOnScroll({});
+  const {ref, isVisible} = useAnimateOnScroll({portionOfVisibility: 0.5});
   const youtubeRef = useRef<HTMLAnchorElement>(null);
   const spotifyRef = useRef<HTMLAnchorElement>(null);
 

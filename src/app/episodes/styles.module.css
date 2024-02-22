@@ -1,0 +1,16 @@
+.episode-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.episodes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6rem;
+  width: min(100%, calc(400px * 3 + 6rem * 2));
+  container-type: inline-size;
+}

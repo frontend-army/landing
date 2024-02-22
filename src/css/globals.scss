@@ -25,8 +25,13 @@
   --slice-1: inset(80% -6px 0 0);
   --slice-2: inset(50% -6px 30% 0);
   --slice-3: inset(10% -6px 85% 0);
+  --floating-header-size: 120px;
 }
 
 * {
   font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+.floating-header-separation {
+  margin-top: var(--floating-header-size);
 }
