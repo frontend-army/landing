@@ -1,9 +1,9 @@
 import { DotBackground } from '@/components/DotBackground';
-import { Navbar } from '@/app/home/components/Navbar';
 import { HeroSection } from '@/app/home/components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { EpisodesSection } from './components/EpisodesSection';
 import { BlogSection } from './components/BlogSection';
+import { Navbar } from './components/Navbar';
 
 export const metadata = {
   title: 'Frontend Army',
