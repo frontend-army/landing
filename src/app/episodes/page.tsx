@@ -7,6 +7,11 @@ import { EpisodesList } from "./components/EpisodesList";
 
 export const revalidate = 3600;
 
+export const metadata = {
+  title: "Episodios",
+  description: "Todos los episodios de la serie",
+};
+
 export default async function Episodes() {
   const episodes = await getEpisodes(9, 0);
   return (
