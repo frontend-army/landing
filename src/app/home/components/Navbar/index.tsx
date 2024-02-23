@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
         hamburgerInputRef.current.checked = false;
       }
     },
-    [hamburgerInputRef]
+    []
   );
   return (
     <header className={styles.header}>

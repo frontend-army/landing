@@ -1,11 +1,34 @@
+"use server";
+import { Episode } from "@/types/episode";
 import supabase from "@/utils/supabase";
 
-export async function getEpisodes(limit?: number) {
-  const { data: episodes } = await supabase.from("episodes").select("*").order("id", { ascending: false }).limit(limit as number);
-  return episodes;
+export async function getEpisodes(size?: number, pageNumber?: number) {
+  let episodes;
+
+  if (size && pageNumber !== undefined) {
+    episodes = await supabase
+      .from("episodes")
+      .select("*")
+      .order("id", { ascending: false })
+      .range(pageNumber * size, pageNumber * size + size - 1)
+      .returns<Array<Episode>>();
+  } else {
+    episodes = await supabase
+      .from("episodes")
+      .select("*")
+      .order("id", { ascending: false })
+      .returns<Array<Episode>>();
+  }
+
+  return episodes.data;
 }
 
 export async function getEpisode(id: number) {
-  const { data: episodes } = await supabase.from("episodes").select("*").order("id", { ascending: false }).eq("id", id);
-  return episodes ? episodes[0]: null;
+  const { data: episodes } = await supabase
+    .from("episodes")
+    .select("*")
+    .order("id", { ascending: false })
+    .eq("id", id)
+    .returns<Array<Episode>>();
+  return episodes ? episodes[0] : null;
 }

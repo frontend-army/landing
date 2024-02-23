@@ -1,25 +1,23 @@
 import { DotBackground } from "@/components/DotBackground";
-import { EpisodeCard } from "@/components/EpisodeCard";
 import { FloatingHeader } from "@/components/FloatingHeader";
 import { SectionTitle } from "@/components/SectionTitle";
 import { getEpisodes } from "@/services/episodes";
 import styles from "./styles.module.css";
+import { EpisodesList } from "./components/EpisodesList";
 
 export const revalidate = 3600;
 
 export default async function Episodes() {
-  const episodes = await getEpisodes();
+  const episodes = await getEpisodes(9, 0);
   return (
     <>
     <FloatingHeader />
     <DotBackground />
-    <main className={`floating-header-separation ${styles.episodeContainer}`}>
+    <main className={`floating-header-separation ${styles.episodesContainer}`}>
       <SectionTitle>Todos los capitulos</SectionTitle>
-      <div className={styles.episodesContainer}>
-        {episodes?.map((episode) => (
-          <EpisodeCard key={episode.id} episode={episode} />
-        ))}
-      </div>
+      {episodes && (
+        <EpisodesList initialEpisodes={episodes} />
+      )}
     </main>
     </>
   );

@@ -52,6 +52,11 @@ export async function generateMetadata({
 
 export default async function Episode({ params }: { params: { slug: string; id: number } }) {
   const episode = await getEpisode(params.id);
+
+  if (!episode) {
+    return null;
+  }
+
   return (
     <div className={styles.episode}>
       <Image src="/fea_logo.png" alt="Frontend Army Logo" width={200} height={200} />
