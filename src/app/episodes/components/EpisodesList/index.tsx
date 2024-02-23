@@ -36,7 +36,7 @@ export const EpisodesList: React.FC<Props> = ({initialEpisodes}) => {
       console.log("triggered");
       loadMoreEpisodes();
     }
-  }, [loadingTriggerObserver?.isIntersecting, page])
+  }, [loadingTriggerObserver?.isIntersecting])
 
   return (
     <div className={styles.episodesContainer}>
@@ -44,7 +44,7 @@ export const EpisodesList: React.FC<Props> = ({initialEpisodes}) => {
         <EpisodeCard key={episode.id} episode={episode} />
       ))}
       {
-        !reachedEnd && new Array(6).fill('').map((_, index) => (
+        !reachedEnd && new Array(3).fill('').map((_, index) => (
           <div key={index + 100} className="episode-skeleton" ref={index === 1 ? loadingTriggerRef : undefined} />
         ))
       }
