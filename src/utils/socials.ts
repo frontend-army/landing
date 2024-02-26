@@ -5,7 +5,7 @@ import {
   faSpotify,
   faTiktok,
   faTwitch,
-  faTwitter,
+  faXTwitter,
   faYoutube,
   faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
@@ -38,7 +38,7 @@ export const socials = [
   },
   {
     url: "https://twitter.com/frontend_army",
-    icon: faTwitter,
+    icon: faXTwitter,
     name: "Twitter",
   },
   {
