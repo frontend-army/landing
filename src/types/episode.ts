@@ -4,6 +4,7 @@ interface EpisodeSource {
 }
 
 export interface Episode {
+  created_at: string;
   id: string;
   title: string;
   description: string;
