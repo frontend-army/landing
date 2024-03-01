@@ -28,7 +28,7 @@ export const metadata = {
   }
 };
 
-export default async function Links() {
+export default function Links() {
   return (
     <main className={styles.socialsContainer}>
       {socials.map((social) => (
