@@ -1,7 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { fetchPost, fetchPosts } from "@/app/api/blogpost";
 import styles from "./styles.module.css";
-import Image from "next/image";
+import { Code } from "bright"
 
 export const dynamicParams = false;
 
@@ -51,8 +51,8 @@ export async function generateMetadata({
 
 const components = {
   p: (props: any) => <p className={styles.articleText} {...props} />,
-  blockquote: (props: any) => (
-    <code className="border-l-4 border-gray-300 pl-2" {...props} />
+  pre: (props: any) => (
+    <Code lang="bash" {...props} />
   ),
   h1: (props: any) => (
     <h2 className={styles.articleSubtitle} {...props} />
@@ -65,6 +65,7 @@ const components = {
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { source, metadata } = await fetchPost(params.slug);
+  console.log({source});
   return (
     <div className="relative">
       <div className={styles.hero} style={{backgroundImage: `url(${metadata.cover})`}}>

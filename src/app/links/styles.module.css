@@ -8,11 +8,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 150px);
   gap: 5rem;
-  padding-block: 5rem;
+  padding-top: calc(var(--floating-header-size) + 2rem);
+  padding-bottom: 5rem;
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding-inline: max(2rem, calc((100% - (150px * 3 + 5rem * 2)) / 2));
+  padding-inline: max(1rem, calc((100% - (150px * 3 + 5rem * 2)) / 2));
   background: var(--black);
   color: var(--white);
 }
@@ -81,5 +82,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (width <= 900px) {
+  .socials-container {
+    gap: 3rem;
   }
 }

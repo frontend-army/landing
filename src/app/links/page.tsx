@@ -1,6 +1,7 @@
 import { socials } from '@/utils/socials';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from './styles.module.css';
+import { FloatingHeader } from '@/components/FloatingHeader';
 
 export const metadata = {
   title: "Links",
@@ -30,21 +31,24 @@ export const metadata = {
 
 export default function Links() {
   return (
-    <main className={styles.socialsContainer}>
-      {socials.map((social) => (
-        <a
-          key={social.url}
-          href={social.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.socialBox}
-        >
-          <FontAwesomeIcon icon={social.icon} className={styles.socialIcon} />
-          <p className={styles.socialLabel}>
-            {social.name}
-          </p>
-        </a>
-      ))}
-    </main>
+    <>
+      <FloatingHeader logoPosition="center" />
+      <main className={styles.socialsContainer}>
+        {socials.map((social) => (
+          <a
+            key={social.url}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialBox}
+          >
+            <FontAwesomeIcon icon={social.icon} className={styles.socialIcon} />
+            <p className={styles.socialLabel}>
+              {social.name}
+            </p>
+          </a>
+        ))}
+      </main>
+    </>
   );
 }
