@@ -45,14 +45,14 @@
       linear-gradient(to top right, var(--black) 50%, transparent 0)0 calc(68% - 1px)/ 4px 4px no-repeat,
       linear-gradient(to top, var(--black), var(--black))100% 0/ 4px 32% no-repeat,
       linear-gradient(to bottom left, var(--black) 50%, transparent 0)100% calc(32% + 1px)/ 4px 4px no-repeat;
-      animation: socials-fill 1s forwards 2s;
+      animation: socials-fill 1s forwards 1s;
   }
 }
 
 .social-icon,
 .social-label {
   opacity: 0;
-  animation: flicker 0.3s steps(4, start) 3s forwards;
+  animation: flicker 0.3s steps(4, start) 2s forwards;
 }
 
 .social-icon {
