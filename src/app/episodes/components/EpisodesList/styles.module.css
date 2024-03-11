@@ -1,7 +1,7 @@
 .episodes-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  justify-items: center;
   gap: 6rem;
-  width: min(100%, calc(350px * 3 + 6rem * 2));
-  container-type: inline-size;
+  grid-template-columns: repeat(auto-fit, minmax(var(--episode-card-width), 1fr));
+  width: min(100%, calc(var(--episode-card-width) * 3 + 6rem* 2));
 }

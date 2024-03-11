@@ -12,7 +12,7 @@
 
 .episode-skeleton {
   height: 165px;
-  width: 350px;
+  width: 100%;
   background:
     linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 0/50% 20px border-box no-repeat,
     linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 25px/100% 40px border-box no-repeat,

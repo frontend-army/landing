@@ -12,7 +12,6 @@
   flex-direction: column;
   gap: 8px;
   min-height: 165px;
-  max-width: 350px;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -191,12 +190,5 @@
   100% {
     clip-path: var(--slice-0);
     transform: translate(0);
-  }
-}
-
-
-@container (width < 1200px) {
-  .episode:nth-child(n+5) {
-    display: none;
   }
 }
