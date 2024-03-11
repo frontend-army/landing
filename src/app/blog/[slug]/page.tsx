@@ -65,7 +65,6 @@ const components = {
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { source, metadata } = await fetchPost(params.slug);
-  console.log({source});
   return (
     <div className="relative">
       <div className={styles.hero} style={{backgroundImage: `url(${metadata.cover})`}}>

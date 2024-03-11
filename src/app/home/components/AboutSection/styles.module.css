@@ -2,7 +2,7 @@
   position: relative;
   z-index: 1;
   background: var(--black);
-  margin-top: 220px;
+  margin-top: 13.5vw;
   padding: 8rem 2rem;
 
   &::before {

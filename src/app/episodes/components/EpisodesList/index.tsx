@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { getEpisodes } from "@/services/episodes";
+import { TypewriterParagraph } from '@/components/TypewriterParagraph';
 
 interface Props {
   initialEpisodes: Array<Episode>
@@ -33,7 +34,6 @@ export const EpisodesList: React.FC<Props> = ({initialEpisodes}) => {
     }
 
     if (loadingTriggerObserver?.isIntersecting) {
-      console.log("triggered");
       loadMoreEpisodes();
     }
   }, [loadingTriggerObserver?.isIntersecting])

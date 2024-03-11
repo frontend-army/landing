@@ -12,13 +12,7 @@ interface Props {
   variant?: SectionTitleVariants;
 }
 
-declare module "react" {
-  interface CSSProperties {
-    [key: `--${string}`]: string | number;
-  }
-}
-
-export const SectionTitle: React.FC<Props> = ({children, className, variant}) => {
+export const SectionTitle: React.FC<Props> = ({children, className = '', variant}) => {
   const {ref, isVisible} = useAnimateOnScroll({});
 
   const formattedChildren = useMemo(() => {

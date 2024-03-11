@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { getEpisodes } from "@/services/episodes";
 import styles from "./styles.module.css";
 import { EpisodesList } from "./components/EpisodesList";
+import { TypewriterParagraph } from '@/components/TypewriterParagraph';
 
 export const revalidate = 3600;
 
