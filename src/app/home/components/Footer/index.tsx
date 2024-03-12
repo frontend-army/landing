@@ -39,9 +39,9 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
         <div className={`${styles.footerInfoColumn} ${styles.footerScheduleSection}`}>
-          <h4 className={styles.footerTitle}>
+          <h5 className={styles.footerTitle}>
             Horarios de streaming:
-          </h4>
+          </h5>
           <div className={styles.footerStreamingSession}>
             <h5 className={styles.footerScheduleTitle}>
               Lunes: Coding Sessions
