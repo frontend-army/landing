@@ -1,0 +1,136 @@
+.upcoming-episode-container {
+  display: grid;
+  grid-template-areas:
+    "title    countdown"
+    "schedule countdown";
+  gap: 9px 1.5rem;
+  position: relative;
+  padding-left: 3rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--red);
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    left: 0;
+    opacity: 0;
+    top: 0.25rem;
+    --falling-height: -2;
+    animation:
+      fall-appear 0.5s ease-out 3s forwards,
+      flicker 0.3s steps(6, start) 3.5s forwards;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2.5rem;
+    background: var(--red);
+    clip-path: polygon(0 0.5px, 2.5rem 100%, 100% 100%, 100% calc(100% - 1px), calc(2.5rem + 0.5px) calc(100% - 1px), 1px 0);
+    transform: translateY(-100%);
+    will-change: width;
+    animation: fill-line 1s ease-in-out 3.8s forwards;
+  }
+}
+
+.upcoming-episode-title {
+  grid-area: title;
+  font-family: var(--font-anton), system-ui, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: var(--black);
+  text-transform: uppercase;
+  height: 2.5rem;
+  display: flex;
+  align-items: end;
+}
+
+.upcoming-episode-schedule {
+  grid-area: schedule;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.upcoming-episode-coundown {
+  grid-area: countdown;
+  font-size: 4rem;
+  color: var(--black);
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    left: -0.75rem;
+    background: var(--red);
+    will-change: height;
+    animation: fill-v-line 0.3s ease-in-out 4.8s forwards;
+  }
+}
+
+@keyframes fall-appear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-1rem * var(--falling-height)));
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fill-line {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: calc(50% + 3rem + 2px);
+  }
+}
+
+@keyframes fill-v-line {
+  from {
+    height: 0;
+    top: 50%;
+  }
+
+  to {
+    height: 100%;
+    top: 0;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    background: transparent;
+  }
+
+  20% {
+    background: radial-gradient(rgb(from var(--red) r g b / 50%) 0.25rem, transparent 0);
+  }
+
+  40% {
+    background: transparent;
+  }
+
+  60% {
+    background: radial-gradient(rgb(from var(--red) r g b / 30%) 0.25rem, transparent 0);
+  }
+
+  80% {
+    background: transparent;
+  }
+
+  100% {
+    background: radial-gradient(var(--red) 0.25rem, transparent 0);;
+  }
+}

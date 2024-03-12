@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { getEpisodes } from "@/services/episodes";
 import styles from "./styles.module.css";
 import { EpisodesList } from "./components/EpisodesList";
-import { TypewriterParagraph } from '@/components/TypewriterParagraph';
+import { UpcomingEpisodeCountdown } from "./components/UpcomingEpisodeCountdown";
 
 export const revalidate = 3600;
 
@@ -21,6 +21,7 @@ export default async function Episodes() {
     <DotBackground />
     <main className={`floating-header-separation ${styles.episodesContainer}`}>
       <SectionTitle>Todos los capitulos</SectionTitle>
+      <UpcomingEpisodeCountdown />
       {episodes && (
         <EpisodesList initialEpisodes={episodes} />
       )}

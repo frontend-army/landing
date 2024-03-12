@@ -1,0 +1,4 @@
+.countdown {
+  font-family: var(--font-anton), system-ui, sans-serif;
+  text-transform: uppercase;
+}
