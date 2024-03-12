@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const withMDX = require("@next/mdx")();
-const { withSentryConfig } = require("@sentry/nextjs");
+const { withAxiom } = require('next-axiom');
 const nextConfig = {
   webpack: (config) => {
     const rules = config.module.rules
@@ -73,7 +73,7 @@ const nextConfig = {
 };
 
 
-module.exports = withMDX(nextConfig);
+module.exports = withAxiom(withMDX(nextConfig));
 // module.exports = withSentryConfig(
 //   withMDX(nextConfig),
 //   {
