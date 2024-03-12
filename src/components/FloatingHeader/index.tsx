@@ -13,7 +13,7 @@ interface Props {
 export const FloatingHeader: React.FC<Props> = ({ logoPosition = POSITIONS.start, priority = false, prefetch = true }) => {
   return (
     <header className={`${styles.floatingHeader} ${classNameForPosition[logoPosition]}`}>
-      <Link className={styles.homeLink} href="/" prefetch={prefetch}>
+      <Link className={styles.homeLink} href="/" prefetch={prefetch} aria-label="Link to Frontend Army's home page">
         <Image src={FeaLogo} alt="" width={60} height={60} priority={priority} />
       </Link>
     </header>

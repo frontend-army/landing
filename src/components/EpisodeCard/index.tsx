@@ -41,6 +41,7 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
           onMouseEnter={handleMouseEnter}
           href={episode.youtube_url}
           target="_blank"
+          aria-label={`Link to episode ${episode.id} on Youtube`}
           rel="noreferrer"
         >
           <FontAwesomeIcon icon={sourceIconMap.youtube} />
@@ -52,6 +53,7 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
           onMouseLeave={handleMouseLeave}
           onMouseEnter={handleMouseEnter}
           href={episode.spotify_url}
+          aria-label={`Link to episode ${episode.id} on Spotify`}
           target="_blank"
           rel="noreferrer"
         >

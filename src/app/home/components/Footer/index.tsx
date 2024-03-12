@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
           <ul className={styles.footerSocialItems}>
             {socials.map((social) => (
               <li key={social.url} className={styles.footerSocialItem}>
-                <a href={social.url}>
+                <a href={social.url} aria-label={`Link to Frontend Army's ${social.name} profile`} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={social.icon} />
                 </a>
               </li>

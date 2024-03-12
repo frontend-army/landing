@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
   );
   return (
     <header className={styles.header}>
-      <Link href="/">
+      <Link href="/" aria-label="Link to Frontend Army's home page">
         <Image src={FeaLogo} alt="" width={60} height={60} />
       </Link>
       <nav className={styles.navbar}>

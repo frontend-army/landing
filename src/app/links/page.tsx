@@ -40,6 +40,7 @@ export default function Links() {
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Link to Frontend Army's ${social.name} profile`}
             className={styles.socialBox}
           >
             <FontAwesomeIcon icon={social.icon} className={styles.socialIcon} />
