@@ -19,8 +19,8 @@
     top: 0.25rem;
     --falling-height: -2;
     animation:
-      fall-appear 0.5s ease-out 3s forwards,
-      flicker 0.3s steps(6, start) 3.5s forwards;
+      fall-appear 0.5s ease-out forwards,
+      flicker 0.3s steps(6, start) 0.5s forwards;
   }
 
   &::after {
@@ -33,7 +33,7 @@
     clip-path: polygon(0 0.5px, 2.5rem 100%, 100% 100%, 100% calc(100% - 1px), calc(2.5rem + 0.5px) calc(100% - 1px), 1px 0);
     transform: translateY(-100%);
     will-change: width;
-    animation: fill-line 1s ease-in-out 3.8s forwards;
+    animation: fill-line 1s ease-in-out 0.8s forwards;
   }
 }
 
@@ -71,7 +71,7 @@
     left: -0.75rem;
     background: var(--red);
     will-change: height;
-    animation: fill-v-line 0.3s ease-in-out 4.8s forwards;
+    animation: fill-v-line 0.3s ease-in-out 1.8s forwards;
   }
 }
 
