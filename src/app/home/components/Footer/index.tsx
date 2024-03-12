@@ -47,19 +47,19 @@ export const Footer: React.FC = () => {
               Lunes: Coding Sessions
             </h5>
             <p className={styles.footerSchedule}>
-              <span className="flex gap-2 items-center">18:30hs <Image width={20} height={16} src={argentinaFlag} alt="Argentina's Flag" /></span> -{' '}
-              <span className="flex gap-2 items-center">16:30hs <Image width={20} height={16} src={colombiaFlag} alt="Colombia's Flag" /></span> -{' '}
-              <span className="flex gap-2 items-center">22:30hs <Image width={20} height={16} src={spainFlag} alt="Spain's Flag" /></span>
+              <span className="flex gap-2 items-center">18:30hs <Image width={20} height="auto" src={argentinaFlag} alt="Argentina's Flag" /></span> -{' '}
+              <span className="flex gap-2 items-center">16:30hs <Image width={20} height="auto" src={colombiaFlag} alt="Colombia's Flag" /></span> -{' '}
+              <span className="flex gap-2 items-center">22:30hs <Image width={20} height="auto" src={spainFlag} alt="Spain's Flag" /></span>
             </p>
           </div>
           <div className={styles.footerStreamingSession}>
             <h5 className={styles.footerScheduleTitle}>
-              Miercoles: Charlas & Podcast
+              Miércoles: Charlas & Podcast
             </h5>
             <p className={styles.footerSchedule}>
-              <span className="flex gap-2 items-center">18:30hs <Image width={20} height={16} src={argentinaFlag} alt="Argentina's Flag" /></span> -{' '}
-              <span className="flex gap-2 items-center">16:30hs <Image width={20} height={16} src={colombiaFlag} alt="Colombia's Flag" /></span> -{' '}
-              <span className="flex gap-2 items-center">22:30hs <Image width={20} height={16} src={spainFlag} alt="Spain's Flag" /></span>
+              <span className="flex gap-2 items-center">18:30hs <Image width={20} height="auto" src={argentinaFlag} alt="Argentina's Flag" /></span> -{' '}
+              <span className="flex gap-2 items-center">16:30hs <Image width={20} height="auto" src={colombiaFlag} alt="Colombia's Flag" /></span> -{' '}
+              <span className="flex gap-2 items-center">22:30hs <Image width={20} height="auto" src={spainFlag} alt="Spain's Flag" /></span>
             </p>
           </div>
         </div>

@@ -32,7 +32,7 @@ export const metadata = {
 export default function Links() {
   return (
     <>
-      <FloatingHeader logoPosition="center" />
+      <FloatingHeader logoPosition="center" priority />
       <main className={styles.socialsContainer}>
         {socials.map((social) => (
           <a

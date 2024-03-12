@@ -6,7 +6,7 @@
   background-attachment: fixed;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   padding: 2rem calc((100% - 80ch) / 2);
 
   &::before {
