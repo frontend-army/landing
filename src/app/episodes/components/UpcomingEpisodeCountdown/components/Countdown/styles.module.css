@@ -2,3 +2,12 @@
   font-family: var(--font-anton), system-ui, sans-serif;
   text-transform: uppercase;
 }
+
+.countdown-days {
+  letter-spacing: 2px;
+}
+
+.countdown-days-label {
+  font-size: 3.5rem;
+  margin-left: 0.75rem;
+}

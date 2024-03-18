@@ -23,7 +23,9 @@ export const UpcomingEpisodeCountdown: React.FC = () => {
           <span className="flex gap-1 items-center">22:30hs <Image width={20} src={spainFlag} alt="Spain's Flag" /></span>
         </div>
       </div>
-      <div className={styles.upcomingEpisodeCountdown}><Countdown ms={nextPodcastDate.getTime()} /></div>
+      <div className={styles.upcomingEpisodeCountdown}>
+        <Countdown ms={nextPodcastDate.getTime()} />
+      </div>
     </div>
   );
 } 

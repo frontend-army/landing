@@ -39,7 +39,12 @@ export const Countdown: React.FC<Props> = ({ms}) => {
   const secsToNextEpisode = Math.floor((msToNextEpisode % (1000 * 60)) / 1000);
 
   if (daysToNextEpisode) {
-    return <div className={styles.countdown}>{daysToNextEpisode} día{daysToNextEpisode > 1 ? "s" : ""}</div>
+    return (
+      <div className={`${styles.countdown} ${styles.countdownDays}`}>
+        {daysToNextEpisode.toString().padStart(2, '0')}
+        <span className={styles.countdownDaysLabel}>día{daysToNextEpisode > 1 ? "s" : ""}</span>
+      </div>
+    );
   }
 
   return (
