@@ -48,6 +48,12 @@ export const Countdown: React.FC<Props> = ({ms}) => {
   }
 
   return (
-    <div className={styles.countdown}>{hsToNextEpisode}:{minsToNextEpisode}:{secsToNextEpisode}</div>
+    <p className={styles.countdown}>
+      <span className={styles.countdownNumber} style={{'--value': hsToNextEpisode}} />
+      :
+      <span className={styles.countdownNumber} style={{'--value': minsToNextEpisode}} />
+      :
+      <span className={styles.countdownNumber} style={{'--value': secsToNextEpisode}} />
+    </p>
   );
 } 
