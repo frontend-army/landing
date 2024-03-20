@@ -90,6 +90,32 @@
   }
 }
 
+@media screen and (width < 675px) {
+  .upcoming-episode-container {
+    grid-template-areas:
+        "title"
+        "schedule"
+        "countdown";
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    padding-left: 0;
+    justify-items: center;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  .upcoming-episode-schedule {
+    text-align: center;
+  }
+
+  .upcoming-episode-countdown::before {
+    content: none;
+  }
+}
+
 @keyframes fall-appear {
   from {
     opacity: 0;

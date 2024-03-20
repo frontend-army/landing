@@ -20,7 +20,7 @@ export default async function Episodes() {
     <FloatingHeader />
     <DotBackground />
     <main className={`floating-header-separation ${styles.episodesContainer}`}>
-      <SectionTitle>Todos los capitulos</SectionTitle>
+      <SectionTitle className="text-center">Todos los capitulos</SectionTitle>
       <UpcomingEpisodeCountdown />
       {episodes && (
         <EpisodesList initialEpisodes={episodes} />

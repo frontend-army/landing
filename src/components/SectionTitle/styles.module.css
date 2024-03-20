@@ -18,7 +18,7 @@
   font-size: clamp(3.5rem, 10vw, 4rem);
   letter-spacing: 2px;
   color: var(--black);
-  ext-wrap: balance;
+  text-wrap: balance;
   text-transform: uppercase;
   transition: opacity 0.5s ease;
 

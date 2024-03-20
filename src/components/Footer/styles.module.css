@@ -36,6 +36,7 @@
 
 .footer-text {
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .footer-title {
@@ -59,6 +60,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-left: calc(2px + 0.5rem);
 }
 
 .footer-social-item {
@@ -89,6 +91,16 @@
   display: flex;
   gap: 0.5rem;
   line-height: 1.5;
+
+  .footer-schedule-entry {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:not(:last-child)::after {
+      content: ' - ';
+    }
+  }
 }
 
 .footer-general-info-section {
@@ -111,6 +123,6 @@
       "schedule"
       "socials"
     ;
-    gap: 3rem;
+    gap: 3rem 0;
   }
 }

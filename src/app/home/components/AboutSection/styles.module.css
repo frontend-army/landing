@@ -13,6 +13,7 @@
     background: var(--red);
     bottom: 100%;
     left: 0;
+    pointer-events: none;
     mask: linear-gradient(var(--black) 0%, var(--black) 100%) 0 100%/100% 2.5rem no-repeat, url(../../../../assets/angle_mask.svg) 50% calc(100% - 2.5rem)/auto no-repeat;
   }
 }
@@ -24,6 +25,7 @@
   left: 0;
   position: absolute;
   filter: drop-shadow(0px -2px 5px var(--70-translucent-black));
+  pointer-events: none;
   
   &::before {
     content: '';
