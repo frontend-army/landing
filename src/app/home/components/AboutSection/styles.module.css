@@ -14,14 +14,14 @@
     bottom: 100%;
     left: 0;
     pointer-events: none;
-    mask: linear-gradient(var(--black) 0%, var(--black) 100%) 0 100%/100% 2.5rem no-repeat, url(../../../../assets/angle_mask.svg) 50% calc(100% - 2.5rem)/auto no-repeat;
+    mask: linear-gradient(var(--black) 0%, var(--black) 100%) 0 100%/100% 2.5rem no-repeat, url(../../../../assets/angle_mask.svg) 50% calc(100% - 2.5rem + 0.5px)/auto no-repeat;
   }
 }
 
 .about-bg {
   width: 100%;
   height: calc(250px + 1.25rem);
-  bottom: 100%;
+  bottom: calc(100% - 1px);
   left: 0;
   position: absolute;
   filter: drop-shadow(0px -2px 5px var(--70-translucent-black));
@@ -32,7 +32,7 @@
     position: absolute;
     inset: 0;
     background: var(--black);
-    mask: url(../../../../assets/angle_mask.svg) 50% calc(100% - 1.25rem)/auto no-repeat, linear-gradient(var(--black) 0%, var(--black) 100%) 0 100%/100% 1.25rem no-repeat;
+    mask: url(../../../../assets/angle_mask.svg) 50% calc(100% - 1.25rem + 1px)/auto no-repeat, linear-gradient(var(--black) 0%, var(--black) 100%) 0 100%/100% 1.25rem no-repeat;
   }
 }
 
