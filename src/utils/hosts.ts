@@ -59,7 +59,7 @@ export const hosts: Array<Host> = [
     avatar: frankProfile,
     socials: [
       { name: "Github", url: "https://github.com/FrankIglesias" },
-      { name: "Twitter", url: "https://twitter.com/FrankIglesias" },
+      { name: "Twitter", url: "https://twitter.com/Frankjiglesias" },
       {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/francisco-janin-iglesias/",
