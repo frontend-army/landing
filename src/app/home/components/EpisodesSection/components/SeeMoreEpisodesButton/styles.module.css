@@ -1,4 +1,4 @@
-.posts-see-more {
+.episodes-see-more {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 0  0.6875rem 1.875rem 2.1875rem;
@@ -14,7 +14,7 @@
       width: calc(100% - 0.5rem);
     }
 
-    .posts-see-more-content {
+    .episodes-see-more-content {
       opacity: 1;
     }
   }
@@ -39,7 +39,7 @@
     clip-path: polygon(0 calc(100% - 0.5px), 1rem 0, 100% 0, 100% 1px, calc(1rem + 0.5px) 1px, 1px 100%);
   }
 
-  .posts-see-more-content {
+  .episodes-see-more-content {
     display: flex;
     align-items: center;
     position: relative;
@@ -57,13 +57,18 @@
     }
   
     &:hover {
-      .posts-see-more-arrow {
+      .episodes-see-more-content {
+        text-shadow: 0px 0px 1px black;
+      }
+
+      .episodes-see-more-arrow {
         animation: arrow-swing 3s linear infinite forwards;
       }
     }
   
-    .posts-see-more-content {
+    .episodes-see-more-content {
       animation: var(--flicker-animation) 0.3s step-end 1s forwards;
+      transition: text-shadow 0.5s ease;
     }
   }
 }

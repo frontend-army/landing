@@ -11,10 +11,10 @@ export const SeeMoreEpisodesButton: React.FC = () => {
   const {ref: buttonRef, isVisible: isButtonVisible} = useAnimateOnScroll({});
 
   return (
-    <Link ref={buttonRef} className={`${styles.postsSeeMore} ${isButtonVisible ? styles.isActive : 'opacity-0'} self-end`} href="/episodes">
-      <span className={styles.postsSeeMoreContent}>
+    <Link ref={buttonRef} className={`${styles.episodesSeeMore} ${isButtonVisible ? styles.isActive : 'opacity-0'} self-end`} href="/episodes">
+      <span className={styles.episodesSeeMoreContent}>
           Ver mas capítulos
-          <ChevronRight className={styles.postsSeeMoreArrow} width={24} height={24} alt="" />
+          <ChevronRight className={styles.episodesSeeMoreArrow} width={24} height={24} alt="" />
       </span>
     </Link>
   );
