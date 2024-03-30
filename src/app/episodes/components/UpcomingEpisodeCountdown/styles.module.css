@@ -6,7 +6,7 @@
 
 .upcoming-episode-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 260px 1fr;
   grid-template-areas:
     "title    countdown"
     "schedule countdown";
@@ -75,7 +75,7 @@
   align-items: center;
 
   & > * {
-    mask-image: linear-gradient(to right, var(--black) calc(var(--countdown-reveal-progress) * 1% + 1px), transparent calc(var(--countdown-reveal-progress) * 1% + 1px));
+    mask-image: linear-gradient(to right, var(--black) calc(var(--countdown-reveal-progress) * 1%), transparent calc(var(--countdown-reveal-progress) * 1%));
     animation: reveal-countdown 0.6s ease-in-out 2s forwards;
   }
 
@@ -134,7 +134,7 @@
   }
 
   to {
-    width: calc(50% + 1.5rem);
+    width: calc(301px + 1.5rem);
   }
 }
 
