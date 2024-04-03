@@ -1,5 +1,14 @@
 .episodes-section {
+  position: relative;
   padding: 8rem 2rem 4rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: var(--white);
+    inset: calc(((100vw * 250) / -1920) - 2px) 0;
+    z-index: -2;
+  }
 }
 
 .episodes-wrapper {
@@ -26,8 +35,9 @@
   }
 }
 
-/* @media screen and (width >= 900px) {
-  .episodes-section {
-    padding: 8rem 4rem 4rem;
+@media (any-pointer: coarse) {
+  .episodes-section::before {
+    background-image: radial-gradient(var(--bg-dots-color) 2px, var(--white) 2px);
+    background-size: 30px 30px;
   }
-} */
+}

@@ -9,6 +9,7 @@ export class DotGrid {
   mouseY: number;
   size = 1.5;
   gridSize = 30;
+  bgColor = "#FBFFFE";
   fillColor = "#E1E1E1";
   distArea = 200;
 
@@ -63,6 +64,8 @@ export class DotGrid {
 
   draw() {
     this.canvas.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+    this.canvas.fillStyle = this.bgColor;
+    this.canvas.fillRect(0, 0, this.canvasWidth, this.canvasHeight);
     this.drawDots();
   }
 
@@ -81,13 +84,7 @@ export class DotGrid {
             ((y - this.mouseY) / dist) *
             this.gridSize *
             Math.max(1 - dist / this.distArea, 0);
-        this.canvas.arc(
-          x + noiseX,
-          y + noiseY,
-          this.size,
-          0,
-          2 * Math.PI
-        );
+        this.canvas.arc(x + noiseX, y + noiseY, this.size, 0, 2 * Math.PI);
         this.canvas.fillStyle = this.fillColor;
         this.canvas.fill();
       }

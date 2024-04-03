@@ -5,3 +5,9 @@
   width: 100dvw;
   height: 100dvh;
 }
+
+@media (any-pointer: coarse) {
+  .dot-background {
+    display: none;
+  }
+}

@@ -16,6 +16,7 @@
   --20-translucent-black: rgba(0, 0, 0, 0.2);
   --dark-gray: #1B1B1E;
   --light-gray: #EBEBEB;
+  --bg-dots-color: #E1E1E1;
   --white: #FBFFFE;
   --50-translucent-white: rgba(251, 255, 254, 0.5);
   --red: #D81F26;
@@ -41,6 +42,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
+  background-color: var(--black);
 }
 
 .floating-header-separation {
