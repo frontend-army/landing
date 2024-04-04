@@ -18,6 +18,29 @@
   --reveal-progress: 100;
   mask-image: linear-gradient(to right, var(--black) calc(var(--reveal-progress) * 1% + 1px), transparent calc(var(--reveal-progress) * 1% + 1px));
   transition: --reveal-progress 0.5s ease-in-out 0.5s;
+  
+  @supports(-moz-appearance: none) {
+    &.is-active > * {
+      opacity: 0;
+      animation: flicker 0.3s steps(4, start) 0.5s forwards;
+    }
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 0;
+    }
+    33% {
+      opacity: 0.7;
+    }
+    66% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 
   &::before {
     content: '';
@@ -86,7 +109,6 @@
   gap: 4px;
   align-items: center;
   justify-content: center;
-  background: var(--black);
   color: var(--white);
   flex: 1;
   background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));

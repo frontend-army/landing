@@ -53,6 +53,9 @@
 .social-label {
   opacity: 0;
   animation: flicker 0.3s steps(4, start) 1s forwards;
+  @supports(-moz-appearance: none) {
+    animation-delay: 0;
+  }
 }
 
 .social-icon {

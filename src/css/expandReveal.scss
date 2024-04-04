@@ -13,6 +13,12 @@
 :root {
   --h-expand-progress: 0;
   --v-expand-progress: 0;
+
+
+  @supports(-moz-appearance: none) {
+    --h-expand-progress: 100;
+    --v-expand-progress: 100;
+  }
 }
 
 .expand-reveal {
@@ -22,13 +28,25 @@
   &.expand-active {
     animation: expand-h 0.5s ease forwards, expand-v 0.4s ease 0.5s forwards;
 
+    @supports(-moz-appearance: none) {
+      animation: none;
+    }
+
     &::before {
       opacity: 0;
       transition: opacity 0.3s ease 0.9s;
+
+      @supports(-moz-appearance: none) {
+        transition: opacity 0.3s ease 0s;
+      }
     }
 
     .expand-reveal-content {
       animation: flicker 0.3s steps(4, start) 1s forwards;
+
+      @supports(-moz-appearance: none) {
+        animation: flicker 0.3s steps(4, start) 0s forwards;
+      }
     }
   }
 

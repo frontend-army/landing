@@ -42,9 +42,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: var(--black);
 }
 
 .floating-header-separation {
-  margin-top: var(--floating-header-size);
+  padding-top: var(--floating-header-size);
 }

@@ -77,6 +77,17 @@
   & > * {
     mask-image: linear-gradient(to right, var(--black) calc(var(--countdown-reveal-progress) * 1%), transparent calc(var(--countdown-reveal-progress) * 1%));
     animation: reveal-countdown 0.6s ease-in-out 2s forwards;
+  
+    @supports(-moz-appearance: none) {
+      opacity: 0;
+      animation: fade-in 0.3s ease-in-out 2s forwards;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
   }
 
   &::before {
