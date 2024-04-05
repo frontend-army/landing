@@ -14,7 +14,7 @@ export const UpcomingEpisodeCountdown: React.FC = () => {
 
   return (
     <div className={styles.upcomingEpisodeContainer}>
-      <h3 className={styles.upcomingEpisodeTitle}>Proximo capitulo</h3>
+      <h3 className={styles.upcomingEpisodeTitle}>Próximo capítulo</h3>
       <div className={styles.upcomingEpisodeSchedule}>
         <p className="capitalize">{format(new Date(nextPodcastDate), "EEEE d 'de' MMMM", { locale: es })}</p>
         <div className="flex gap-2">
