@@ -33,7 +33,7 @@ export default function Links() {
   return (
     <>
       <FloatingHeader logoPosition="center" priority />
-      <main className={styles.socialsContainer}>
+      <main className={`${styles.socialsContainer} links`}>
         {socials.map((social) => (
           <a
             key={social.url}

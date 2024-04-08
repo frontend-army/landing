@@ -35,7 +35,7 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="home">
         <DotBackground/>
         <HeroSection />
         <EpisodesSection />
