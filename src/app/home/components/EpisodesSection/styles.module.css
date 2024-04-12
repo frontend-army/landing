@@ -1,0 +1,43 @@
+.episodes-section {
+  position: relative;
+  padding: 8rem 2rem 4rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: var(--white);
+    inset: calc(((100vw * 250) / -1920) - 2px) 0;
+    z-index: -2;
+  }
+}
+
+.episodes-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(var(--episode-card-width) * 3 + 6rem * 2);
+  width: 100%;
+  gap: 3rem;
+  align-items: center;
+}
+
+.episodes-container {
+  display: grid;
+  justify-items: center;
+  gap: 6rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+}
+
+
+@media screen and (width <= 900px) {
+  .episodes-container > *:nth-child(n+5) {
+    display: none;
+  }
+}
+
+@media (any-pointer: coarse) {
+  .episodes-section::before {
+    background-image: radial-gradient(var(--bg-dots-color) 2px, var(--white) 2px);
+    background-size: 30px 30px;
+  }
+}

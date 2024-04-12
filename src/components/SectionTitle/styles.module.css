@@ -1,0 +1,28 @@
+.title-visible .section-title-letter {
+  opacity: 0;
+  animation: reveal 0.2s ease var(--reveal-delay) forwards, var(--flicker-animation) var(--should-flicker, 0.5s) ease var(--reveal-delay);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.title-1 {
+  font-family: var(--font-anton), system-ui, sans-serif;
+  font-size: clamp(3.5rem, 10vw, 4rem);
+  letter-spacing: 2px;
+  color: var(--black);
+  text-wrap: balance;
+  text-transform: uppercase;
+  transition: opacity 0.5s ease;
+
+  &.white {
+    color: var(--white);
+  }
+}

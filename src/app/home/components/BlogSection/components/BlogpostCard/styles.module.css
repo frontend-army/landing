@@ -1,0 +1,198 @@
+.post {
+  transition: scale 0.3s ease, box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &:hover {
+    scale: 1.02;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 5px var(--red);
+
+    .post-read-arrow {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+  
+      &::before {
+        transition: opacity 0.2s ease 0.3s;
+      }
+  
+      &::after {
+        transition: opacity 0.2s ease 0.5s;
+      }
+  
+      .post-read-arrow-icon {
+        color: var(--red);
+        animation: slide-fade-out 0.3s ease forwards, fade-in 0.2s ease 0.7s forwards;
+        transition: color 0s 0.3s;
+      }
+    }
+  }
+}
+
+.post-cover {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  min-height: 0;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.post-info {
+  display: grid;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--black);
+  box-shadow: 0 10px 70px 80px var(--black);
+  grid-template-rows: min-content 1fr repeat(2, min-content);
+  grid-template-areas:
+    "date date"
+    "title title"
+    "body body"
+    "divider divider"
+    "author arrow";
+  gap: 1rem;
+
+  &::after {
+    content: '';
+    grid-area: divider;
+    width: 20px;
+    height: 1px;
+    background: var(--red);
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.post-date {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-size: 0.75rem;
+  grid-area: date;
+  justify-self: start;
+  align-self: center;
+  font-weight: 300;
+}
+
+.post-title {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  grid-area: title;
+  text-wrap: balance;
+  line-height: 1.2;
+}
+
+.post-body {
+  grid-area: body;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  line-height: 1.4;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-wrap: pretty;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: end;
+  align-self: start;
+}
+
+.post-author {
+  grid-area: author;
+}
+
+.post-author-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--white);
+  object-fit: cover;
+}
+
+.post-author-name {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.post-read-arrow {
+  position: relative;
+  padding-inline: 0.75rem;
+  grid-area: arrow;
+  justify-self: end;
+  align-self: center;
+
+  &::before,
+  &::after {
+    content: url('../../../../../../assets/chevron-simple-right-red.svg');
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &::after {
+    left: 0.75rem;
+    top: 0;
+    transition: opacity 0.3s ease 0.2s;
+  }
+
+  .post-read-arrow-icon {
+    position: relative;
+    left: 0.75rem;
+    color: var(--white);
+    transition: color 0.3s ease 0.5s;
+  }
+}
+
+@keyframes slide-fade-out {
+  to {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (width >= 900px) {
+  .post-horizontal {
+    flex-direction: row;
+
+    .post-info {
+      box-shadow: 10px 0 70px 80px var(--black);
+      flex: 4;
+      grid-template-rows: repeat(2, min-content) 1fr repeat(2, min-content);
+      gap: 0.5rem;
+    }
+
+    .post-cover {
+      flex: 3;
+    }
+
+    .post-author,
+    .post-read-arrow {
+      margin-top: 0.5rem;
+    }
+  }
+}

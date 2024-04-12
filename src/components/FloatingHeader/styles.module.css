@@ -1,0 +1,23 @@
+.floating-header {
+  height: var(--floating-header-size);
+  display: flex;
+  align-items: center;
+  padding-inline: max(calc((100% - 1200px) / 2), 2rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  &.start {
+    justify-content: start;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.end {
+    justify-content: end;
+  }
+}

@@ -1,0 +1,13 @@
+.episodes-container {
+  display: grid;
+  justify-items: center;
+  gap: 6rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--episode-card-width), 1fr));
+  width: min(100%, calc(var(--episode-card-width) * 3 + 6rem* 2));
+}
+
+@media screen and (width < calc(350px + 4rem)) {
+  .episodes-container {
+    --episode-card-width: 300px;
+  }
+}

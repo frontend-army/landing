@@ -1,0 +1,65 @@
+$glitch-steps: 100;
+$glitch-pink: #ff00e0;
+$glitch-cyan: #00e8ff;
+
+:root {
+  --glitch-lines: 1;
+}
+
+@keyframes glitch-left {
+  0%, 79% {
+    clip: rect(0, 1200px, 0, 0);
+    display: block;
+  }
+
+  @for $i from 80 through $glitch-steps {
+    #{percentage($i * (1 / $glitch-steps))} {
+      clip: rect(random(100) + px, 9999px, calc(#{random(100) + px} * var(--glitch-lines)), 0);
+    }
+  }
+}
+
+@keyframes glitch-right {
+  0%, 79% {
+    clip: rect(0, 1200px, 0, 0);
+  }
+
+  @for $i from 80 through $glitch-steps {
+    #{percentage($i * (1 / $glitch-steps))} {
+      clip: rect(random(100) + px, 9999px, calc(#{random(100) + px} * var(--glitch-lines)), 0);
+    }
+  }
+}
+
+.glitch {
+  position: relative;
+  
+  &::before {
+    position: absolute;
+    content: attr(data-text);
+    left: -2px;
+    top: 0;
+    width: 100%;
+    text-shadow: -1px 0 $glitch-pink;
+    background: var(--black);
+    animation: glitch-left 5s infinite linear alternate-reverse;
+  }
+  
+  &::after {
+    position: absolute;
+    content: attr(data-text);
+    left: 2px;
+    top: 0;
+    width: 100%;
+    text-shadow: 1px 0 $glitch-cyan;
+    color: var(--white);
+    background: var(--black);
+    animation: glitch-right 5s infinite linear alternate-reverse;
+  }
+}
+
+@media screen and (width <= 713px) {
+  :root {
+    --glitch-lines: 2;
+  }
+}

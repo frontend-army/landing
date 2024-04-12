@@ -1,0 +1,36 @@
+.blog-section {
+  padding: 4rem 2rem;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media screen and (width >= 900px) {
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "main-post secondary-post"
+      "main-post tertiary-post";
+    gap: 1.5rem;
+    max-width: 1200px;
+    width: 100%;
+
+    & > *:first-child {
+      grid-area: main-post;
+    }
+    
+    & > *:nth-child(2) {
+      grid-area: secondary-post;
+    }
+  
+    & > *:nth-child(3) {
+      grid-area: tertiary-post;
+    }
+  }
+}

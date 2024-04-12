@@ -1,0 +1,95 @@
+@property --socials-amplitude {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.socials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  gap: 5rem;
+  padding-top: calc(var(--floating-header-size) + 2rem);
+  padding-bottom: 5rem;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-inline: max(1rem, calc((100% - (150px * 3 + 5rem * 2)) / 2));
+  background: var(--black);
+  color: var(--white);
+}
+
+.social-box {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      conic-gradient(from -45deg at center,var(--red) var(--socials-amplitude), transparent 0),
+      conic-gradient(from 135deg at center,var(--red) var(--socials-amplitude), transparent 0);
+    mask:
+      linear-gradient(to bottom, var(--black) 1px, transparent 0)16px 0,
+      linear-gradient(to left, var(--black) 1px, transparent 0),
+      linear-gradient(to top, var(--black) 1px, transparent 0),
+      linear-gradient(to right, var(--black) 1px, transparent 0),
+      linear-gradient(to top, var(--black), var(--black))0 100%/ 4px 32% no-repeat,
+      linear-gradient(to top right, var(--black) 50%, transparent 0)0 calc(68% - 1px)/ 4px 4px no-repeat,
+      linear-gradient(to top, var(--black), var(--black))100% 0/ 4px 32% no-repeat,
+      linear-gradient(to bottom left, var(--black) 50%, transparent 0)100% calc(32% + 1px)/ 4px 4px no-repeat;
+      animation: socials-fill 1s forwards;
+  }
+}
+
+.social-icon,
+.social-label {
+  opacity: 0;
+  animation: flicker 0.3s steps(4, start) 1s forwards;
+  @supports(-moz-appearance: none) {
+    animation-delay: 0;
+  }
+}
+
+.social-icon {
+  font-size: 3.75em;
+}
+
+.social-label {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+@keyframes socials-fill {
+  to {
+    --socials-amplitude: 180deg;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0.7;
+  }
+  66% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (width <= 900px) {
+  .socials-container {
+    gap: 3rem;
+  }
+}

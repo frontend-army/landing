@@ -1,0 +1,128 @@
+.footer {
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  padding: 4rem max(calc((100vw - 1200px + 2rem) / 2), 2rem);
+  position: relative;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(1200px, calc(100% - 4rem));
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--dark-gray) 30%, var(--dark-gray) 60%, transparent);
+    transform: translateX(-50%);
+  }
+}
+
+.footer-info {
+  display: grid;
+  grid-template-areas:
+    "general schedule"
+    "socials schedule"
+  ;
+  grid-template-columns: 1fr auto;
+}
+
+.footer-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-text {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.footer-title {
+  position: relative;
+  margin-left: 2px;
+  padding-left: 0.5rem;
+  font-weight: 300;
+
+  &::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: var(--red);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.footer-social-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: calc(2px + 0.5rem);
+}
+
+.footer-social-item {
+  font-size: 1.5rem;
+  color: var(--white);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--red);
+  }
+}
+
+.footer-streaming-session {
+  margin-left: calc(2px + 0.5rem);
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.footer-schedule-title {
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.footer-schedule {
+  font-weight: 300;
+  display: flex;
+  gap: 0.5rem;
+  line-height: 1.5;
+
+  .footer-schedule-entry {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:not(:last-child)::after {
+      content: ' - ';
+    }
+  }
+}
+
+.footer-general-info-section {
+  grid-area: general;
+}
+
+.footer-socials-section {
+  grid-area: socials;
+  align-self: end;
+}
+
+.footer-schedule-section {
+  grid-area: schedule;
+}
+
+@media screen and (width <= 900px) {
+  .footer-info {
+    grid-template-areas:
+      "general"
+      "schedule"
+      "socials"
+    ;
+    gap: 3rem 0;
+  }
+}

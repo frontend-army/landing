@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./equalizer.scss";
+@import "./glitch.scss";
+@import "./texts.scss";
+@import "./buttons.scss";
+@import "./animations.scss";
+@import "./expandReveal.scss";
+@import "./episodeSkeleton.scss";
+
+:root {
+  --black: #000;
+  --70-translucent-black: rgba(0, 0, 0, 0.7);
+  --30-translucent-black: rgba(0, 0, 0, 0.3);
+  --20-translucent-black: rgba(0, 0, 0, 0.2);
+  --dark-gray: #1B1B1E;
+  --light-gray: #EBEBEB;
+  --bg-dots-color: #E1E1E1;
+  --white: #FBFFFE;
+  --50-translucent-white: rgba(251, 255, 254, 0.5);
+  --red: #D81F26;
+  --dark-red: #96031A;
+  --spotify-green: #1ed760;
+  // episode button glitch animation
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --floating-header-size: 120px;
+
+  // Episode card
+  --episode-card-width: 350px;
+}
+
+* {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  &:has(> .home),
+  &:has(> .links) {
+    background-color: var(--black);
+  }
+}
+
+.floating-header-separation {
+  padding-top: var(--floating-header-size);
+}

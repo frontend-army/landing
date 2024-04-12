@@ -1,0 +1,216 @@
+@property --reveal-progress {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.episode {
+  padding: 0;
+  padding-left: 1.5rem;
+  display: flex;
+  color: var(--black);
+  flex-direction: column;
+  gap: 8px;
+  min-height: 165px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  --reveal-progress: 100;
+  mask-image: linear-gradient(to right, var(--black) calc(var(--reveal-progress) * 1% + 1px), transparent calc(var(--reveal-progress) * 1% + 1px));
+  transition: --reveal-progress 0.5s ease-in-out 0.5s;
+  
+  @supports(-moz-appearance: none) {
+    &.is-active > * {
+      opacity: 0;
+      animation: flicker 0.3s steps(4, start) 0.5s forwards;
+    }
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 0;
+    }
+    33% {
+      opacity: 0.7;
+    }
+    66% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  &::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: var(--red);
+    transition: height 0.5s ease;
+  }
+
+  &:not(.is-active) {
+    --reveal-progress: 0;
+
+    &::before {
+      height: 0;
+    }
+  }
+}
+
+.episode-number {
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.episode-title {
+  font-family: var(--font-anton), system-ui, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.episode-description {
+  font-size: 0.85rem;
+  line-height: 1.2;
+  flex: 1;
+}
+
+.episode-links {
+  display: flex;
+  gap: 10px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 8px;
+    border-bottom: 8px solid var(--red);
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+.episode-link,
+.episode-link:active,
+.episode-link:visited {
+  --button-background: var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex: 1;
+  background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+  position: relative;
+  
+  &:hover::after {
+    animation: glitch 3s steps(2, end) infinite alternate;
+  }
+
+  &::after {
+    position: absolute;
+    line-height: 2rem;
+    text-align: center;
+    inset: 0;
+    background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+    display: block;
+    clip-path: var(--slice-0);
+  }
+  
+  &.spotify {
+    background: linear-gradient(45deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+
+    &:hover {
+      --button-background: var(--spotify-green);
+      color: var(--black);
+      
+      &::after {
+        --button-background: var(--spotify-green);
+        color: var(--black);
+      }
+    }
+
+    &::after {
+      content: 'Spotify';
+      background: linear-gradient(45deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+    }
+  }
+
+  &.youtube {
+    background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+
+    &:hover {
+      --button-background: var(--red);
+
+      &::after {
+        --button-background: var(--red);
+      }
+    }
+
+    &::after {
+      content: 'YouTube';
+      background: linear-gradient(315deg, transparent calc(cos(45deg) * 1rem), var(--button-background) calc(cos(45deg) * 1rem));
+    }
+  }
+}
+
+.button-glitch::after {
+  animation: glitch2 0.3s steps(2, end) alternate;
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-2px, -10px);
+  }
+  4% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 10px);
+  }
+  8% {
+    clip-path: var(--slice-1);
+    transform: translate(-5px, 2px);
+  }
+  12% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, -4px);
+  }
+  16% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  20%, 100% {
+    clip-path: var(--slice-0);
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(4px, -2px);
+  }
+  33% {
+    clip-path: var(--slice-3);
+    transform: translate(-5px, -4px);
+  }
+  66% {
+    clip-path: var(--slice-2);
+    transform: translate(2px, 4px);
+  }
+  100% {
+    clip-path: var(--slice-0);
+    transform: translate(0);
+  }
+}

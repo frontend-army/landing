@@ -1,0 +1,35 @@
+---
+title: Evitando Memory Leaks en React con useEffect
+description: React es una biblioteca poderosa para construir interfaces de usuario dinámicas y receptivas. Sin embargo, como cualquier herramienta, también tiene sus propias trampas, y una de ellas es la posibilidad de generar memory leaks cuando se utiliza el hook useEffect de manera incorrecta.
+author: Gabriel Zanzotti
+avatar: https://frontendarmy.tech/skolz_profile.png
+date: 2024-02-23
+cover: https://images.unsplash.com/photo-1542855368-ca6ea825bca2?q=80&w=2899&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+React es una biblioteca poderosa para construir interfaces de usuario dinámicas y receptivas. Sin embargo, como cualquier herramienta, también tiene sus propias trampas, y una de ellas es la posibilidad de generar memory leaks cuando se utiliza el hook useEffect de manera incorrecta.
+
+## ¿Qué es un memory leak?
+
+Un memory leak (fuga de memoria) ocurre cuando un programa de computadora asigna memoria de manera continua sin liberarla, lo que puede resultar en una pérdida gradual de rendimiento o incluso en el bloqueo del programa.
+
+## ¿Cómo se generan los memory leaks en React con useEffect?
+
+Olvidar limpiar efectos anteriores: Si un efecto de useEffect realiza suscripciones a eventos o crea temporizadores, es crucial limpiarlos cuando el componente se desmonta. De lo contrario, estas suscripciones y temporizadores seguirán activos, consumiendo memoria incluso después de que el componente ya no esté en uso.
+
+Dependencias incorrectas o faltantes: useEffect depende de un array de dependencias que determina cuándo se debe volver a ejecutar el efecto. Si este array está mal configurado o si algunas dependencias faltan, el efecto puede ejecutarse más veces de lo necesario, lo que puede llevar a fugas de memoria.
+
+Referencias a funciones o variables obsoletas: Si el efecto hace referencia a variables o funciones que ya no son necesarias pero que aún están en el ámbito de cierre, puede provocar que esas referencias no se liberen de la memoria.
+
+## ¿Cómo evitar los memory leaks en React?
+
+Siempre limpia los efectos anteriores utilizando el mecanismo de retorno de useEffect.
+Verificá y configurá correctamente las dependencias del useEffect para evitar ejecuciones innecesarias.
+Utiliza referencias ref para almacenar variables y funciones que necesiten persistir entre renderizaciones, y asegurate de limpiarlas cuando ya no sean necesarias.
+En conclusión, aunque useEffect es una herramienta poderosa para manejar efectos secundarios en React, también requiere un manejo cuidadoso para evitar posibles memory leaks. Siguiendo buenas prácticas y prestando atención a los detalles, podemos garantizar un rendimiento óptimo y una experiencia de usuario sin problemas en nuestras aplicaciones React.
+
+¡Espero que hayas encontrado útil esta información para mantener tus aplicaciones React libres de memory leaks!
+
+```bash
+pnpm test -- -u
+```

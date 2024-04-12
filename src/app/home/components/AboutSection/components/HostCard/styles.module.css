@@ -1,0 +1,71 @@
+.host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 240px;
+}
+
+.host-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.75rem 2rem;
+  gap: 10px;
+  position: relative;
+  color: var(--white);
+  flex: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(-45deg, var(--red) 50%, transparent 0);
+    pointer-events: none;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.host-avatar {
+  align-self: center;
+}
+
+.host-socials {
+  display: flex;
+  gap: 8px;
+  font-size: 1.2rem;
+}
+
+.host-social {
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--red);
+  }
+}
+
+.host-name {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.host-description {
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  position: relative;
+  padding-top: 1px;
+  text-wrap: pretty;
+  font-weight: 300;
+
+  &::before {
+    content: '';
+    height: 1px;
+    width: 12px;
+    background: var(--red);
+    position: absolute;
+    top: -9px;
+    left: 0;
+  }
+}
