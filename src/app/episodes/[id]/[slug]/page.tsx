@@ -38,7 +38,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
-      images: ["https://frontendarmy.tech/fea_logo.png"],
+      images: ["https://frontendarmy.tech/twitter_og.png"],
       url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
     },
     linkedin: {

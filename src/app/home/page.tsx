@@ -20,7 +20,7 @@ export const metadata = {
     card : 'summary_large_image',
     title: 'Frontend army',
     description: 'Sumate a nuestro podcast y comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.',
-    images: ["https://frontendarmy.tech/fea_logo.png"],
+    images: ["https://frontendarmy.tech/twitter_og.png"],
     url: 'https://frontendarmy.tech'
   },
   linkedin: {
