@@ -37,13 +37,14 @@
 .footer-text {
   font-weight: 500;
   line-height: 1.4;
+  font-size: 1.2rem;
 }
 
 .footer-title {
   position: relative;
   margin-left: 2px;
   padding-left: 0.5rem;
-  font-weight: 300;
+  font-weight: 200;
 
   &::before {
     content: '';
@@ -84,6 +85,7 @@
 .footer-schedule-title {
   font-weight: 500;
   line-height: 1.5;
+  font-size: 1.2rem;
 }
 
 .footer-schedule {
@@ -96,6 +98,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-weight: 200;
 
     &:not(:last-child)::after {
       content: ' - ';
