@@ -10,7 +10,7 @@ import { AxiomWebVitals } from 'next-axiom';
 config.autoAddCss = false;
 
 const a = Anton({weight: "400", subsets: ['latin'], variable: '--font-anton'});
-const b = Archivo({ subsets: ['latin'], variable: '--font-archivo' });
+const b = IBM_Plex_Sans({ weight: ['100','200', '300', '400', '500', '600', '700'], subsets: ['latin'], variable: '--font-ibm-sans' });
 
 export default function RootLayout({
   children,

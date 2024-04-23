@@ -14,7 +14,7 @@
   /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-family: var(--font-ibm-sans), system-ui, sans-serif;
   justify-items: center;
 }
 
