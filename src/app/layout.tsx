@@ -1,4 +1,4 @@
-import { Montserrat, Anton } from 'next/font/google'
+import { Montserrat, Anton, Chivo, Archivo, IBM_Plex_Sans, Poppins } from 'next/font/google'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import '@/css/globals.scss';
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -10,7 +10,7 @@ import { AxiomWebVitals } from 'next-axiom';
 config.autoAddCss = false;
 
 const a = Anton({weight: "400", subsets: ['latin'], variable: '--font-anton'});
-const b = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
+const b = Archivo({ subsets: ['latin'], variable: '--font-archivo' });
 
 export default function RootLayout({
   children,

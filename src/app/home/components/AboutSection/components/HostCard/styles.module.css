@@ -3,6 +3,7 @@
   flex-direction: column;
   position: relative;
   max-width: 240px;
+  height: 100%;
 }
 
 .host-info {
@@ -46,18 +47,18 @@
 
 .host-name {
   text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.1ch;
 }
 
 .host-description {
   margin-top: 10px;
-  font-size: 0.875rem;
   line-height: 1.5;
   position: relative;
   padding-top: 1px;
   text-wrap: pretty;
-  font-weight: 300;
+  font-weight: 100;
 
   &::before {
     content: '';

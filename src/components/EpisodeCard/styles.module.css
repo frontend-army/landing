@@ -65,6 +65,7 @@
 .episode-number {
   text-transform: uppercase;
   line-height: 1.2;
+  font-weight: 200;
 }
 
 .episode-title {
@@ -74,9 +75,10 @@
 }
 
 .episode-description {
-  font-size: 0.85rem;
   line-height: 1.2;
   flex: 1;
+  font-weight: 300;
+  letter-spacing: 0.05ch;
 }
 
 .episode-links {
