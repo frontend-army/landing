@@ -58,7 +58,7 @@
   position: relative;
   padding-top: 1px;
   text-wrap: pretty;
-  font-weight: 200;
+  font-weight: 300;
 
   &::before {
     content: '';

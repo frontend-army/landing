@@ -44,7 +44,7 @@
   position: relative;
   margin-left: 2px;
   padding-left: 0.5rem;
-  font-weight: 200;
+  font-weight: 300;
 
   &::before {
     content: '';
@@ -98,7 +98,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 200;
+    font-weight: 300;
 
     &:not(:last-child)::after {
       content: ' - ';

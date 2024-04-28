@@ -21,7 +21,7 @@
 .nav-link, .nav-link:active {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--white);
   position: relative;
   width: min-content;
