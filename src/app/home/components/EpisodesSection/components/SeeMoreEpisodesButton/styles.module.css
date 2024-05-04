@@ -4,7 +4,6 @@
   padding: 0  0.6875rem 1.875rem 2.1875rem;
   position: relative;
   font-size: 1.2rem;
-  font-weight: 400;
   color: var(--dark-gray);
 
   &:not(.is-active) {
@@ -44,6 +43,7 @@
     align-items: center;
     position: relative;
     opacity: 0;
+    font-weight: 400;
   }
 
   &.is-active {

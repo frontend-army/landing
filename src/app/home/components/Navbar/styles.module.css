@@ -14,14 +14,14 @@
   /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-family: var(--font-ibm-sans), system-ui, sans-serif;
   justify-items: center;
 }
 
 .nav-link, .nav-link:active {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 500;
+  font-weight: 300;
   color: var(--white);
   position: relative;
   width: min-content;
