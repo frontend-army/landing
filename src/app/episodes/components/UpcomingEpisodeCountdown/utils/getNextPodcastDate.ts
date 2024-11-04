@@ -2,7 +2,7 @@ export const getNextPodcastDate = () => {
   const fromDate = new Date();
   const PODCAST_DAY_OF_WEEK = 3;
   const PODCAST_FREQUENCY = 2;
-  const STARTING_PODCAST_DATE = "2023-10-04T21:30:00";
+  const STARTING_PODCAST_DATE = "2023-10-04T21:00:00";
 
   const dateDiffInDays = (a: Date, b: Date) => {
     const _MS_PER_DAY = 1000 * 60 * 60 * 24;

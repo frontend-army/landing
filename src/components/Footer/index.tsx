@@ -18,7 +18,9 @@ export const Footer: React.FC = () => {
         alt="Frontend Army Logo"
       />
       <div className={styles.footerInfo}>
-        <div className={`${styles.footerInfoColumn} ${styles.footerGeneralInfoSection}`}>
+        <div
+          className={`${styles.footerInfoColumn} ${styles.footerGeneralInfoSection}`}
+        >
           <p className={styles.footerText}>
             Frontend Army® 2024, todos los derechos reservados.
           </p>
@@ -26,30 +28,45 @@ export const Footer: React.FC = () => {
             Hecho recontra manija en Argentina&nbsp;⭐⭐⭐
           </p>
         </div>
-        <div className={`${styles.footerInfoColumn} ${styles.footerSocialsSection}`}>
+        <div
+          className={`${styles.footerInfoColumn} ${styles.footerSocialsSection}`}
+        >
           <h4 className={styles.footerTitle}>Encontranos en:</h4>
           <ul className={styles.footerSocialItems}>
             {socials.map((social) => (
               <li key={social.url} className={styles.footerSocialItem}>
-                <a href={social.url} aria-label={`Link to Frontend Army's ${social.name} profile`} target="_blank" rel="noreferrer">
+                <a
+                  href={social.url}
+                  aria-label={`Link to Frontend Army's ${social.name} profile`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FontAwesomeIcon icon={social.icon} />
                 </a>
               </li>
             ))}
           </ul>
         </div>
-        <div className={`${styles.footerInfoColumn} ${styles.footerScheduleSection}`}>
-          <h5 className={styles.footerTitle}>
-            Horarios de streaming:
-          </h5>
+        <div
+          className={`${styles.footerInfoColumn} ${styles.footerScheduleSection}`}
+        >
+          <h5 className={styles.footerTitle}>Horarios de streaming:</h5>
           <div className={styles.footerStreamingSession}>
             <h5 className={styles.footerScheduleTitle}>
               Lunes: Coding Sessions
             </h5>
             <p className={styles.footerSchedule}>
-              <span className={styles.footerScheduleEntry}>18hs <Image width={20} src={argentinaFlag} alt="Argentina's Flag" /></span>
-              <span className={styles.footerScheduleEntry}>16hs <Image width={20} src={colombiaFlag} alt="Colombia's Flag" /></span>
-              <span className={styles.footerScheduleEntry}>23hs <Image width={20} src={spainFlag} alt="Spain's Flag" /></span>
+              <span className={styles.footerScheduleEntry}>
+                18hs{" "}
+                <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
+              </span>
+              <span className={styles.footerScheduleEntry}>
+                16hs{" "}
+                <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
+              </span>
+              <span className={styles.footerScheduleEntry}>
+                22hs <Image width={20} src={spainFlag} alt="Spain's Flag" />
+              </span>
             </p>
           </div>
           <div className={styles.footerStreamingSession}>
@@ -57,9 +74,17 @@ export const Footer: React.FC = () => {
               Miércoles: Charlas & Podcast
             </h5>
             <p className={styles.footerSchedule}>
-              <span className={styles.footerScheduleEntry}>18hs <Image width={20} src={argentinaFlag} alt="Argentina's Flag" /></span>
-              <span className={styles.footerScheduleEntry}>16hs <Image width={20} src={colombiaFlag} alt="Colombia's Flag" /></span>
-              <span className={styles.footerScheduleEntry}>23hs <Image width={20} src={spainFlag} alt="Spain's Flag" /></span>
+              <span className={styles.footerScheduleEntry}>
+                18hs{" "}
+                <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
+              </span>
+              <span className={styles.footerScheduleEntry}>
+                16hs{" "}
+                <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
+              </span>
+              <span className={styles.footerScheduleEntry}>
+                22hs <Image width={20} src={spainFlag} alt="Spain's Flag" />
+              </span>
             </p>
           </div>
         </div>
