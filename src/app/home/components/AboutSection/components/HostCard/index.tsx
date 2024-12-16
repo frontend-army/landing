@@ -2,31 +2,44 @@
 
 import { Host } from "@/types/host";
 import Image from "next/image";
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { socialsIconMap } from "./utils";
 import { useAnimateOnScroll } from "@/hooks/useRevealOnScroll";
 
 interface Props {
-  host: Host
-};
+  host: Host;
+}
 
-export const HostCard: React.FC<Props> = ({host}) => {
-  const {ref, isVisible} = useAnimateOnScroll({portionOfVisibility: 0.5});
+export const HostCard: React.FC<Props> = ({ host }) => {
+  const { ref, isVisible } = useAnimateOnScroll({ portionOfVisibility: 0.5 });
   return (
     <div className={`expand-reveal ${isVisible ? "expand-active" : ""}`}>
       <div ref={ref} className={`${styles.host} expand-reveal-content`}>
-        <Image className={styles.hostAvatar} src={host.avatar} alt={`${host.name}'s profile picture`} width={240} height={300} />
+        <Image
+          quality={100}
+          className={styles.hostAvatar}
+          src={host.avatar}
+          alt={`${host.name}'s profile picture`}
+          width={240}
+          height={300}
+        />
         <div className={styles.hostInfo}>
           <div className={styles.hostSocials}>
-            {
-              host.socials.map(social =>(
-                <a key={social.url} className={styles.hostSocial} href={social.url} target="_blank" rel="noreferrer"
-                aria-label={`Link to ${host.name}'s ${social.name} profile`}>
-                  <FontAwesomeIcon icon={socialsIconMap[social.name.toLocaleLowerCase()]} />
-                </a>
-              ))
-            }
+            {host.socials.map((social) => (
+              <a
+                key={social.url}
+                className={styles.hostSocial}
+                href={social.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Link to ${host.name}'s ${social.name} profile`}
+              >
+                <FontAwesomeIcon
+                  icon={socialsIconMap[social.name.toLocaleLowerCase()]}
+                />
+              </a>
+            ))}
           </div>
           <p className={styles.hostName}>{host.name}</p>
           <p className={styles.hostDescription}>{host.description}</p>
@@ -34,4 +47,4 @@ export const HostCard: React.FC<Props> = ({host}) => {
       </div>
     </div>
   );
-} 
+};

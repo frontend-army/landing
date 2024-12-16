@@ -1,0 +1,16 @@
+@property --bg-position-x {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.grinch {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  width: 100px;
+  height: 170px;
+  background-image: url("../../../public/grinch.png");
+  z-index: 1;
+  background-position: calc(var(--bg-position-x) * 1px) 0;
+}

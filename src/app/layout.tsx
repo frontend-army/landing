@@ -1,22 +1,41 @@
-import { Montserrat, Anton, Chivo, Archivo, IBM_Plex_Sans, Poppins } from 'next/font/google'
+import {
+  Montserrat,
+  Anton,
+  Chivo,
+  Archivo,
+  IBM_Plex_Sans,
+  Poppins,
+} from "next/font/google";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import '@/css/globals.scss';
+import "@/css/globals.scss";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import { Footer } from '@/components/Footer';
+import { Footer } from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from '@vercel/analytics/react';
-import { AxiomWebVitals } from 'next-axiom';
+import { Analytics } from "@vercel/analytics/react";
+import { AxiomWebVitals } from "next-axiom";
+import { AnimatedGrinch } from "@/components/AnimatedGrinch";
 
 config.autoAddCss = false;
 
-const a = Anton({weight: "400", subsets: ['latin'], variable: '--font-anton'});
-const b = IBM_Plex_Sans({ weight: ['100','200', '300', '400', '500', '600', '700'], subsets: ['latin'], variable: '--font-ibm-sans' });
+const a = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+});
+const b = IBM_Plex_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-ibm-sans",
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  const today = new Date();
+  const isDecember = today.getMonth() === 11;
+
   return (
     <html lang="en" className={`${a.variable} ${b.variable}`}>
       <body suppressHydrationWarning={true}>
@@ -25,7 +44,8 @@ export default function RootLayout({
         <Analytics />
         {children}
         <Footer />
+        {isDecember && <AnimatedGrinch />}
       </body>
     </html>
-  )
+  );
 }
