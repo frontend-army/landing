@@ -1,0 +1,53 @@
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.snow-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.snowflake {
+  $snowflake-amount: 100;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+
+  @for $i from 1 through $snowflake-amount {
+    $random-x: random(1000000) * 0.0001vw; // random between 0 and 100vw
+    $random-offset: random_range(-100000, 100000) * 0.0001vw; // random between -100vw and 100vw
+    $random-x-end: $random-x + $random-offset;
+
+    $random-x-end-yoyo: $random-x + ($random-offset / 2); // random between -50vw and 150vw
+    $random-yoyo-time: random_range(30000, 80000) / 100000; // random between 0.3 and 0.8
+    $random-yoyo-y: $random-yoyo-time * 100vh; // random between 0 and 100vh
+
+    $random-scale: random(10000) * 0.0001; // random between 0 and 1
+
+    $fall-duration: random_range(5, 20) * 1s; // random between 5 and 20 seconds
+    $fall-delay: random(20) * -1s; // random between 0 and -20 seconds
+
+    &:nth-child(#{$i}) {
+      opacity: max(random(10000) * 0.0001, 0.2); // random between 0.2 and 1
+      transform: translate($random-x, -10px) scale($random-scale);
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+    }
+
+    @keyframes fall-#{$i} {
+      #{percentage($random-yoyo-time)} {
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+      }
+
+      to {
+        transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+      }
+    }
+  }
+}

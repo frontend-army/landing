@@ -1,11 +1,4 @@
-import {
-  Montserrat,
-  Anton,
-  Chivo,
-  Archivo,
-  IBM_Plex_Sans,
-  Poppins,
-} from "next/font/google";
+import { Anton, IBM_Plex_Sans } from "next/font/google";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@/css/globals.scss";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -14,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { AxiomWebVitals } from "next-axiom";
 import { AnimatedGrinch } from "@/components/AnimatedGrinch";
+import { AnimatedSnow } from "@/components/AnimatedSnow";
 
 config.autoAddCss = false;
 
@@ -21,11 +15,13 @@ const a = Anton({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-anton",
+  display: "swap",
 });
 const b = IBM_Plex_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-ibm-sans",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -44,7 +40,12 @@ export default function RootLayout({
         <Analytics />
         {children}
         <Footer />
-        {isDecember && <AnimatedGrinch />}
+        {isDecember && (
+          <>
+            <AnimatedGrinch />
+            <AnimatedSnow />
+          </>
+        )}
       </body>
     </html>
   );
