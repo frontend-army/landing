@@ -4,6 +4,15 @@
   position: relative;
   max-width: 240px;
   height: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to top, rgb(0, 0, 0) 0%, transparent 80%);
+  }
 }
 
 .host-info {
@@ -16,7 +25,7 @@
   flex: 1;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     background: linear-gradient(-45deg, var(--red) 50%, transparent 0);
@@ -61,7 +70,7 @@
   font-weight: 300;
 
   &::before {
-    content: '';
+    content: "";
     height: 1px;
     width: 12px;
     background: var(--red);
