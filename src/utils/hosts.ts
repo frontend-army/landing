@@ -1,10 +1,10 @@
 import { Host } from "@/types/host";
-import skolzProfile from "@/assets/skolz_profile.png";
-import frankProfile from "@/assets/frank_profile.png";
-import pablitoProfile from "@/assets/pablito_profile.png";
-import luquiProfile from "@/assets/luqui_profile.png";
-import capiProfile from "@/assets/capi_profile.png";
-import tinchoProfile from "@/assets/tincho_profile.png";
+import skolzProfile from "@/assets/hosts/skolz_profile.png";
+import frankProfile from "@/assets/hosts/frank_profile.png";
+import pablitoProfile from "@/assets/hosts/pablito_profile.png";
+import luquiProfile from "@/assets/hosts/luqui_profile.png";
+import capiProfile from "@/assets/hosts/capi_profile.png";
+import tinchoProfile from "@/assets/hosts/tincho_profile.png";
 
 export const hosts: Array<Host> = [
   {
