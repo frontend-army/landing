@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
           className={`${styles.footerInfoColumn} ${styles.footerGeneralInfoSection}`}
         >
           <p className={styles.footerText}>
-            Frontend Army® 2024, todos los derechos reservados.
+            Frontend Army® 2025, todos los derechos reservados.
           </p>
           <p className={`${styles.footerText} mb-auto`}>
             Hecho recontra manija en Argentina&nbsp;⭐⭐⭐
