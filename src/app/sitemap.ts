@@ -1,9 +1,9 @@
 import { getEpisodes } from '@/services/episodes'
 import { fetchPosts } from './api/blogpost'
- 
+
 export default async function sitemap() {
-  const [episodes, posts] = await Promise.all([
-    getEpisodes(),  
+  const [{ episodes }, posts] = await Promise.all([
+    getEpisodes(),
     fetchPosts(),
   ]);
 

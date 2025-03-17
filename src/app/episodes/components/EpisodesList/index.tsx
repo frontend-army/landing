@@ -12,7 +12,7 @@ interface Props {
   initialEpisodes: Array<Episode>
 }
 
-export const EpisodesList: React.FC<Props> = ({initialEpisodes}) => {
+export const EpisodesList: React.FC<Props> = ({ initialEpisodes }) => {
   const [episodes, setEpisodes] = useState<Array<Episode>>(initialEpisodes);
   const [page, setPage] = useState(0);
   const [reachedEnd, setReachedEnd] = useState(false);
@@ -21,15 +21,14 @@ export const EpisodesList: React.FC<Props> = ({initialEpisodes}) => {
 
   useEffect(() => {
     const loadMoreEpisodes = async () => {
-      const episodesPage = await getEpisodes(9, page + 1);
+      const { episodes: episodesPage, hasNextPage } = await getEpisodes(9, page + 1);
       setPage((currentPage) => currentPage + 1);
       if (episodesPage?.length) {
         setEpisodes((currentEpisodes) => ([
           ...currentEpisodes,
           ...episodesPage
         ]));
-      } else {
-        setReachedEnd(true);
+        setReachedEnd(!hasNextPage);
       }
     }
 

@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className={styles.footerStreamingSession}>
             <h5 className={styles.footerScheduleTitle}>
-              Miércoles: Charlas & Podcast
+              Miércoles: Entrevistas, Noticias y Podcast
             </h5>
             <p className={styles.footerSchedule}>
               <span className={styles.footerScheduleEntry}>

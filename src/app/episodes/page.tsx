@@ -14,18 +14,18 @@ export const metadata = {
 };
 
 export default async function Episodes() {
-  const episodes = await getEpisodes(9, 0);
+  const { episodes } = await getEpisodes(9, 0);
   return (
     <>
-    <FloatingHeader />
-    <DotBackground />
-    <main className={styles.episodesContainer}>
-      <SectionTitle className="text-center">Todos los capitulos</SectionTitle>
-      <UpcomingEpisodeCountdown />
-      {episodes && (
-        <EpisodesList initialEpisodes={episodes} />
-      )}
-    </main>
+      <FloatingHeader />
+      <DotBackground />
+      <main className={styles.episodesContainer}>
+        <SectionTitle className="text-center">Todos los capitulos</SectionTitle>
+        <UpcomingEpisodeCountdown />
+        {episodes && (
+          <EpisodesList initialEpisodes={episodes} />
+        )}
+      </main>
     </>
   );
 };

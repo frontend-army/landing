@@ -7,7 +7,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 export const revalidate = 3600;
 
 export const EpisodesSection: React.FC = async () => {
-  const episodes = await getEpisodes(6, 0);
+  const { episodes } = await getEpisodes(6, 0);
   return (
     <section id="episodes" className={`flex flex-col items-center gap-20 ${styles.episodesSection}`}>
       <SectionTitle>Podcast</SectionTitle>
