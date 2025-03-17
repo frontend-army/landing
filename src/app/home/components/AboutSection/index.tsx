@@ -24,7 +24,7 @@ export const AboutSection: React.FC<Props> = () => {
       </div>
       <SectionTitle variant="white">Twitch</SectionTitle>
       <iframe
-        src="https://player.twitch.tv/?frontend_army&parent=localhost"
+        src="https://player.twitch.tv/?frontend_army&parent=landing-git-embed-twitch-frontend-armys-projects.vercel.app"
         height="800"
         width="600"
       >
