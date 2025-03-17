@@ -5,11 +5,11 @@ import spainFlag from "@/assets/spain_flag.svg?url";
 import styles from "./styles.module.css";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { getNextPodcastDate } from "./utils/getNextPodcastDate";
+import { getNextEpisode } from "./utils/getNextPodcastDate";
 import { Countdown } from "./components/Countdown";
 
 export const UpcomingEpisodeCountdown: React.FC = () => {
-  const nextPodcastDate = getNextPodcastDate();
+  const nextPodcastDate = getNextEpisode(new Date()).date;
 
   return (
     <div className={styles.upcomingEpisodeContainer}>
