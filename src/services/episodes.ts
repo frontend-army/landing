@@ -8,7 +8,7 @@ export async function getEpisodes(size?: number, pageNumber?: number) {
   if (size && pageNumber !== undefined) {
     episodes = await supabase
       .from("episodes")
-      .select("*")
+      .select("*", { count: "exact" })
       .order("id", { ascending: false })
       .range(pageNumber * size, pageNumber * size + size - 1)
       .returns<Array<Episode>>();
@@ -20,7 +20,10 @@ export async function getEpisodes(size?: number, pageNumber?: number) {
       .returns<Array<Episode>>();
   }
 
-  return episodes.data;
+  return {
+    episodes: episodes.data,
+    hasNextPage: size && pageNumber !== undefined && episodes.count ? episodes.count > (pageNumber + 1) * size : false
+  };
 }
 
 export async function getEpisode(id: number) {

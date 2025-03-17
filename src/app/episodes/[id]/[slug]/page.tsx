@@ -6,7 +6,7 @@ import Image from 'next/image';
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const episodes = await getEpisodes();
+  const { episodes } = await getEpisodes();
   return episodes ? episodes.map((episode) => ({
     slug: episode.title.replaceAll(" ", "-").toLowerCase(),
     id: episode.id.toString()
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params
 }: {
-  params: { slug: string; id: number};
+  params: { slug: string; id: number };
 }) {
   const episode = await getEpisode(params.id);
   if (!episode) {
@@ -61,17 +61,17 @@ export default async function Episode({ params }: { params: { slug: string; id: 
     <div className={styles.episode}>
       <Image src="/fea_logo.png" alt="Frontend Army Logo" width={200} height={200} />
       <div className={styles.episodeContent}>
-      <h1 className={styles.episodeName}>{episode.title}</h1>
-      <p className={styles.episodeDescription}>{episode.description}</p>
-      <div className={styles.episodeLinks}>
-      <Link className={styles.episodeLink} href={episode.youtube_url} target="_blank" rel="noopener noreferrer">
-        Watch on YouTube
-      </Link>
-      <Link className={styles.episodeLink} href={episode.spotify_url} target="_blank" rel="noopener noreferrer">
-        Listen on Spotify
-      </Link>
+        <h1 className={styles.episodeName}>{episode.title}</h1>
+        <p className={styles.episodeDescription}>{episode.description}</p>
+        <div className={styles.episodeLinks}>
+          <Link className={styles.episodeLink} href={episode.youtube_url} target="_blank" rel="noopener noreferrer">
+            Watch on YouTube
+          </Link>
+          <Link className={styles.episodeLink} href={episode.spotify_url} target="_blank" rel="noopener noreferrer">
+            Listen on Spotify
+          </Link>
+        </div>
       </div>
-    </div>
 
     </div>
   );
