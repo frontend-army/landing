@@ -3,13 +3,11 @@
 import FeaLogo from "@/assets/fea_logo.png";
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export const Navbar: React.FC = () => {
   const hamburgerInputRef = useRef<HTMLInputElement>(null);
-  const pathname = usePathname();
   useEffect(() => {
     const uncheckHamburgerHandler = (event: UIEvent) => {
       if (hamburgerInputRef.current && document.body.clientWidth > 900) {

@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { AxiomWebVitals } from "next-axiom";
 import { AnimatedGrinch } from "@/components/AnimatedGrinch";
 import { AnimatedSnow } from "@/components/AnimatedSnow";
+import Script from "next/script";
 
 config.autoAddCss = false;
 
@@ -34,6 +35,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${a.variable} ${b.variable}`}>
+      <Script src="https://embed.twitch.tv/embed/v1.js" />
       <body suppressHydrationWarning={true}>
         <SpeedInsights />
         <AxiomWebVitals />

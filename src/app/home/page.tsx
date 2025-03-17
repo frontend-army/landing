@@ -17,7 +17,7 @@ export const metadata = {
     url: 'https://frontendarmy.tech'
   },
   twitter: {
-    card : 'summary_large_image',
+    card: 'summary_large_image',
     title: 'Frontend army',
     description: 'Sumate a nuestro podcast y comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.',
     images: ["https://frontendarmy.tech/twitter_og.png"],
@@ -36,7 +36,7 @@ export default async function Home() {
     <>
       <Navbar />
       <main className="home">
-        <DotBackground/>
+        <DotBackground />
         <HeroSection />
         <EpisodesSection />
         {/* <BlogSection /> */}
