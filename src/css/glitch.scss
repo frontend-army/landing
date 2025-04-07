@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $glitch-steps: 100;
 $glitch-pink: #ff00e0;
 $glitch-cyan: #00e8ff;
@@ -13,8 +15,8 @@ $glitch-cyan: #00e8ff;
   }
 
   @for $i from 80 through $glitch-steps {
-    #{percentage($i * (1 / $glitch-steps))} {
-      clip: rect(random(100) + px, 9999px, calc(#{random(100) + px} * var(--glitch-lines)), 0);
+    #{math.percentage($i * math.div(1, $glitch-steps))} {
+      clip: rect(math.random(100) + px, 9999px, calc(#{math.random(100) + px} * var(--glitch-lines)), 0);
     }
   }
 }
@@ -25,8 +27,8 @@ $glitch-cyan: #00e8ff;
   }
 
   @for $i from 80 through $glitch-steps {
-    #{percentage($i * (1 / $glitch-steps))} {
-      clip: rect(random(100) + px, 9999px, calc(#{random(100) + px} * var(--glitch-lines)), 0);
+    #{math.percentage($i * math.div(1, $glitch-steps))} {
+      clip: rect(math.random(100) + px, 9999px, calc(#{math.random(100) + px} * var(--glitch-lines)), 0);
     }
   }
 }

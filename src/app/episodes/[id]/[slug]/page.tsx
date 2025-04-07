@@ -16,9 +16,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params
 }: {
-  params: { slug: string; id: number };
+  params: Promise<{ slug: string; id: number }>;
 }) {
-  const episode = await getEpisode(params.id);
+  const { slug, id } = await params;
+  const episode = await getEpisode(id);
   if (!episode) {
     return {};
   }
@@ -27,31 +28,32 @@ export async function generateMetadata({
     title: `${episode.title} - Frontend Army`,
     description: episode.description,
     images: ["https://frontendarmy.tech/fea_logo.png"],
-    url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`,
+    url: `https://frontendarmy.tech/episodes/${id}/${slug}`,
     openGraph: {
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
       images: ["https://frontendarmy.tech/fea_logo.png"],
-      url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
+      url: `https://frontendarmy.tech/episodes/${id}/${slug}`
     },
     twitter: {
       card: "summary_large_image",
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
       images: ["https://frontendarmy.tech/twitter_og.png"],
-      url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
+      url: `https://frontendarmy.tech/episodes/${id}/${slug}`
     },
     linkedin: {
       title: `${episode.title} - Frontend Army`,
       description: episode.description,
       images: ["https://frontendarmy.tech/fea_logo.png"],
-      url: `https://frontendarmy.tech/episodes/${params.id}/${params.slug}`
+      url: `https://frontendarmy.tech/episodes/${id}/${slug}`
     }
   };
 }
 
-export default async function Episode({ params }: { params: { slug: string; id: number } }) {
-  const episode = await getEpisode(params.id);
+export default async function Episode({ params }: { params: Promise<{ slug: string; id: number }> }) {
+  const { slug, id } = await params;
+  const episode = await getEpisode(id);
 
   if (!episode) {
     return null;

@@ -26,8 +26,9 @@ export const SectionTitle: React.FC<Props> = ({children, className = '', variant
 
     return letters.map((char, index) => (
       <span
-        className={styles.sectionTitleLetter}
+        suppressHydrationWarning
         key={index}
+        className={styles.sectionTitleLetter}
         style={{
           '--reveal-delay': `calc(${letterPositions[index]} * 0.1s + 0.2s)`,
           '--should-flicker': Math.random() > 0.7 ? '0.3s' : '0s'

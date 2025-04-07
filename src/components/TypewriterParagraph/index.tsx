@@ -41,7 +41,7 @@ useEffect(() => {
       spans.push(text);
     }
     setSplitAbout(spans);
-  }, []);
+  }, [splitAbout.length]);
 
   return (
       <p ref={ref} className={`${styles.paragraph} ${className}`} data-text={children}>
