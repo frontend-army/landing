@@ -15,9 +15,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { metadata } = await fetchPost(params.slug);
+  const { slug } = await params;
+  const { metadata } = await fetchPost(slug);
   if (!metadata) {
     return {};
   }
@@ -26,25 +27,25 @@ export async function generateMetadata({
     title: metadata.title,
     description: metadata.description,
     images: [metadata.cover],
-    url: `https://frontendarmy.tech/blog/${params.slug}`,
+    url: `https://frontendarmy.tech/blog/${slug}`,
     openGraph: {
       title: metadata.title,
       description: metadata.description,
       images: [metadata.cover],
-      url: `https://frontendarmy.tech/blog/${params.slug}`
+      url: `https://frontendarmy.tech/blog/${slug}`
     },
     twitter: {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
       images: [metadata.cover],
-      url: `https://frontendarmy.tech/blog/${params.slug}`
+      url: `https://frontendarmy.tech/blog/${slug}`
     },
     linkedin: {
       title: metadata.title,
       description: metadata.description,
       images: [metadata.cover],
-      url: `https://frontendarmy.tech/blog/${params.slug}`
+      url: `https://frontendarmy.tech/blog/${slug}`
     }
   };
 }
@@ -63,8 +64,10 @@ const components = {
   li: (props: any) => <li className="my-2 leading-normal list-disc ml-4" {...props} />
 };
 
-export default async function Post({ params }: { params: { slug: string } }) {
-  const { source, metadata } = await fetchPost(params.slug);
+export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  
+  const { source, metadata } = await fetchPost(slug);
   return (
     <div className="relative">
       <div className={styles.hero} style={{backgroundImage: `url(${metadata.cover})`}}>
