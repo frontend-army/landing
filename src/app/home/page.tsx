@@ -21,7 +21,8 @@ export const metadata = {
     title: 'Frontend army',
     description: 'Sumate a nuestro podcast y comunidad para explorar las tendencias en desarrollo web y compartir tu experiencia en el mundo Frontend.',
     images: ["https://frontendarmy.tech/twitter_og.png"],
-    url: 'https://frontendarmy.tech'
+    url: 'https://frontendarmy.tech',
+    site: '@frontend_army'
   },
   linkedin: {
     title: 'Frontend army',
