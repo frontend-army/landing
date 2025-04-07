@@ -39,7 +39,8 @@ export async function generateMetadata({
       title: metadata.title,
       description: metadata.description,
       images: [metadata.cover],
-      url: `https://frontendarmy.tech/blog/${slug}`
+      url: `https://frontendarmy.tech/blog/${slug}`,
+      site: '@frontend_army'
     },
     linkedin: {
       title: metadata.title,
