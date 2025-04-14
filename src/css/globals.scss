@@ -1,15 +1,16 @@
+@use "sass:meta";
 @use "sass:math";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./equalizer.scss";
-@import "./glitch.scss";
-@import "./texts.scss";
-@import "./buttons.scss";
-@import "./animations.scss";
-@import "./expandReveal.scss";
-@import "./episodeSkeleton.scss";
+@include meta.load-css("equalizer.scss");
+@include meta.load-css("glitch.scss");
+@include meta.load-css("texts.scss");
+@include meta.load-css("buttons.scss");
+@include meta.load-css("animations.scss");
+@include meta.load-css("expandReveal.scss");
+@include meta.load-css("episodeSkeleton.scss");
 
 :root {
   --black: #000;
