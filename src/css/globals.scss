@@ -1,15 +1,16 @@
 @use "sass:math";
+@use "./equalizer";
+@use "./glitch";
+@use "./texts";
+@use "./buttons";
+@use "./animations";
+@use "./expandReveal";
+@use "./episodeSkeleton";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./equalizer.scss";
-@import "./glitch.scss";
-@import "./texts.scss";
-@import "./buttons.scss";
-@import "./animations.scss";
-@import "./expandReveal.scss";
-@import "./episodeSkeleton.scss";
+
 
 :root {
   --black: #000;

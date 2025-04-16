@@ -33,8 +33,8 @@ export default function RootLayout({
   const isDecember = today.getMonth() === 11;
 
   return (
-    <html lang="en" className={`${a.variable} ${b.variable}`}>
-      <body suppressHydrationWarning={true}>
+    <html lang="en" className={`${a.variable} ${b.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <SpeedInsights />
         <AxiomWebVitals />
         <Analytics />

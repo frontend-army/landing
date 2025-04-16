@@ -13,6 +13,7 @@
   &::before {
     position: relative;
     font-size: 4rem;
+    line-height: 4rem;
     top: calc(var(--value) * -1em);
     white-space: pre;
     text-align: center;

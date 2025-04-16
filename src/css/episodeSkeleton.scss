@@ -1,4 +1,4 @@
-@use "sass:math";
+@use "sass:list";
 
 @property --skeleton-progress {
   syntax: "<number>";
@@ -18,11 +18,11 @@
   background:
     linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 0/50% 20px border-box no-repeat,
     linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 25px/100% 40px border-box no-repeat,
-    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 math.div(75px, calc(100% - 10px)) 12px border-box no-repeat,
-    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 math.div(92px, calc(100% - 10px)) 12px border-box no-repeat,
+    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 list.slash(75px, calc(100% - 10px)) 12px border-box no-repeat,
+    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 list.slash(92px, calc(100% - 10px)) 12px border-box no-repeat,
     linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 109px/75% 12px border-box no-repeat,
-    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 math.div(100%, calc(50% - 5px)) 30px border-box no-repeat,
-    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))100% math.div(100%, calc(50% - 5px)) 30px border-box no-repeat;
+    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))0 list.slash(100%, calc(50% - 5px)) 30px border-box no-repeat,
+    linear-gradient(to right, var(--loader-background-color) calc(var(--skeleton-progress) * 1% - 50%), var(--loader-highlight-color) calc(var(--skeleton-progress) * 1%), var(--loader-background-color) calc(var(--skeleton-progress) * 1% + 50%))100% list.slash(100%, calc(50% - 5px)) 30px border-box no-repeat;
   animation: progress-skeleton 2s ease infinite;
 }
 

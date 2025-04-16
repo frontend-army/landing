@@ -1,4 +1,4 @@
-@use "sass:math";
+@use "sass:list";
 
 @property --h-expand-progress {
   syntax: "<number>";
@@ -63,7 +63,7 @@
         var(--red) 0
       )
       calc(50% + (var(--h-expand-progress) * 1% / 2) + 4px * (1 - var(--h-expand-progress) / 100))
-      math.div(calc(50% + (var(--v-expand-progress) * 1% / 2) + 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat,
+      list.slash(calc(50% + (var(--v-expand-progress) * 1% / 2) + 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat,
 
       conic-gradient(
         from 180deg at top 1px right 1px,
@@ -71,7 +71,7 @@
         var(--red) 0
       )
       calc(50% - (var(--h-expand-progress) * 1% / 2) - 4px * (1 - var(--h-expand-progress) / 100))
-      math.div(calc(50% + (var(--v-expand-progress) * 1% / 2) + 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat,
+      list.slash(calc(50% + (var(--v-expand-progress) * 1% / 2) + 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat,
 
       conic-gradient(
         from 0deg at bottom 1px left 1px,
@@ -79,7 +79,7 @@
         var(--red) 0
       )
       calc(50% + (var(--h-expand-progress) * 1% / 2) + 4px * (1 - var(--h-expand-progress) / 100))
-      math.div(calc(50% - (var(--v-expand-progress) * 1% / 2) - 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat,
+      list.slash(calc(50% - (var(--v-expand-progress) * 1% / 2) - 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat,
 
       conic-gradient(
         from -90deg at bottom 1px right 1px,
@@ -87,7 +87,7 @@
         var(--red) 0
       )
       calc(50% - (var(--h-expand-progress) * 1% / 2) - 4px * (1 - var(--h-expand-progress) / 100))
-      math.div(calc(50% - (var(--v-expand-progress) * 1% / 2) - 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat;
+      list.slash(calc(50% - (var(--v-expand-progress) * 1% / 2) - 4px * (1 - var(--v-expand-progress) / 100)), 8px) 8px border-box no-repeat;
   }
   
   .expand-reveal-content {
