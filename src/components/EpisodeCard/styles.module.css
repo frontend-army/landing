@@ -14,11 +14,10 @@
   min-height: 165px;
   width: 100%;
   position: relative;
-  overflow: hidden;
   --reveal-progress: 100;
   mask-image: linear-gradient(to right, var(--black) calc(var(--reveal-progress) * 1% + 1px), transparent calc(var(--reveal-progress) * 1% + 1px));
   transition: --reveal-progress 0.5s ease-in-out 0.5s;
-  
+
   @supports(-moz-appearance: none) {
     &.is-active > * {
       opacity: 0;
@@ -213,5 +212,24 @@
   100% {
     clip-path: var(--slice-0);
     transform: translate(0);
+  }
+}
+
+@media screen and (width >= 900px) {
+
+  .episode-title,
+  .episode-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .episode-title {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+
+  .episode-description {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 }
