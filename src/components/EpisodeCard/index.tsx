@@ -31,7 +31,7 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
   return (
     <div ref={ref} className={`${styles.episode} ${isVisible ? styles.isActive : ''}`}>
       <p className={styles.episodeNumber}>Capitulo {episode.id}:</p>
-        <h3 className={styles.episodeTitle}>{episode.title}</h3>
+      <h3 className={styles.episodeTitle} title={episode.title}>{episode.title}</h3>
       <p className={styles.episodeDescription}>{episode.description}</p>
       <div className={styles.episodeLinks}>
         <a
