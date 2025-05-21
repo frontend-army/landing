@@ -6,8 +6,13 @@ import colombiaFlag from "@/assets/colombia_flag.svg?url";
 import spainFlag from "@/assets/spain_flag.svg?url";
 import styles from "./styles.module.css";
 import { socials } from "@/utils/socials";
+import { getTimezonedHour } from "@/utils/date";
 
 export const Footer: React.FC = () => {
+  const argentinaStreamTime = getTimezonedHour(21, "AR");
+  const colombiaStreamTime = getTimezonedHour(21, "CO");
+  const spainStreamTime = getTimezonedHour(21, "ES");
+
   return (
     <footer className={styles.footer}>
       <Image
@@ -57,15 +62,16 @@ export const Footer: React.FC = () => {
             </h5>
             <p className={styles.footerSchedule}>
               <span className={styles.footerScheduleEntry}>
-                18hs{" "}
+                {argentinaStreamTime}hs{" "}
                 <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
               </span>
               <span className={styles.footerScheduleEntry}>
-                16hs{" "}
+                {colombiaStreamTime}hs{" "}
                 <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
               </span>
               <span className={styles.footerScheduleEntry}>
-                22hs <Image width={20} src={spainFlag} alt="Spain's Flag" />
+                {spainStreamTime}hs
+                <Image width={20} src={spainFlag} alt="Spain's Flag" />
               </span>
             </p>
           </div>
@@ -75,15 +81,16 @@ export const Footer: React.FC = () => {
             </h5>
             <p className={styles.footerSchedule}>
               <span className={styles.footerScheduleEntry}>
-                18hs{" "}
+                {argentinaStreamTime}hs{" "}
                 <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
               </span>
               <span className={styles.footerScheduleEntry}>
-                16hs{" "}
+                {colombiaStreamTime}hs{" "}
                 <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
               </span>
               <span className={styles.footerScheduleEntry}>
-                22hs <Image width={20} src={spainFlag} alt="Spain's Flag" />
+                {spainStreamTime}hs
+                <Image width={20} src={spainFlag} alt="Spain's Flag" />
               </span>
             </p>
           </div>
