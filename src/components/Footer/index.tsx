@@ -58,26 +58,7 @@ export const Footer: React.FC = () => {
           <h5 className={styles.footerTitle}>Horarios de streaming:</h5>
           <div className={styles.footerStreamingSession}>
             <h5 className={styles.footerScheduleTitle}>
-              Lunes: Coding Sessions
-            </h5>
-            <p className={styles.footerSchedule}>
-              <span className={styles.footerScheduleEntry}>
-                {argentinaStreamTime}hs{" "}
-                <Image width={20} src={argentinaFlag} alt="Argentina" />
-              </span>
-              <span className={styles.footerScheduleEntry}>
-                {colombiaStreamTime}hs{" "}
-                <Image width={20} src={colombiaFlag} alt="Colombia" />
-              </span>
-              <span className={styles.footerScheduleEntry}>
-                {spainStreamTime}hs
-                <Image width={20} src={spainFlag} alt="España" />
-              </span>
-            </p>
-          </div>
-          <div className={styles.footerStreamingSession}>
-            <h5 className={styles.footerScheduleTitle}>
-              Miércoles: Entrevistas, Noticias y Podcast
+              Lunes: Live Coding, Noticias y Podcast
             </h5>
             <p className={styles.footerSchedule}>
               <span className={styles.footerScheduleEntry}>
