@@ -61,7 +61,7 @@ export default async function Episode({ params }: { params: Promise<{ slug: stri
 
   return (
     <div className={styles.episode}>
-      <Image src="/fea_logo.png" alt="Frontend Army Logo" width={200} height={200} />
+      <Image src="/fea_logo.png" alt="Logo de Frontend Army" width={200} height={200} />
       <div className={styles.episodeContent}>
         <h1 className={styles.episodeName}>{episode.title}</h1>
         <p className={styles.episodeDescription}>{episode.description}</p>

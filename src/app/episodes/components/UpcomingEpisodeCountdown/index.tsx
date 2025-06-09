@@ -22,13 +22,13 @@ export const UpcomingEpisodeCountdown: React.FC = () => {
         </p>
         <div className="flex gap-2">
           <span className="flex gap-1 items-center">
-            18hs <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
+            18hs <Image width={20} src={argentinaFlag} alt="Argentina" />
           </span>
           <span className="flex gap-1 items-center">
-            16hs <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
+            16hs <Image width={20} src={colombiaFlag} alt="Colombia" />
           </span>
           <span className="flex gap-1 items-center">
-            22hs <Image width={20} src={spainFlag} alt="Spain's Flag" />
+            22hs <Image width={20} src={spainFlag} alt="España" />
           </span>
         </div>
       </div>

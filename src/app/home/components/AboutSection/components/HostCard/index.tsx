@@ -20,7 +20,7 @@ export const HostCard: React.FC<Props> = ({ host }) => {
           quality={100}
           className={styles.hostAvatar}
           src={host.avatar}
-          alt={`${host.name}'s profile picture`}
+          alt={`Foto de perfil de ${host.name}`}
           width={240}
           height={300}
         />
@@ -33,7 +33,7 @@ export const HostCard: React.FC<Props> = ({ host }) => {
                 href={social.url}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`Link to ${host.name}'s ${social.name} profile`}
+                aria-label={`Link al perfil de ${host.name} en ${social.name}`}
               >
                 <FontAwesomeIcon
                   icon={socialsIconMap[social.name.toLocaleLowerCase()]}

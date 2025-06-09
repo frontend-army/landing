@@ -63,15 +63,15 @@ export const Footer: React.FC = () => {
             <p className={styles.footerSchedule}>
               <span className={styles.footerScheduleEntry}>
                 {argentinaStreamTime}hs{" "}
-                <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
+                <Image width={20} src={argentinaFlag} alt="Argentina" />
               </span>
               <span className={styles.footerScheduleEntry}>
                 {colombiaStreamTime}hs{" "}
-                <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
+                <Image width={20} src={colombiaFlag} alt="Colombia" />
               </span>
               <span className={styles.footerScheduleEntry}>
                 {spainStreamTime}hs
-                <Image width={20} src={spainFlag} alt="Spain's Flag" />
+                <Image width={20} src={spainFlag} alt="España" />
               </span>
             </p>
           </div>
@@ -82,15 +82,15 @@ export const Footer: React.FC = () => {
             <p className={styles.footerSchedule}>
               <span className={styles.footerScheduleEntry}>
                 {argentinaStreamTime}hs{" "}
-                <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
+                <Image width={20} src={argentinaFlag} alt="Argentina" />
               </span>
               <span className={styles.footerScheduleEntry}>
                 {colombiaStreamTime}hs{" "}
-                <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
+                <Image width={20} src={colombiaFlag} alt="Colombia" />
               </span>
               <span className={styles.footerScheduleEntry}>
                 {spainStreamTime}hs
-                <Image width={20} src={spainFlag} alt="Spain's Flag" />
+                <Image width={20} src={spainFlag} alt="España" />
               </span>
             </p>
           </div>
