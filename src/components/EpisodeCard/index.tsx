@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const EpisodeCard: React.FC<Props> = ({ episode }) => {
-  const {ref, isVisible} = useAnimateOnScroll({portionOfVisibility: 0.5});
+  const { ref, isVisible } = useAnimateOnScroll({ portionOfVisibility: 0.5 });
   const youtubeRef = useRef<HTMLAnchorElement>(null);
   const spotifyRef = useRef<HTMLAnchorElement>(null);
 
@@ -41,7 +41,7 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
           onMouseEnter={handleMouseEnter}
           href={episode.youtube_url}
           target="_blank"
-          aria-label={`Link to episode ${episode.id} on Youtube`}
+          aria-label={`Ir al episodio ${episode.id} en Youtube`}
           rel="noreferrer"
         >
           <FontAwesomeIcon icon={sourceIconMap.youtube} />
@@ -53,7 +53,7 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
           onMouseLeave={handleMouseLeave}
           onMouseEnter={handleMouseEnter}
           href={episode.spotify_url}
-          aria-label={`Link to episode ${episode.id} on Spotify`}
+          aria-label={`Ir al episodio ${episode.id} en Spotify`}
           target="_blank"
           rel="noreferrer"
         >

@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
               <li key={social.url} className={styles.footerSocialItem}>
                 <a
                   href={social.url}
-                  aria-label={`Link to Frontend Army's ${social.name} profile`}
+                  aria-label={`Link al perfil de Frontend Army en ${social.name}`}
                   target="_blank"
                   rel="noreferrer"
                 >
