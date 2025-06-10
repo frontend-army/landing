@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
               <li key={social.url} className={styles.footerSocialItem}>
                 <a
                   href={social.url}
-                  aria-label={`Link to Frontend Army's ${social.name} profile`}
+                  aria-label={`Link al perfil de Frontend Army en ${social.name}`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -58,39 +58,20 @@ export const Footer: React.FC = () => {
           <h5 className={styles.footerTitle}>Horarios de streaming:</h5>
           <div className={styles.footerStreamingSession}>
             <h5 className={styles.footerScheduleTitle}>
-              Lunes: Coding Sessions
+              Lunes: Live Coding, Noticias y Podcast
             </h5>
             <p className={styles.footerSchedule}>
               <span className={styles.footerScheduleEntry}>
                 {argentinaStreamTime}hs{" "}
-                <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
+                <Image width={20} src={argentinaFlag} alt="Argentina" />
               </span>
               <span className={styles.footerScheduleEntry}>
                 {colombiaStreamTime}hs{" "}
-                <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
+                <Image width={20} src={colombiaFlag} alt="Colombia" />
               </span>
               <span className={styles.footerScheduleEntry}>
                 {spainStreamTime}hs
-                <Image width={20} src={spainFlag} alt="Spain's Flag" />
-              </span>
-            </p>
-          </div>
-          <div className={styles.footerStreamingSession}>
-            <h5 className={styles.footerScheduleTitle}>
-              Miércoles: Entrevistas, Noticias y Podcast
-            </h5>
-            <p className={styles.footerSchedule}>
-              <span className={styles.footerScheduleEntry}>
-                {argentinaStreamTime}hs{" "}
-                <Image width={20} src={argentinaFlag} alt="Argentina's Flag" />
-              </span>
-              <span className={styles.footerScheduleEntry}>
-                {colombiaStreamTime}hs{" "}
-                <Image width={20} src={colombiaFlag} alt="Colombia's Flag" />
-              </span>
-              <span className={styles.footerScheduleEntry}>
-                {spainStreamTime}hs
-                <Image width={20} src={spainFlag} alt="Spain's Flag" />
+                <Image width={20} src={spainFlag} alt="España" />
               </span>
             </p>
           </div>
