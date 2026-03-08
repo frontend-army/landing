@@ -4,8 +4,6 @@ import { EpisodeCard } from "@/components/EpisodeCard";
 import { SeeMoreEpisodesButton } from "./components/SeeMoreEpisodesButton";
 import { SectionTitle } from "@/components/SectionTitle";
 
-export const revalidate = 3600;
-
 export const EpisodesSection: React.FC = async () => {
   const { episodes } = await getEpisodes(6, 0);
   return (
