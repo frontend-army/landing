@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const EpisodesList: React.FC<Props> = ({ initialEpisodes }) => {
-  const [episodes, setEpisodes] = useState<Array<Episode>>(initialEpisodes);
+  const [episodePages, setEpisodePages] = useState<Array<Array<Episode>>>([initialEpisodes]);
   const [page, setPage] = useState(0);
   const [reachedEnd, setReachedEnd] = useState(false);
   const loadingTriggerRef = useRef(null);
@@ -23,10 +23,11 @@ export const EpisodesList: React.FC<Props> = ({ initialEpisodes }) => {
       const { episodes: episodesPage, hasNextPage } = await getEpisodes(9, page + 1);
       setPage((currentPage) => currentPage + 1);
       if (episodesPage?.length) {
-        setEpisodes((currentEpisodes) => ([
-          ...currentEpisodes,
-          ...episodesPage
-        ]));
+        setEpisodePages((currentPages) => {
+          const newPages = [...currentPages];
+          newPages[page + 1] = episodesPage;
+          return newPages;
+        });
         setReachedEnd(!hasNextPage);
       }
     }
@@ -38,7 +39,7 @@ export const EpisodesList: React.FC<Props> = ({ initialEpisodes }) => {
 
   return (
     <div className={styles.episodesContainer}>
-      {episodes?.map((episode) => (
+      {episodePages.flat().map((episode) => (
         <EpisodeCard key={episode.id} episode={episode} />
       ))}
       {

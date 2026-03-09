@@ -2,8 +2,9 @@ import { DotBackground } from '@/components/DotBackground';
 import { HeroSection } from '@/app/home/components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { EpisodesSection } from './components/EpisodesSection';
-import { BlogSection } from './components/BlogSection';
 import { Navbar } from './components/Navbar';
+
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Frontend Army',
@@ -40,7 +41,6 @@ export default async function Home() {
         <DotBackground/>
         <HeroSection />
         <EpisodesSection />
-        {/* <BlogSection /> */}
         <AboutSection />
       </main>
     </>
