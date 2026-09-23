@@ -1,0 +1,29 @@
+name: Sync Podcast Episodes
+
+on:
+  schedule:
+    # Runs every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Trigger Episode Sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Sync API Route
+        run: |
+          ENDPOINT="${{ secrets.SYNC_ENDPOINT_URL || 'https://frontendarmy.tech/api/sync-episodes' }}"
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "$ENDPOINT" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}")
+          
+          HTTP_BODY=$(echo "$RESPONSE" | sed '$d')
+          HTTP_STATUS=$(echo "$RESPONSE" | tail -n 1)
+
+          echo "Response: $HTTP_BODY"
+          echo "HTTP Status: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" -ne 200 ]; then
+            echo "Error: Sync failed with status $HTTP_STATUS"
+            exit 1
+          fi

@@ -8,6 +8,6 @@ export interface Episode {
   id: string;
   title: string;
   description: string;
-  youtube_url: string;
-  spotify_url: string;
+  youtube_url?: string | null;
+  spotify_url?: string | null;
 }

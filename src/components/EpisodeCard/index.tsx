@@ -21,11 +21,8 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
   };
 
   const handleMouseEnter = useCallback(() => {
-    if (!youtubeRef.current || !spotifyRef.current) {
-      return;
-    }
-    youtubeRef.current.classList.remove(styles.buttonGlitch);
-    spotifyRef.current.classList.remove(styles.buttonGlitch);
+    youtubeRef.current?.classList.remove(styles.buttonGlitch);
+    spotifyRef.current?.classList.remove(styles.buttonGlitch);
   }, []);
 
   return (
@@ -34,32 +31,36 @@ export const EpisodeCard: React.FC<Props> = ({ episode }) => {
       <h3 className={styles.episodeTitle} title={episode.title}>{episode.title}</h3>
       <p className={styles.episodeDescription}>{episode.description}</p>
       <div className={styles.episodeLinks}>
-        <a
-          className={`${styles.episodeLink} ${styles.youtube}`}
-          ref={youtubeRef}
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter}
-          href={episode.youtube_url}
-          target="_blank"
-          aria-label={`Ir al episodio ${episode.id} en Youtube`}
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={sourceIconMap.youtube} />
-          <span className={styles.episodeSourceName}>Youtube</span>
-        </a>
-        <a
-          className={`${styles.episodeLink} ${styles.spotify}`}
-          ref={spotifyRef}
-          onMouseLeave={handleMouseLeave}
-          onMouseEnter={handleMouseEnter}
-          href={episode.spotify_url}
-          aria-label={`Ir al episodio ${episode.id} en Spotify`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={sourceIconMap.spotify} />
-          <span className={styles.episodeSourceName}>Spotify</span>
-        </a>
+        {episode.youtube_url && (
+          <a
+            className={`${styles.episodeLink} ${styles.youtube}`}
+            ref={youtubeRef}
+            onMouseLeave={handleMouseLeave}
+            onMouseEnter={handleMouseEnter}
+            href={episode.youtube_url}
+            target="_blank"
+            aria-label={`Ir al episodio ${episode.id} en Youtube`}
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={sourceIconMap.youtube} />
+            <span className={styles.episodeSourceName}>Youtube</span>
+          </a>
+        )}
+        {episode.spotify_url && (
+          <a
+            className={`${styles.episodeLink} ${styles.spotify}`}
+            ref={spotifyRef}
+            onMouseLeave={handleMouseLeave}
+            onMouseEnter={handleMouseEnter}
+            href={episode.spotify_url}
+            aria-label={`Ir al episodio ${episode.id} en Spotify`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={sourceIconMap.spotify} />
+            <span className={styles.episodeSourceName}>Spotify</span>
+          </a>
+        )}
       </div>
     </div>
   );

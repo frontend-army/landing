@@ -8,11 +8,13 @@ interface Props {
 }
 
 export const Countdown: React.FC<Props> = ({ ms }) => {
-  const [msToNextEpisode, setMsToNextEpisode] = useState(
-    ms - new Date().getTime()
-  );
+  const [mounted, setMounted] = useState(false);
+  const [msToNextEpisode, setMsToNextEpisode] = useState(0);
 
   useEffect(() => {
+    setMounted(true);
+    setMsToNextEpisode(ms - Date.now());
+
     const timeout = setInterval(() => {
       setMsToNextEpisode((prev) => prev - 1000);
     }, 1000);
@@ -20,7 +22,7 @@ export const Countdown: React.FC<Props> = ({ ms }) => {
     return () => {
       clearInterval(timeout);
     };
-  }, [msToNextEpisode, ms]);
+  }, [ms]);
 
   const daysToNextEpisode = Math.floor(msToNextEpisode / (1000 * 60 * 60 * 24));
   const hsToNextEpisode = Math.floor(
@@ -32,7 +34,10 @@ export const Countdown: React.FC<Props> = ({ ms }) => {
   const secsToNextEpisode = Math.floor((msToNextEpisode % (1000 * 60)) / 1000);
 
   return (
-    <p className={styles.countdown}>
+    <p
+      className={styles.countdown}
+      style={mounted ? undefined : { visibility: "hidden" }}
+    >
       <span className="flex flex-col items-center gap-1">
         <span
           className={styles.countdownNumber}
