@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const { episodes } = await getEpisodes();
@@ -66,12 +66,16 @@ export default async function Episode({ params }: { params: Promise<{ slug: stri
         <h1 className={styles.episodeName}>{episode.title}</h1>
         <p className={styles.episodeDescription}>{episode.description}</p>
         <div className={styles.episodeLinks}>
-          <Link className={styles.episodeLink} href={episode.youtube_url} target="_blank" rel="noopener noreferrer">
-            Watch on YouTube
-          </Link>
-          <Link className={styles.episodeLink} href={episode.spotify_url} target="_blank" rel="noopener noreferrer">
-            Listen on Spotify
-          </Link>
+          {episode.youtube_url && (
+            <Link className={styles.episodeLink} href={episode.youtube_url} target="_blank" rel="noopener noreferrer">
+              Watch on YouTube
+            </Link>
+          )}
+          {episode.spotify_url && (
+            <Link className={styles.episodeLink} href={episode.spotify_url} target="_blank" rel="noopener noreferrer">
+              Listen on Spotify
+            </Link>
+          )}
         </div>
       </div>
 
