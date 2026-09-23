@@ -34,10 +34,7 @@ export const Countdown: React.FC<Props> = ({ ms }) => {
   const secsToNextEpisode = Math.floor((msToNextEpisode % (1000 * 60)) / 1000);
 
   return (
-    <p
-      className={styles.countdown}
-      style={mounted ? undefined : { visibility: "hidden" }}
-    >
+    <p className={`${styles.countdown} ${!mounted ? styles.unmounted : ""}`.trim()}>
       <span className="flex flex-col items-center gap-1">
         <span
           className={styles.countdownNumber}

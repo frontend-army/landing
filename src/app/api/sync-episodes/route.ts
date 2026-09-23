@@ -33,7 +33,3 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET(request: NextRequest) {
-  // Support GET if invoked via basic Vercel Cron GET
-  return POST(request);
-}

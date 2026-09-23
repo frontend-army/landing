@@ -27,3 +27,7 @@
   font-family: var(--font-ibm-sans), system-ui, sans-serif;
   font-size: 1rem;
 }
+
+.unmounted {
+  visibility: hidden;
+}
