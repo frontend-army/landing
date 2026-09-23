@@ -94,8 +94,26 @@
     border-style: solid;
     border-width: 5px 8px;
     border-bottom: 8px solid var(--red);
-    position: absolute;
     transform: translateX(-50%);
+  }
+
+  &:has(.episode-link:only-child) {
+    &::after {
+      content: none;
+    }
+
+    .episode-link {
+      --chamfer: 1rem;
+      background: var(--button-background);
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - var(--chamfer)),
+        calc(100% - var(--chamfer)) 100%,
+        var(--chamfer) 100%,
+        0 calc(100% - var(--chamfer))
+      );
+    }
   }
 }
 
